@@ -1,9 +1,11 @@
 import React from "react";
+import Navigation from "../components/Navigation";
 
 const Home = () => {
   return (
     <div>
-      <h1>Hello</h1>
+      <Navigation />
+      <h1>heloo</h1>
     </div>
   );
 };
