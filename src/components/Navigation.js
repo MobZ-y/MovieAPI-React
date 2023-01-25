@@ -4,26 +4,17 @@ import { NavLink } from "react-router-dom";
 const navigation = () => {
   return (
     <header>
-      <nav className="wrapper">
+      <nav>
         <ul>
           <NavLink to="/">
             <li>accueil</li>
           </NavLink>
           <NavLink to="/About">
-            <li>
-              Films
-              <ul className="sub-menu">
-                <li>Films du Moments</li>
-                <li>Films à venir</li>
-              </ul>
-            </li>
+            <li>Films</li>
           </NavLink>
-          <li>
-            Artistes
-            <ul className="sub-menu">
-              <li>Artistes populaires</li>
-            </ul>
-          </li>
+          <NavLink to="/">
+            <li>Artistes</li>
+          </NavLink>
         </ul>
       </nav>
     </header>
