@@ -12,7 +12,7 @@ const navigation = () => {
           <NavLink to="/About">
             <li>Films</li>
           </NavLink>
-          <NavLink to="/">
+          <NavLink to="/Artist">
             <li>Artistes</li>
           </NavLink>
         </ul>
