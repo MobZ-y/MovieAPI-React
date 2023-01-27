@@ -6,13 +6,22 @@ const navigation = () => {
     <header>
       <nav>
         <ul>
-          <NavLink to="/">
+          <NavLink
+            to="/"
+            className={(nav) => (nav.isActive ? "nav-active" : "")}
+          >
             <li>accueil</li>
           </NavLink>
-          <NavLink to="/About">
+          <NavLink
+            to="/About"
+            className={(nav) => (nav.isActive ? "nav-active" : "")}
+          >
             <li>Films</li>
           </NavLink>
-          <NavLink to="/Artist">
+          <NavLink
+            to="/Artist"
+            className={(nav) => (nav.isActive ? "nav-active" : "")}
+          >
             <li>Artistes</li>
           </NavLink>
         </ul>

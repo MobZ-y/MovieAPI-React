@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "font-1";
+  src: url(../assets/fonts/JosefinSans-Medium.ttf);
+}
 * {
   padding: 0;
   margin: 0;
@@ -5,7 +9,7 @@
 }
 
 body {
-  background: rgb(243, 243, 243);
+  background: rgb(245, 251, 255);
   font-family: "font-1", sans-serif;
 }
 
@@ -14,7 +18,7 @@ li {
 }
 
 nav {
-  background: rgb(0, 0, 0);
+  background: rgb(43, 43, 43);
   display: flex;
   height: 60px;
   align-items: center;
@@ -30,4 +34,241 @@ nav ul a {
   color: rgb(241, 241, 241);
   text-decoration: none;
   padding: 10px;
+}
+nav ul .nav-active {
+  position: relative;
+}
+nav ul .nav-active::after {
+  content: "";
+  height: 4px;
+  width: 0;
+  background: #61dafb;
+  position: absolute;
+  border-radius: 10px;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-animation: anim 0.3s ease forwards;
+  animation: anim 0.6s ease forwards;
+}
+@-webkit-keyframes anim {
+  to {
+    width: 100%;
+  }
+}
+@keyframes anim {
+  to {
+    width: 100%;
+  }
+}
+
+.filter-container {
+  width: 100%;
+  height: 500px;
+  background: url(../../assets/img/bladerunner2049.jpg) center/cover;
+}
+.filter-container h2 {
+  font-size: 70px;
+}
+.filter-container .Titlte-filter-container {
+  display: flex;
+  justify-content: center;
+}
+.filter-container .Titlte-filter-container h2 {
+  margin-top: 50px;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.filter-container .input-search {
+  display: flex;
+  justify-content: center;
+}
+.filter-container #inputSearch {
+  padding: 20px;
+  width: 600px;
+  border-radius: 15px;
+  height: 10px;
+  margin-top: 100px;
+}
+.filter-container button {
+  height: 50px;
+  width: 100px;
+  margin-top: 100px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.movies-trending {
+  margin: 0px auto;
+}
+
+.card {
+  margin: 10px;
+}
+.card .card-popular {
+  color: rgb(53, 53, 53);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.card .card-popular .profile-popular {
+  width: 150px;
+  height: 225px;
+}
+.card .card-popular .profile-popular img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+.card .card-popular .profile-meta {
+  justify-content: center;
+  font-size: 10px;
+  position: relative;
+}
+.card .card-popular .profile-meta .name {
+  font-weight: 700;
+  font-weight: 600;
+  word-wrap: break-word;
+}
+
+.carousel {
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.carousel .trending {
+  display: flex;
+  width: 100%;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+}
+.carousel .slide {
+  width: 100%;
+  scroll-snap-align: start;
+}
+
+.trendingOnPerson {
+  margin: 30px auto;
+}
+.trendingOnPerson .carouselPerson {
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.trendingOnPerson .carouselPerson .trendingPerson {
+  display: flex;
+  width: 100%;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+}
+.trendingOnPerson .carouselPerson .slide {
+  width: 100%;
+  scroll-snap-align: start;
+}
+
+.Switch {
+  display: flex;
+  width: 165px;
+  border-radius: 50px;
+  margin-left: 150px;
+  margin-top: 20px;
+  font-size: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  border: solid 2px black;
+}
+.Switch h3 {
+  padding: 10px;
+  color: black;
+}
+
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.SwitchDisco {
+  display: flex;
+  width: 115px;
+  border-radius: 50px;
+  margin-left: 150px;
+  margin-top: 20px;
+  font-size: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  border: solid 2px black;
+}
+.SwitchDisco h3 {
+  padding: 10px;
+  color: black;
+  transition: 0.2;
+}
+
+.content {
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.content .famous-actors {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  margin-top: 30px;
+}
+.content .card {
+  flex: 1 0 5%;
+  margin-top: 5px;
+  margin-bottom: 50px;
+}
+.content .card-famous {
+  width: 255px;
+  color: rgb(53, 53, 53);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  position: relative;
+  background-color: white;
+  box-shadow: -7px 8px 17px 0px rgba(0, 0, 0, 0.75);
+}
+.content .card-famous .profile-famous img {
+  width: 100%;
+  height: 220px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.content .card-famous .profile-meta {
+  justify-content: center;
+  font-size: 10px;
+  overflow: hidden;
+}
+.content .card-famous .profile-meta .sub {
+  white-space: nowrap;
+}
+.content .card-famous .profile-meta .name {
+  font-size: 20px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.pages {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.pages button {
+  padding: 10px;
+  width: 100px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.4s;
+  margin: 0px 30px;
+}
+.pages button:hover {
+  transform: scale(1.2);
 }/*# sourceMappingURL=index.css.map */

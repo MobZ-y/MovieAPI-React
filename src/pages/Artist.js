@@ -1,11 +1,12 @@
 import React from "react";
+import ArtistComp from "../components/ArtistComp";
 import Navigation from "../components/Navigation";
 
 const Artist = () => {
   return (
     <div>
       <Navigation />
-      <h2>ANA DE ARMAS</h2>
+      <ArtistComp />
     </div>
   );
 };
