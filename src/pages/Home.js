@@ -2,6 +2,7 @@ import React from "react";
 import MoviesAndTV from "../components/MoviesAndTV";
 import Navigation from "../components/Navigation";
 import Actors from "../components/Actors";
+import { NavLink } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -17,7 +18,9 @@ const Home = () => {
             id="inputSearch"
             placeholder="Rechercher, acteurs, réalisateur"
           />
-          <button>S</button>
+          <NavLink to="./SearchPage">
+            <button>S</button>
+          </NavLink>
         </div>
       </div>
       <MoviesAndTV />
