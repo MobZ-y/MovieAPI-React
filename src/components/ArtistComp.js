@@ -1,17 +1,19 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import CardArtist from "./CardArtist";
 
 const ArtistComp = () => {
   const [data, setData] = useState([]);
+  let [page, setPage] = useState("1");
 
   useEffect(() => {
     axios
       .get(
-        "https://api.themoviedb.org/3/person/popular?api_key=dc4fa11dbb0888468121f0e93ac98077&language=en-US&page=1"
+        `https://api.themoviedb.org/3/person/popular?api_key=dc4fa11dbb0888468121f0e93ac98077&language=en-US&page=${page}`
       )
       .then((res) => setData(res.data.results));
-  });
+  }, [page]);
 
   return (
     <div className="content">
@@ -21,9 +23,9 @@ const ArtistComp = () => {
         ))}
       </div>
       <div className="pages">
-        <button className="previous">
-          <p>Prev</p>
-        </button>
+        <NavLink>
+          <button className="previous">prev</button>
+        </NavLink>
         <h2 className="count"></h2>
         <button className="next">
           <p>Next</p>
