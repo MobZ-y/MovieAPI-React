@@ -12,7 +12,7 @@ const CardArtist = ({ Artist }) => {
         </div>
         <div className="profile-meta">
           <p className="name">{Artist.name}</p>
-          <p class="sub">
+          <p className="sub">
             {Artist.known_for[0].title === undefined
               ? Artist.known_for[0].name
               : Artist.known_for[0].title}

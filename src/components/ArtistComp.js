@@ -6,6 +6,7 @@ import CardArtist from "./CardArtist";
 const ArtistComp = () => {
   const [data, setData] = useState([]);
   let [page, setPage] = useState("1");
+  let [pageEdit, setPageEdit] = useState("");
 
   useEffect(() => {
     axios
@@ -14,6 +15,11 @@ const ArtistComp = () => {
       )
       .then((res) => setData(res.data.results));
   }, [page]);
+
+  const setPageUpdate = () => {
+    setPageEdit(page++);
+    page = pageEdit;
+  };
 
   return (
     <div className="content">
@@ -24,7 +30,9 @@ const ArtistComp = () => {
       </div>
       <div className="pages">
         <NavLink>
-          <button className="previous">prev</button>
+          <button className="previous" onClick={setPageUpdate}>
+            prev
+          </button>
         </NavLink>
         <h2 className="count"></h2>
         <button className="next">
