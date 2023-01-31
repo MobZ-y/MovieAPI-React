@@ -15,16 +15,16 @@ const ArtistComp = () => {
       .then((res) => setData(res.data.results));
   };
 
-  useEffect(() => getData(), []);
+  useEffect(() => {
+    getData();
+  }, [page]);
 
   const setPageUpdateAdd = () => {
-    setPage((nextPage) => nextPage + 1);
-    console.log(page);
-    getData();
+    setPage((prevPage) => prevPage + 1);
   };
 
   const setPageUpdateMinus = () => {
-    if (page <= 1) {
+    if (page < 1) {
     } else {
       setPage((nextPage) => nextPage - 1);
       console.log(page);
