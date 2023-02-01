@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import MoviesAndTV from "../components/MoviesAndTV";
 import Navigation from "../components/Navigation";
 import Actors from "../components/Actors";
 import { NavLink } from "react-router-dom";
 
 const Home = () => {
+  const [inputValue, setInputValue] = useState("");
+
+  const handleChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  console.log(inputValue);
+
   return (
     <div>
       <Navigation />
@@ -17,6 +25,7 @@ const Home = () => {
             type="text"
             id="inputSearch"
             placeholder="Rechercher, acteurs, réalisateur"
+            onChange={handleChange}
           />
           <NavLink to="./SearchPage">
             <button>S</button>
