@@ -4,6 +4,10 @@
   padding-top: 0;
   padding-bottom: 0;
 
+  h2 {
+    margin-top: 20px;
+  }
+
   .famous-actors {
     display: flex;
     flex-wrap: wrap;
@@ -13,8 +17,6 @@
 
   .card {
     flex: 1 0 5%;
-    margin-top: 1px;
-    margin-bottom: 50px;
   }
   .card-famous {
     width: 185px;
@@ -24,7 +26,7 @@
     position: relative;
     background-color: white;
     box-shadow: -7px 8px 10px 0px rgba(0, 0, 0, 0.25);
-    border: 1px solid grey;
+    border: 1px solid rgb(202, 202, 202);
 
     .profile-famous img {
       width: 100%;
@@ -33,21 +35,20 @@
     }
 
     .profile-meta {
-      justify-content: center;
       font-size: 10px;
       overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
 
       .sub {
-        white-space: nowrap;
         display: flex;
-
+        padding-left: 5px;
         font-size: 10px;
       }
 
       .name {
         font-size: 12px;
         font-weight: 600;
-        white-space: nowrap;
       }
     }
   }
@@ -59,15 +60,17 @@
   margin-bottom: 20px;
 
   button {
-    padding: 10px;
+    padding: 5px;
     width: 100px;
     border-radius: 20px;
+    border: 1px solid black;
     cursor: pointer;
     transition: 0.4s;
-    margin: 0px 30px;
+    background-color: white;
+    margin: 0px 10px;
 
     &:hover {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
   }
 }

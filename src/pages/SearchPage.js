@@ -1,12 +1,12 @@
 import React from "react";
 import Navigation from "../components/Navigation";
-import SearchPeople from "../components/SearchPeople";
+import Search from "../components/Search";
 
 const SearchPage = () => {
   return (
     <div>
       <Navigation />
-      <SearchPeople />
+      <Search />
     </div>
   );
 };

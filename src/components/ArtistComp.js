@@ -27,12 +27,13 @@ const ArtistComp = () => {
     if (page < 1) {
     } else {
       setPage((nextPage) => nextPage - 1);
-      console.log(page);
+
       getData();
     }
   };
   return (
     <div className="content">
+      <h2>Populaires</h2>
       <div className="famous-actors">
         {data.map((Artist, index) => (
           <CardArtist key={index} Artist={Artist} />
@@ -41,12 +42,12 @@ const ArtistComp = () => {
       <div className="pages">
         <NavLink>
           <button className="previous" onClick={setPageUpdateMinus}>
-            prev
+            Précedent
           </button>
         </NavLink>
         <h2 className="count"></h2>
         <button className="next" onClick={setPageUpdateAdd}>
-          <p>Next</p>
+          <p>Suivant</p>
         </button>
       </div>
     </div>
