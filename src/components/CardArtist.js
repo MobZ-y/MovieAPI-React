@@ -16,6 +16,13 @@ const CardArtist = ({ Artist }) => {
             {Artist.known_for[0].title === undefined
               ? Artist.known_for[0].name
               : Artist.known_for[0].title}
+            ,
+            {Artist.known_for[1].title === undefined
+              ? Artist.known_for[1].name
+              : Artist.known_for[1].title}
+            {Artist.known_for[2] && Artist.known_for[2].title
+              ? `, ${Artist.known_for[2].title}`
+              : ""}
           </p>
         </div>
       </div>
