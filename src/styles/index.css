@@ -9,7 +9,7 @@
 }
 
 body {
-  background: rgb(245, 251, 255);
+  background: rgb(243, 243, 243);
   font-family: "font-1", sans-serif;
 }
 
@@ -96,6 +96,28 @@ nav ul .nav-active::after {
   margin-top: 100px;
   border-radius: 15px;
   cursor: pointer;
+}
+
+.visibility {
+  visibility: hidden;
+}
+
+.search-wrap {
+  margin-top: 0;
+  margin-bottom: 0;
+  background-color: #fff;
+  width: 100%;
+}
+.search-wrap .search {
+  width: 60%;
+  position: absolute;
+  left: 50%;
+  margin-top: 20px;
+  transform: translateX(-50%);
+}
+.search-wrap .search .Profile img {
+  width: 30%;
+  border-radius: 20px;
 }
 
 .movies-trending {
@@ -217,6 +239,9 @@ a:visited {
   padding-top: 0;
   padding-bottom: 0;
 }
+.content h2 {
+  margin-top: 20px;
+}
 .content .famous-actors {
   display: flex;
   flex-wrap: wrap;
@@ -225,35 +250,36 @@ a:visited {
 }
 .content .card {
   flex: 1 0 5%;
-  margin-top: 5px;
-  margin-bottom: 50px;
 }
 .content .card-famous {
-  width: 255px;
+  width: 185px;
   color: rgb(53, 53, 53);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   position: relative;
   background-color: white;
-  box-shadow: -7px 8px 17px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -7px 8px 10px 0px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgb(202, 202, 202);
 }
 .content .card-famous .profile-famous img {
   width: 100%;
-  height: 220px;
+  height: 180px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 .content .card-famous .profile-meta {
-  justify-content: center;
   font-size: 10px;
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .content .card-famous .profile-meta .sub {
-  white-space: nowrap;
+  display: flex;
+  padding-left: 5px;
+  font-size: 10px;
 }
 .content .card-famous .profile-meta .name {
-  font-size: 20px;
+  font-size: 12px;
   font-weight: 600;
-  white-space: nowrap;
 }
 
 .pages {
@@ -262,13 +288,15 @@ a:visited {
   margin-bottom: 20px;
 }
 .pages button {
-  padding: 10px;
+  padding: 5px;
   width: 100px;
   border-radius: 20px;
+  border: 1px solid black;
   cursor: pointer;
   transition: 0.4s;
-  margin: 0px 30px;
+  background-color: white;
+  margin: 0px 10px;
 }
 .pages button:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }/*# sourceMappingURL=index.css.map */

@@ -1,29 +1,35 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { NavLink } from "react-router-dom";
+import SearchCard from "./SearchCard";
 
 const Search = () => {
-  const [People, setPeople] = useState("");
+  const [People, setPeople] = useState("Ana de armas");
+  const [data, setData] = useState([]);
+  let [ids, setId] = useState("224513");
+
+  useEffect(() => {
+    axios
+      .get(
+        `https://api.themoviedb.org/3/search/person?api_key=dc4fa11dbb0888468121f0e93ac98077&language=en-US&query=${People}`
+      )
+      .then((res) => setId(res.data.results[0].id));
+  }, [People]);
+
+  useEffect(() => {
+    axios
+      .get(
+        `https://api.themoviedb.org/3/person/${ids}?api_key=dc4fa11dbb0888468121f0e93ac98077&language=en-US&query=`
+      )
+      .then((res) => setData(res.data));
+  }, [ids]);
+
+  console.log(ids);
+  console.log(data);
 
   return (
-    <div>
-      <div>
-        <div className="filter-container">
-          <div className="Titlte-filter-container">
-            <h2>Bienvenue !</h2>
-          </div>
-          <div className="input-search">
-            <input
-              type="text"
-              id="inputSearch"
-              placeholder="Rechercher, acteurs, réalisateur"
-              onChange={(e) => setPeople(e.target.value)}
-            />
-            <NavLink to="./SearchPage">
-              <button>Search</button>
-            </NavLink>
-          </div>
-        </div>
-      </div>
+    <div className="people">
+      {data.length > 0 && <SearchCard key={0} Search={data[0]} />}
     </div>
   );
 };

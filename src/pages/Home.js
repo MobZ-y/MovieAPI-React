@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import MoviesAndTV from "../components/MoviesAndTV";
 import Navigation from "../components/Navigation";
 import Actors from "../components/Actors";
-import Search from "../components/Search";
+import SearchSer from "../components/SearchSer";
 
 const Home = () => {
   return (
     <div>
       <Navigation />
-      <Search />
+      <SearchSer />
       <MoviesAndTV />
       <Actors />
     </div>
