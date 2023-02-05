@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import About from "./pages/About";
 import Artist from "./pages/Artist";
 import Home from "./pages/Home";
 import SearchPage from "./pages/SearchPage";
+import Films from "./pages/Films";
 import "./styles/index.scss";
 
 const App = () => {
@@ -12,9 +12,9 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/About" element={<About />}></Route>
           <Route path="/Artist" element={<Artist />}></Route>
           <Route path="/SearchPage" element={<SearchPage />}></Route>
+          <Route path="/Films" element={<Films />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

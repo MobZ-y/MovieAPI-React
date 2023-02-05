@@ -4,8 +4,9 @@ import { NavLink } from "react-router-dom";
 import SearchCard from "./SearchCard";
 
 const Search = () => {
-  const [People, setPeople] = useState("Ana de armas");
+  const [People, setPeople] = useState("");
   const [data, setData] = useState([]);
+  const [Credits, setCredits] = useState([]);
   let [ids, setId] = useState("224513");
 
   useEffect(() => {
@@ -24,12 +25,19 @@ const Search = () => {
       .then((res) => setData(res.data));
   }, [ids]);
 
-  console.log(ids);
-  console.log(data);
+  useEffect(() => {
+    axios
+      .get(
+        `https://api.themoviedb.org/3/person/${ids}/movie_credits?api_key=dc4fa11dbb0888468121f0e93ac98077&language=en-US`
+      )
+      .then((res) => setCredits(res.data.results[0]));
+  }, [ids]);
+
+  console.log(Credits);
 
   return (
     <div className="people">
-      {data.length > 0 && <SearchCard key={0} Search={data[0]} />}
+      <SearchCard key={0} Credits={Credits} Search={data} />
     </div>
   );
 };
