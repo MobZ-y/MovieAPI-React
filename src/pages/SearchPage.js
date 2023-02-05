@@ -1,12 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import Navigation from "../components/Navigation";
-import Search from "../components/Search";
+import SearchPreviewCard from "../components/SearchPreviewCard";
 
 const SearchPage = () => {
+  const [People, setPeople] = useState("Ana de armas");
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(
+        `https://api.themoviedb.org/3/search/person?api_key=dc4fa11dbb0888468121f0e93ac98077&language=en-US&query=${People}`
+      )
+      .then((res) => setData(res.data.results));
+  }, [People]);
+
+  console.log(data);
   return (
     <div>
       <Navigation />
-      <Search />
+      <form action="" className="input-form">
+        <input
+          type="text"
+          placeholder="entrez le nom d'un artiste !"
+          onChange={(e) => setPeople(e.target.value)}
+        />
+        <input type="submit" value="Rechercher" />
+      </form>
+      {data.map((Search, index) => (
+        <SearchPreviewCard key={index} Search={Search} />
+      ))}
     </div>
   );
 };

@@ -11,9 +11,9 @@ const App = () => {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" element={<Home />} />
           <Route path="/Artist" element={<Artist />}></Route>
-          <Route path="/SearchPage" element={<SearchPage />}></Route>
+          <Route path="/SearchPage" element={<SearchPage />} />
           <Route path="/Films" element={<Films />}></Route>
         </Routes>
       </BrowserRouter>
