@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import SearchPage from "./pages/SearchPage";
 import Films from "./pages/Films";
 import "./styles/index.scss";
+import ProfileCard from "./pages/ProfileCard";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route path="/Artist" element={<Artist />}></Route>
           <Route path="/SearchPage" element={<SearchPage />} />
           <Route path="/Films" element={<Films />}></Route>
+          <Route path="/ProfileCard/:id" element={<ProfileCard />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

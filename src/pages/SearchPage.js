@@ -4,7 +4,7 @@ import Navigation from "../components/Navigation";
 import SearchPreviewCard from "../components/SearchPreviewCard";
 
 const SearchPage = () => {
-  const [People, setPeople] = useState("Ana de armas");
+  const [People, setPeople] = useState("");
   const [data, setData] = useState([]);
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 import React from "react";
 
-const SearchCard = ({ Search, Credits }) => {
+const SearchCard = ({ Search }) => {
   let birthday = Search.birthday;
   let age = ~~((Date.now() - new Date(birthday)) / 31557600000);
   return (
@@ -28,16 +28,6 @@ const SearchCard = ({ Search, Credits }) => {
             <p>Biographie :</p>
             <br />
             <p>{Search.biography}</p>
-          </div>
-          <div className="profile-popular">
-            <img
-              src={`https://image.tmdb.org/t/p/w500${Credits.poster_path}`}
-            />
-          </div>
-          <div className="profile-meta">
-            <p className="name">
-              {Credits.name === undefined ? Credits.title : Credits.name}
-            </p>
           </div>
         </div>
       </div>
