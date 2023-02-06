@@ -6,7 +6,7 @@ const CardArtist = ({ Artist }) => {
 
   useEffect(() => {
     setId(Artist.id);
-  }, []);
+  }, [Artist.id]);
   return (
     <div className="card">
       <div className="card-famous">

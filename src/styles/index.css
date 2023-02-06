@@ -304,6 +304,10 @@ li:hover .sub-menu {
   background-color: white;
   box-shadow: -7px 8px 10px 0px rgba(0, 0, 0, 0.25);
   border: 1px solid rgb(202, 202, 202);
+  transition: 0.2s;
+}
+.content .card-famous:hover {
+  transform: scale(1.1);
 }
 .content .card-famous .profile-famous img {
   width: 100%;
