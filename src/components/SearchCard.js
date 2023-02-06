@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-const SearchCard = ({ Search }) => {
+const SearchCard = ({ Search, Credits }) => {
+  const [sortedArray, setSortedArray] = useState([]);
+
+  React.useEffect(() => {
+    const sorted = [...Credits].sort((a, b) => b.popularity - a.popularity);
+    setSortedArray(sorted.slice(0, 8));
+  }, [Credits]);
+
   let birthday = Search.birthday;
   let age = ~~((Date.now() - new Date(birthday)) / 31557600000);
   return (
@@ -28,6 +35,19 @@ const SearchCard = ({ Search }) => {
             <p>Biographie :</p>
             <br />
             <p>{Search.biography}</p>
+            <ul className="Credits">
+              {sortedArray.map((item, index) => (
+                <li key={index}>
+                  {" "}
+                  <img
+                    src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+                    alt="drapeau"
+                    id="pp"
+                  />
+                  <h3>{item.title}</h3>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

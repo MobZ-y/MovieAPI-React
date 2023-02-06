@@ -9,7 +9,7 @@
 }
 
 body {
-  background: rgb(243, 243, 243);
+  background: rgb(255, 255, 255);
   font-family: "font-1", sans-serif;
 }
 
@@ -62,50 +62,39 @@ nav ul .nav-active::after {
   }
 }
 
-.filter-container {
-  width: 100%;
-  height: 500px;
-  background: url(../../assets/img/bladerunner2049.jpg) center/cover;
-}
-.filter-container h2 {
-  font-size: 70px;
-}
-.filter-container .Titlte-filter-container {
+.Preview-Content {
+  align-items: center;
+  margin: 40px;
+  margin-top: 10px;
   display: flex;
-  justify-content: center;
 }
-.filter-container .Titlte-filter-container h2 {
-  margin-top: 50px;
-  color: white;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-.filter-container .input-search {
-  display: flex;
-  justify-content: center;
-}
-.filter-container #inputSearch {
-  padding: 20px;
-  width: 600px;
-  border-radius: 15px;
-  height: 10px;
-  margin-top: 100px;
-}
-.filter-container button {
-  height: 50px;
-  width: 100px;
-  margin-top: 100px;
-  border-radius: 15px;
+.Preview-Content a:-webkit-any-link {
+  color: black;
   cursor: pointer;
+  text-decoration: none;
 }
-
-.visibility {
-  visibility: hidden;
+.Preview-Content a:visited {
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  text-decoration: none;
+}
+.Preview-Content .img-preview-content {
+  width: 70px;
+  min-width: 70px;
+  height: 70px;
+  margin-right: 20px;
+}
+.Preview-Content .img-preview-content img {
+  width: 100%;
+  border-radius: 10px;
+}
+.Preview-Content .text-preview-content h2 {
+  margin-bottom: 30px;
 }
 
 .search-wrap {
   margin-top: 0;
   margin-bottom: 0;
-  background-color: #fff;
   width: 100%;
 }
 .search-wrap .search {
@@ -126,6 +115,12 @@ nav ul .nav-active::after {
 .search-wrap .search .Profile img {
   width: 220px;
   border-radius: 20px;
+}
+.search-wrap ul {
+  display: flex;
+}
+.search-wrap ul img {
+  width: 60px;
 }
 
 .movies-trending {
@@ -213,18 +208,6 @@ nav ul .nav-active::after {
   color: black;
 }
 
-a:-webkit-any-link {
-  color: -webkit-link;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-a:visited {
-  color: white;
-  cursor: pointer;
-  text-decoration: none;
-}
-
 .SwitchDisco {
   display: flex;
   width: 115px;
@@ -307,4 +290,23 @@ a:visited {
 }
 .pages button:hover {
   transform: scale(1.1);
+}
+
+.input-form {
+  width: 100%;
+  margin-top: 20px;
+}
+.input-form input {
+  display: block;
+  margin: 0 auto;
+  border-radius: 40px;
+  margin-bottom: 20px;
+  padding: 5px;
+  width: 340px;
+}
+.input-form h3 {
+  display: flex;
+  padding-bottom: 20px;
+  justify-content: center;
+  font-size: 30px;
 }/*# sourceMappingURL=index.css.map */

@@ -19,13 +19,14 @@ const SearchPage = () => {
   return (
     <div>
       <Navigation />
+
       <form action="" className="input-form">
+        <h3>Chercher un Artiste </h3>
         <input
           type="text"
           placeholder="entrez le nom d'un artiste !"
           onChange={(e) => setPeople(e.target.value)}
         />
-        <input type="submit" value="Rechercher" />
       </form>
       {data.map((Search, index) => (
         <SearchPreviewCard key={index} Search={Search} />

@@ -1,8 +1,20 @@
 //**********************************************************Search FINDER
 .Preview-Content {
-  margin: 60px;
+  align-items: center;
+  margin: 40px;
   margin-top: 10px;
   display: flex;
+  a:-webkit-any-link {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    text-decoration: none;
+  }
 
   .img-preview-content {
     width: 70px;
@@ -25,7 +37,6 @@
 .search-wrap {
   margin-top: 0;
   margin-bottom: 0;
-  background-color: #fff;
   width: 100%;
 
   .search {
@@ -50,6 +61,14 @@
         width: 220px;
         border-radius: 20px;
       }
+    }
+  }
+
+  ul {
+    display: flex;
+
+    img {
+      width: 60px;
     }
   }
 }
