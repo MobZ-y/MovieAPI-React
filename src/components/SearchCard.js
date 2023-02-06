@@ -35,19 +35,28 @@ const SearchCard = ({ Search, Credits }) => {
             <p>Biographie :</p>
             <br />
             <p>{Search.biography}</p>
-            <ul className="Credits">
-              {sortedArray.map((item, index) => (
-                <li key={index}>
-                  {" "}
-                  <img
-                    src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
-                    alt="drapeau"
-                    id="pp"
-                  />
-                  <h3>{item.title}</h3>
-                </li>
-              ))}
-            </ul>
+            <div class="lower-content-Carousel">
+              <div class="carousel">
+                <div class="search-carousel">
+                  {sortedArray.map((item) => (
+                    <div class="card">
+                      <div class="card-popular">
+                        <div class="profile-popular">
+                          <img
+                            src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+                            alt="drapeau"
+                            id="pp"
+                          />
+                        </div>
+                        <div class="profile-meta">
+                          <h3>{item.title}</h3>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
