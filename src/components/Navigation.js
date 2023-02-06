@@ -29,7 +29,23 @@ const navigation = () => {
             to="/SearchPage"
             className={(nav) => (nav.isActive ? "nav-active" : "")}
           >
-            <li>Recherche</li>
+            <li>
+              Recherche
+              <ul className="sub-menu">
+                <NavLink
+                  to="/SearchPage"
+                  className={(nav) => (nav.isActive ? "nav-active" : "")}
+                >
+                  <li>Artiste</li>
+                </NavLink>
+              </ul>
+            </li>
+          </NavLink>
+          <NavLink
+            to="/LikePage"
+            className={(nav) => (nav.isActive ? "nav-active" : "")}
+          >
+            <li>Favorite</li>
           </NavLink>
         </ul>
       </nav>

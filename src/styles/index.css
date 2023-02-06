@@ -62,6 +62,18 @@ nav ul .nav-active::after {
   }
 }
 
+.sub-menu {
+  display: none;
+  position: absolute;
+  background-color: aqua;
+  width: 200px;
+}
+
+li:hover .sub-menu {
+  display: block;
+  background: rgb(61, 61, 61);
+}
+
 .Preview-Content {
   align-items: center;
   margin: 40px;

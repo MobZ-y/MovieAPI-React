@@ -47,3 +47,13 @@ nav {
     }
   }
 }
+.sub-menu {
+  display: none;
+  position: absolute;
+  background-color: aqua;
+  width: 200px;
+}
+li:hover .sub-menu {
+  display: block;
+  background: rgb(61, 61, 61);
+}

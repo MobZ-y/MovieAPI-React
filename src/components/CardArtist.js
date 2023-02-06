@@ -1,17 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const CardArtist = ({ Artist }) => {
+  const [id, setId] = useState("");
+
+  useEffect(() => {
+    setId(Artist.id);
+  }, []);
   return (
     <div className="card">
       <div className="card-famous">
         <div className="profile-famous">
-          <img
-            src={
-              Artist.profile_path
-                ? "https://image.tmdb.org/t/p/w500" + Artist.profile_path
-                : "/public/A+.png"
-            }
-          />
+          <NavLink to={`/ProfileCard/${id}`}>
+            <img
+              src={
+                Artist.profile_path
+                  ? "https://image.tmdb.org/t/p/w500" + Artist.profile_path
+                  : "/public/A+.png"
+              }
+            />
+          </NavLink>
         </div>
         <div className="profile-meta">
           <p className="name">{Artist.name}</p>
