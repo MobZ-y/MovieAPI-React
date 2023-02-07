@@ -18,6 +18,7 @@ const CardArtist = ({ Artist }) => {
                   ? "https://image.tmdb.org/t/p/w500" + Artist.profile_path
                   : "/public/A+.png"
               }
+              alt={Artist.name}
             />
           </NavLink>
         </div>

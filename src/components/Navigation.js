@@ -26,22 +26,6 @@ const navigation = () => {
             <li>Films</li>
           </NavLink>
           <NavLink
-            to="/SearchPage"
-            className={(nav) => (nav.isActive ? "nav-active" : "")}
-          >
-            <li>
-              Recherche
-              <ul className="sub-menu">
-                <NavLink
-                  to="/SearchPage"
-                  className={(nav) => (nav.isActive ? "nav-active" : "")}
-                >
-                  <li>Artiste</li>
-                </NavLink>
-              </ul>
-            </li>
-          </NavLink>
-          <NavLink
             to="/LikePage"
             className={(nav) => (nav.isActive ? "nav-active" : "")}
           >

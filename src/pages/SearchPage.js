@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Navigation from "../components/Navigation";
+import { useParams } from "react-router-dom";
 import SearchPreviewCard from "../components/SearchPreviewCard";
 
-const SearchPage = () => {
-  const [People, setPeople] = useState("");
+const SearchTestPage = () => {
+  const { People } = useParams();
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -15,19 +16,9 @@ const SearchPage = () => {
       .then((res) => setData(res.data.results));
   }, [People]);
 
-  console.log(data);
   return (
     <div>
       <Navigation />
-
-      <form action="" className="input-form">
-        <h3>Chercher un Artiste </h3>
-        <input
-          type="text"
-          placeholder="entrez le nom d'un artiste !"
-          onChange={(e) => setPeople(e.target.value)}
-        />
-      </form>
       {data.map((Search, index) => (
         <SearchPreviewCard key={index} Search={Search} />
       ))}
@@ -35,4 +26,4 @@ const SearchPage = () => {
   );
 };
 
-export default SearchPage;
+export default SearchTestPage;

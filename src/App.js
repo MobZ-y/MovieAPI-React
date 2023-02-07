@@ -2,11 +2,11 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Artist from "./pages/Artist";
 import Home from "./pages/Home";
-import SearchPage from "./pages/SearchPage";
 import Films from "./pages/Films";
 import "./styles/index.scss";
 import ProfileCard from "./pages/ProfileCard";
 import LikePage from "./pages/LikePage";
+import SearchPage from "./pages/SearchPage";
 
 const App = () => {
   return (
@@ -15,10 +15,10 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Artist" element={<Artist />}></Route>
-          <Route path="/SearchPage" element={<SearchPage />} />
           <Route path="/Films" element={<Films />}></Route>
           <Route path="/ProfileCard/:id" element={<ProfileCard />}></Route>
           <Route path="/LikePage" element={<LikePage />}></Route>
+          <Route path="/SearchPage/:People" element={<SearchPage />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
