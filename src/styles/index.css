@@ -177,6 +177,28 @@ li:hover .sub-menu {
   scroll-snap-align: start;
 }
 
+.filter-container {
+  width: 100%;
+  height: 360px;
+  background: url(/assets/img/babylon.jpg) center/cover;
+}
+.filter-container h2 {
+  font-size: 70px;
+}
+.filter-container .Titlte-filter-container {
+  display: flex;
+  justify-content: center;
+}
+.filter-container .Titlte-filter-container h2 {
+  margin-top: 50px;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.filter-container .input-search {
+  display: flex;
+  justify-content: center;
+}
+
 .movies-trending {
   margin: 0px auto;
 }
