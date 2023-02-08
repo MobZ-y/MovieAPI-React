@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 const SearchTest = () => {
   const [People, setPeople] = useState("");
@@ -7,11 +9,8 @@ const SearchTest = () => {
   return (
     <div>
       <div>
-        <div className="content">
+        <div className="content-search">
           <div className="filter-container">
-            <div className="Titlte-filter-container">
-              <h2>Bienvenue !</h2>
-            </div>
             <div className="input-search">
               <input
                 type="text"
@@ -20,7 +19,7 @@ const SearchTest = () => {
                 onChange={(e) => setPeople(e.target.value)}
               />
               <NavLink to={`./SearchPage/${People}`}>
-                <input type="submit" value="search" id="inputFinder" />
+                <FontAwesomeIcon icon={faMagnifyingGlass} id="icon" />;
               </NavLink>
             </div>
           </div>

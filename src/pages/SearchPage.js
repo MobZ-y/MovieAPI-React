@@ -11,17 +11,29 @@ const SearchTestPage = () => {
   useEffect(() => {
     axios
       .get(
-        `https://api.themoviedb.org/3/search/person?api_key=dc4fa11dbb0888468121f0e93ac98077&language=en-US&query=${People}`
+        `https://api.themoviedb.org/3/search/multi?api_key=dc4fa11dbb0888468121f0e93ac98077&language=en-US&query=${People}`
       )
       .then((res) => setData(res.data.results));
   }, [People]);
 
+  console.log(data);
+
   return (
     <div>
       <Navigation />
-      {data.map((Search, index) => (
-        <SearchPreviewCard key={index} Search={Search} />
-      ))}
+      <div className="content-wrapper">
+        <div className="selector">
+          <ul>
+            <li>Actors</li>
+            <li>Movie</li>
+          </ul>
+        </div>
+        <div className="Cards">
+          {data.map((Search, index) => (
+            <SearchPreviewCard key={index} Search={Search} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
