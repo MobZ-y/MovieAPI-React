@@ -19,6 +19,7 @@ const SearchTestPage = () => {
       .then((res) => setData(res.data.results));
   }, [People]);
 
+  /// Sort for Movie and Person
   const sortedData = data.sort((a, b) => {
     if (a.media_type === "person" && b.media_type === "movie") {
       return -1;
@@ -39,6 +40,7 @@ const SearchTestPage = () => {
 
   console.log(dataPerson);
   console.log(dataMovie);
+
   return (
     <div>
       <Navigation />
@@ -50,9 +52,13 @@ const SearchTestPage = () => {
           </ul>
         </div>
         <div className="Cards">
-          {dataPerson.map((SearchPerson, index) => (
-            <SearchPreviewPerson key={index} SearchPerson={SearchPerson} />
-          ))}
+          {sortedData.length > 0 && sortedData[0].media_type === "person"
+            ? dataPerson.map((SearchPerson, index) => (
+                <SearchPreviewPerson key={index} SearchPerson={SearchPerson} />
+              ))
+            : dataMovie.map((SearchMovie, index) => (
+                <SearchPreviewMovie key={index} SearchMovie={SearchMovie} />
+              ))}
         </div>
       </div>
     </div>
