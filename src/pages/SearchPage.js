@@ -10,6 +10,7 @@ const SearchTestPage = () => {
   const [data, setData] = useState([]);
   const [dataPerson, setDataPerson] = useState([]);
   const [dataMovie, setDataMovie] = useState([]);
+  const [selectedTab, setSelectedTab] = useState("person");
 
   useEffect(() => {
     axios
@@ -47,18 +48,19 @@ const SearchTestPage = () => {
       <div className="content-wrapper">
         <div className="selector">
           <ul>
-            <li>Actors</li>
-            <li>Movie</li>
+            <li onClick={() => setSelectedTab("person")}>Actors</li>
+            <li onClick={() => setSelectedTab("movie")}>Movie</li>
           </ul>
         </div>
         <div className="Cards">
-          {sortedData.length > 0 && sortedData[0].media_type === "person"
-            ? dataPerson.map((SearchPerson, index) => (
-                <SearchPreviewPerson key={index} SearchPerson={SearchPerson} />
-              ))
-            : dataMovie.map((SearchMovie, index) => (
-                <SearchPreviewMovie key={index} SearchMovie={SearchMovie} />
-              ))}
+          {selectedTab === "person" &&
+            dataPerson.map((SearchPerson, index) => (
+              <SearchPreviewPerson key={index} SearchPerson={SearchPerson} />
+            ))}
+          {selectedTab === "movie" &&
+            dataMovie.map((SearchMovie, index) => (
+              <SearchPreviewMovie key={index} SearchMovie={SearchMovie} />
+            ))}
         </div>
       </div>
     </div>
