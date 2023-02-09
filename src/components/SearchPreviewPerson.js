@@ -42,8 +42,7 @@ const SearchPreviewPerson = ({ SearchPerson }) => {
             : ""}
           {SearchPerson.known_for[2] && SearchPerson.known_for[2].title
             ? ` ${SearchPerson.known_for[2].title}`
-            : SearchPerson.known_for[2] &&
-              SearchPerson.SearchPreviewPersonknown_for[2].name
+            : SearchPerson.known_for[2] && SearchPerson.known_for[2].name
             ? ` ${SearchPerson.known_for[2].name}`
             : ""}
         </p>
