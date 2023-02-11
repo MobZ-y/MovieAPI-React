@@ -3,7 +3,7 @@
 }
 
 .card {
-  margin: 10px;
+  margin: 5px;
 
   .card-popular {
     color: white;
@@ -25,20 +25,13 @@
       justify-content: center;
       font-size: 10px;
       position: relative;
-      color: white;
-
-      .name {
-        font-weight: 700;
-        font-weight: 600;
-        word-wrap: break-word;
-      }
     }
   }
 }
 
 //******Carrousel tendances*******//
 .carousel {
-  width: 80%;
+  width: 95%;
   margin: 0 auto;
   overflow: hidden;
 
@@ -61,7 +54,7 @@
   margin: 30px auto;
 
   .carouselPerson {
-    width: 80%;
+    width: 95%;
     margin: 0 auto;
     overflow: hidden;
 

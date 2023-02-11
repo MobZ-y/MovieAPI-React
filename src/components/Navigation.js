@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 const navigation = () => {
+  const [People, setPeople] = useState("");
   return (
     <header>
       <nav>
@@ -31,6 +34,17 @@ const navigation = () => {
           >
             <li>Favorite</li>
           </NavLink>
+          <div className="input-search">
+            <input
+              type="text"
+              id="inputSearch"
+              placeholder="Rechercher, acteurs, réalisateur"
+              onChange={(e) => setPeople(e.target.value)}
+            />
+            <NavLink to={`./SearchPage/${People}`}>
+              <FontAwesomeIcon icon={faMagnifyingGlass} id="icon" />
+            </NavLink>
+          </div>
         </ul>
       </nav>
     </header>

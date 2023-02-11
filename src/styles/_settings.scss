@@ -18,6 +18,8 @@ $white: rgb(243, 243, 243);
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  text-decoration: none;
+  color: rgb(226, 226, 226);
 }
 
 body {
@@ -31,7 +33,7 @@ li {
 *::-webkit-scrollbar {
   width: 10px;
   height: 10px;
-  background-color: #f5f5f5;
+  background: rgb(42, 42, 51);
 }
 
 *::-webkit-scrollbar-thumb {
