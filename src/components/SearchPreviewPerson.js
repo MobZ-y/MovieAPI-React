@@ -4,10 +4,6 @@ import { NavLink } from "react-router-dom";
 const SearchPreviewPerson = ({ SearchPerson }) => {
   const [id, setId] = useState("");
 
-  const IdSetup = () => {
-    setId(SearchPerson.id);
-  };
-
   useEffect(() => {
     setId(SearchPerson.id);
   }, [SearchPerson.id]);
@@ -21,7 +17,7 @@ const SearchPreviewPerson = ({ SearchPerson }) => {
         />
       </div>
       <div className="text-preview-content">
-        <NavLink onClick={IdSetup} to={`/ProfileCard/${id}`}>
+        <NavLink to={`/ProfileCard/${id}`}>
           <h2>
             {SearchPerson.name
               ? SearchPerson.name

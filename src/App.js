@@ -7,6 +7,7 @@ import "./styles/index.scss";
 import ProfileCard from "./pages/ProfileCard";
 import LikePage from "./pages/LikePage";
 import SearchPage from "./pages/SearchPage";
+import PhotoPerson from "./pages/PhotoPerson";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/ProfileCard/:id" element={<ProfileCard />}></Route>
           <Route path="/LikePage" element={<LikePage />}></Route>
           <Route path="/SearchPage/:People" element={<SearchPage />}></Route>
+          <Route path="/PhotoPerson/:id" element={<PhotoPerson />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

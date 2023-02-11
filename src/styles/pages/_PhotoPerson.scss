@@ -1,0 +1,23 @@
+.back-profile {
+  margin: 20px 90px;
+  width: 130px;
+}
+
+.image-main {
+  margin: 10px 50px;
+
+  .image-low {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+
+    .card-image {
+      border: 1px solid black;
+      width: 300px;
+      margin: 30px;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}

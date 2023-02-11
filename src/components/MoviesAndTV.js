@@ -17,6 +17,10 @@ const MoviesAndTV = () => {
       name: "Trending TV",
       url: "https://api.themoviedb.org/3/tv/popular?api_key=dc4fa11dbb0888468121f0e93ac98077",
     },
+    {
+      name: "Trending Movie",
+      url: "https://api.themoviedb.org/3/movie/popular?api_key=dc4fa11dbb0888468121f0e93ac98077",
+    },
   ];
 
   useEffect(() => {

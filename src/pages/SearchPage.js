@@ -22,9 +22,9 @@ const SearchTestPage = () => {
 
   /// Sort for Movie and Person
   const sortedData = data.sort((a, b) => {
-    if (a.media_type === "person" && b.media_type === "movie") {
+    if (a.media_type === "movie" && b.media_type === "person") {
       return -1;
-    } else if (a.media_type === "movie" && b.media_type === "person") {
+    } else if (a.media_type === "person" && b.media_type === "movie") {
       return 1;
     } else {
       return 0;
@@ -46,19 +46,22 @@ const SearchTestPage = () => {
     <div>
       <Navigation />
       <div className="content-wrapper">
-        <div className="selector">
-          <ul>
-            <li onClick={() => setSelectedTab("person")}>Actors</li>
-            <li onClick={() => setSelectedTab("movie")}>Movie</li>
-          </ul>
+        <div className="selector-content">
+          <div className="selector">
+            <h3>Resultats</h3>
+            <ul>
+              <li onClick={() => setSelectedTab("person")}>Actors</li>
+              <li onClick={() => setSelectedTab("movie")}>Movie</li>
+            </ul>
+          </div>
         </div>
         <div className="Cards">
           {selectedTab === "person" &&
-            dataPerson.map((SearchPerson, index) => (
+            people.map((SearchPerson, index) => (
               <SearchPreviewPerson key={index} SearchPerson={SearchPerson} />
             ))}
           {selectedTab === "movie" &&
-            dataMovie.map((SearchMovie, index) => (
+            movies.map((SearchMovie, index) => (
               <SearchPreviewMovie key={index} SearchMovie={SearchMovie} />
             ))}
         </div>

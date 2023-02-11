@@ -1,7 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const SearchCard = ({ Search, Credits }) => {
   const [sortedArray, setSortedArray] = useState([]);
+  const [id, setId] = useState("");
+
+  useEffect(() => {
+    setId(Search.id);
+  }, [Search.id]);
+
+  console.log(id);
 
   React.useEffect(() => {
     const sorted = [...Credits].sort((a, b) => b.popularity - a.popularity);
@@ -13,6 +21,11 @@ const SearchCard = ({ Search, Credits }) => {
   return (
     <div>
       <div className="search-wrap">
+        <div className="nav-profile">
+          <NavLink to={`/PhotoPerson/${id}`}>
+            <p>Image</p>
+          </NavLink>
+        </div>
         <div className="search">
           <div className="Profile">
             <img

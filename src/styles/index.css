@@ -1,6 +1,6 @@
 @font-face {
   font-family: "font-1";
-  src: url(../assets/fonts/JosefinSans-Medium.ttf);
+  src: url(../assets/fonts/Inter-Medium.ttf);
 }
 * {
   padding: 0;
@@ -20,7 +20,7 @@ li {
 nav {
   background: rgb(43, 43, 43);
   display: flex;
-  height: 60px;
+  height: 70px;
   align-items: center;
   width: 100%;
 }
@@ -29,6 +29,7 @@ nav ul {
   justify-content: center;
   align-items: center;
   width: 100%;
+  font-size: 20px;
 }
 nav ul a {
   color: rgb(241, 241, 241);
@@ -48,13 +49,7 @@ nav ul .nav-active::after {
   bottom: 0px;
   left: 50%;
   transform: translateX(-50%);
-  -webkit-animation: anim 0.3s ease forwards;
   animation: anim 0.6s ease forwards;
-}
-@-webkit-keyframes anim {
-  to {
-    width: 100%;
-  }
 }
 @keyframes anim {
   to {
@@ -76,9 +71,8 @@ li:hover .sub-menu {
 
 .Preview-Content {
   align-items: center;
-  margin: 40px;
-  margin-top: 10px;
   display: flex;
+  margin-top: 10px;
 }
 .Preview-Content a:-webkit-any-link {
   color: black;
@@ -98,10 +92,49 @@ li:hover .sub-menu {
 }
 .Preview-Content .img-preview-content img {
   width: 100%;
+  height: 100%;
   border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .Preview-Content .text-preview-content h2 {
-  margin-bottom: 30px;
+  font-size: 20px;
+}
+
+.Cards {
+  margin-top: 20px;
+}
+
+.Preview-Content-movie {
+  align-items: center;
+  display: flex;
+  margin-top: 10px;
+}
+.Preview-Content-movie a:-webkit-any-link {
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+}
+.Preview-Content-movie a:visited {
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  text-decoration: none;
+}
+.Preview-Content-movie .img-preview-content-movie {
+  width: 90px;
+  min-width: 90px;
+  height: 120px;
+  margin-right: 20px;
+}
+.Preview-Content-movie .img-preview-content-movie img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.Preview-Content-movie .text-preview-content-movie h2 {
+  font-size: 20px;
 }
 
 .search-wrap {
@@ -141,8 +174,7 @@ li:hover .sub-menu {
 .lower-content-Carousel .carousel .search-carousel {
   display: flex;
   width: 100%;
-  -ms-scroll-snap-type: x mandatory;
-      scroll-snap-type: x mandatory;
+  scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   overflow-x: scroll;
 }
@@ -177,26 +209,33 @@ li:hover .sub-menu {
   scroll-snap-align: start;
 }
 
-.filter-container {
+.content-wrapper {
+  display: flex;
+}
+
+.selector-content {
+  margin: 50px;
+  margin-top: 20px;
+}
+.selector-content .selector {
+  border: 1px solid black;
+  height: 150px;
+  width: 130px;
+  border-radius: 10px;
+}
+.selector-content .selector ul {
+  margin-top: 20px;
+  height: 80px;
+}
+.selector-content .selector ul li {
   width: 100%;
-  height: 360px;
-  background: url(/assets/img/babylon.jpg) center/cover;
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
 }
-.filter-container h2 {
-  font-size: 70px;
-}
-.filter-container .Titlte-filter-container {
-  display: flex;
-  justify-content: center;
-}
-.filter-container .Titlte-filter-container h2 {
-  margin-top: 50px;
+.selector-content .selector ul li:hover {
+  background-color: rgb(201, 201, 201);
   color: white;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-.filter-container .input-search {
-  display: flex;
-  justify-content: center;
 }
 
 .movies-trending {
@@ -238,8 +277,7 @@ li:hover .sub-menu {
 .carousel .trending {
   display: flex;
   width: 100%;
-  -ms-scroll-snap-type: x mandatory;
-      scroll-snap-type: x mandatory;
+  scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   overflow-x: scroll;
 }
@@ -259,8 +297,7 @@ li:hover .sub-menu {
 .trendingOnPerson .carouselPerson .trendingPerson {
   display: flex;
   width: 100%;
-  -ms-scroll-snap-type: x mandatory;
-      scroll-snap-type: x mandatory;
+  scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   overflow-x: scroll;
 }
@@ -271,7 +308,7 @@ li:hover .sub-menu {
 
 .Switch {
   display: flex;
-  width: 165px;
+  width: 245px;
   border-radius: 50px;
   margin-left: 150px;
   margin-top: 20px;
@@ -389,4 +426,70 @@ li:hover .sub-menu {
   padding-bottom: 20px;
   justify-content: center;
   font-size: 30px;
+}
+
+.content-search {
+  width: 100%;
+  height: 440px;
+  background: url(/assets/img/2.jpg) center/cover;
+}
+.content-search .filter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.content-search .filter-container h2 {
+  font-size: 70px;
+}
+.content-search .filter-container .Titlte-filter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content-search .filter-container .Titlte-filter-container h2 {
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.content-search .filter-container .input-search {
+  display: flex;
+  justify-content: center;
+}
+.content-search .filter-container .input-search #inputSearch {
+  border-radius: 120px;
+  padding: 3px;
+  width: 420px;
+}
+.content-search .filter-container .input-search #icon {
+  background: white;
+  padding: 20px;
+  border-radius: 150px;
+  color: black;
+  border: 1px solid black;
+}
+.content-search .filter-container .input-search #icon #icon:visited {
+  color: black;
+}
+
+.back-profile {
+  margin: 20px 90px;
+  width: 130px;
+}
+
+.image-main {
+  margin: 10px 50px;
+}
+.image-main .image-low {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.image-main .image-low .card-image {
+  border: 1px solid black;
+  width: 300px;
+  margin: 30px;
+}
+.image-main .image-low img {
+  width: 100%;
 }/*# sourceMappingURL=index.css.map */
