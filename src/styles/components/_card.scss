@@ -6,7 +6,7 @@
   margin: 10px;
 
   .card-popular {
-    color: rgb(53, 53, 53);
+    color: white;
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
       "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 
@@ -25,6 +25,7 @@
       justify-content: center;
       font-size: 10px;
       position: relative;
+      color: white;
 
       .name {
         font-weight: 700;
@@ -86,11 +87,11 @@
   margin-top: 20px;
   font-size: 10px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  border: solid 2px black;
+  border: solid 2px white;
 
   h3 {
     padding: 10px;
-    color: black;
+    color: white;
   }
 }
 
@@ -102,11 +103,11 @@
   margin-top: 20px;
   font-size: 10px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  border: solid 2px black;
+  border: solid 2px white;
 
   h3 {
     padding: 10px;
-    color: black;
+    color: white;
     transition: 0.2;
   }
 }

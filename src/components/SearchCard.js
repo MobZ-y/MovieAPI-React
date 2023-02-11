@@ -23,7 +23,7 @@ const SearchCard = ({ Search, Credits }) => {
       <div className="search-wrap">
         <div className="nav-profile">
           <NavLink to={`/PhotoPerson/${id}`}>
-            <p>Image</p>
+            <p>Images</p>
           </NavLink>
         </div>
         <div className="search">
