@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import videoBg from "../assets/img/g.mp4";
+import videoBg from "../assets/video/babylon.mp4";
 
 const SearchTest = () => {
   const [People, setPeople] = useState("");
@@ -7,6 +7,10 @@ const SearchTest = () => {
   return (
     <div className="main">
       <video src={videoBg} autoPlay loop muted />
+      <div className="content-bg">
+        <h2>BABYLON</h2>
+        <p>infos</p>
+      </div>
     </div>
   );
 };
