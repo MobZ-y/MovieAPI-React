@@ -9,7 +9,7 @@ const SearchTest = () => {
       <video src={videoBg} autoPlay loop muted />
       <div className="content-bg">
         <h2>BABYLON</h2>
-        <p>infos</p>
+        <p>+infos</p>
       </div>
     </div>
   );

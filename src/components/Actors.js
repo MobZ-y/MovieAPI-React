@@ -30,7 +30,7 @@ const Actors = () => {
   return (
     <div>
       <div className="trendingOnPerson">
-        <div className="SwitchDisco">
+        <div className="SwitchPerson">
           {contentTypes.map((contentType) => (
             <NavLink
               key={contentType.name}

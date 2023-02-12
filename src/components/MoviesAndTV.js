@@ -5,6 +5,7 @@ import Card from "./Card";
 
 const MoviesAndTV = () => {
   const [data, setData] = useState([]);
+  const [Movie, setMovie] = useState([]);
   const [url, setUrl] = useState(
     "https://api.themoviedb.org/3/trending/all/day?api_key=dc4fa11dbb0888468121f0e93ac98077&page=1"
   );
@@ -17,11 +18,15 @@ const MoviesAndTV = () => {
       name: "Trending TV",
       url: "https://api.themoviedb.org/3/tv/popular?api_key=dc4fa11dbb0888468121f0e93ac98077",
     },
-    {
-      name: "Trending Movie",
-      url: "https://api.themoviedb.org/3/movie/popular?api_key=dc4fa11dbb0888468121f0e93ac98077",
-    },
   ];
+
+  useEffect(() => {
+    axios
+      .get(
+        "https://api.themoviedb.org/3/movie/popular?api_key=dc4fa11dbb0888468121f0e93ac98077"
+      )
+      .then((res) => setMovie(res.data.results));
+  });
 
   useEffect(() => {
     axios.get(url).then((res) => setData(res.data.results));
@@ -48,6 +53,16 @@ const MoviesAndTV = () => {
         <div className="carousel">
           <div className="trending">
             {data.map((Movies, index) => (
+              <Card key={index} Movies={Movies} />
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="movies-trending">
+        <div className="carousel">
+          <h3>Films Populaires</h3>
+          <div className="trending">
+            {Movie.map((Movies, index) => (
               <Card key={index} Movies={Movies} />
             ))}
           </div>
