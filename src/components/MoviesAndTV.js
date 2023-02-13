@@ -11,11 +11,11 @@ const MoviesAndTV = () => {
   );
   const contentTypes = [
     {
-      name: "Trending",
+      name: "Populaires",
       url: "https://api.themoviedb.org/3/trending/all/day?api_key=dc4fa11dbb0888468121f0e93ac98077&page=1",
     },
     {
-      name: "Trending TV",
+      name: "Populaires TV",
       url: "https://api.themoviedb.org/3/tv/popular?api_key=dc4fa11dbb0888468121f0e93ac98077",
     },
   ];

@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-const navigation = () => {
+const Navigation = () => {
   const [People, setPeople] = useState("");
   return (
     <header>
@@ -51,4 +51,4 @@ const navigation = () => {
   );
 };
 
-export default navigation;
+export default Navigation;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import SearchCard from "../components/SearchCard";
+import SearchCardPerson from "../components/SearchCardPerson";
 
 const ProfileCard = () => {
   const { id } = useParams();
@@ -31,7 +31,7 @@ const ProfileCard = () => {
     <div>
       <Navigation />
       <div className="ff">
-        <SearchCard key={0} Search={data} Credits={Credits} />
+        <SearchCardPerson key={0} Search={data} Credits={Credits} />
       </div>
     </div>
   );

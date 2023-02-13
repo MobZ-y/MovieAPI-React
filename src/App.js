@@ -8,6 +8,7 @@ import ProfileCard from "./pages/ProfileCard";
 import LikePage from "./pages/LikePage";
 import SearchPage from "./pages/SearchPage";
 import PhotoPerson from "./pages/PhotoPerson";
+import MovieCard from "./pages/MovieCard";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/LikePage" element={<LikePage />}></Route>
           <Route path="/SearchPage/:People" element={<SearchPage />}></Route>
           <Route path="/PhotoPerson/:id" element={<PhotoPerson />}></Route>
+          <Route path="/Movie/:id" element={<MovieCard />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
