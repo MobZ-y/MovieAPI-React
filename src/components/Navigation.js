@@ -5,6 +5,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 const Navigation = () => {
   const [People, setPeople] = useState("");
+
   return (
     <header>
       <nav>
@@ -41,7 +42,7 @@ const Navigation = () => {
               placeholder="Rechercher, acteurs, réalisateur"
               onChange={(e) => setPeople(e.target.value)}
             />
-            <NavLink to={`./SearchPage/${People}`}>
+            <NavLink to={`/SearchPage/${People}`}>
               <FontAwesomeIcon icon={faMagnifyingGlass} id="icon" />
             </NavLink>
           </div>
