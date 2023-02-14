@@ -84,7 +84,7 @@
 
   .search {
     display: flex;
-    width: 60%;
+    width: 63%;
     position: absolute;
     left: 50%;
     margin-top: 20px;
@@ -102,7 +102,7 @@
 
     .Profile {
       img {
-        width: 220px;
+        width: 300px;
         border-radius: 20px;
       }
     }
@@ -162,6 +162,36 @@
       width: 100%;
       scroll-snap-align: start;
     }
+  }
+}
+
+.table {
+  background: rgb(112, 112, 112);
+  margin-top: 20px;
+  border-radius: 10px;
+  font-size: 18px;
+
+  .fristLine {
+    padding-top: 10px;
+  }
+
+  .separator {
+    width: 24px;
+    span {
+      border: 1px solid black;
+      width: 20px;
+      background-color: rgb(85, 85, 85);
+      padding-left: 20px;
+      border-radius: 150px;
+    }
+  }
+
+  .year {
+    padding: 0px 20px;
+  }
+
+  .originalTitle {
+    padding: 0px 20px;
   }
 }
 //////***************************************************************** BG

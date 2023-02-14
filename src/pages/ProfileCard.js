@@ -8,6 +8,7 @@ const ProfileCard = () => {
   const { id } = useParams();
   const [data, setData] = useState([]);
   const [Credits, setCredits] = useState([]);
+  const [CreditsCombined, setCreditsCombined] = useState([]);
 
   useEffect(() => {
     axios
@@ -25,13 +26,26 @@ const ProfileCard = () => {
       .then((res) => setCredits(res.data.cast));
   }, [id]);
 
-  console.log(Credits);
+  useEffect(() => {
+    axios
+      .get(
+        `https://api.themoviedb.org/3/person/${id}/combined_credits?api_key=dc4fa11dbb0888468121f0e93ac98077&language=en-US`
+      )
+      .then((res) => setCreditsCombined(res.data.cast));
+  }, [id]);
+
+  console.log(CreditsCombined);
 
   return (
     <div>
       <Navigation />
       <div className="ff">
-        <SearchCardPerson key={0} Search={data} Credits={Credits} />
+        <SearchCardPerson
+          key={0}
+          Search={data}
+          Credits={Credits}
+          CreditsCombined={CreditsCombined}
+        />
       </div>
     </div>
   );

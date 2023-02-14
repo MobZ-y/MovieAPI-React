@@ -22,7 +22,7 @@ const App = () => {
           <Route path="/LikePage" element={<LikePage />}></Route>
           <Route path="/SearchPage/:People" element={<SearchPage />}></Route>
           <Route path="/PhotoPerson/:id" element={<PhotoPerson />}></Route>
-          <Route path="/Movie/:id" element={<MovieCard />}></Route>
+          <Route path="/Movie/:idMovie" element={<MovieCard />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

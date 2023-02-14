@@ -3,8 +3,6 @@ import videoBg from "../assets/video/babylon.mp4";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const SearchTest = () => {
-  const [People, setPeople] = useState("");
-
   return (
     <div className="main">
       <video src={videoBg} autoPlay loop muted />

@@ -6,14 +6,14 @@ import SearchCardMovie from "../components/SearchCardMovie";
 
 const MovieCard = () => {
   const [data, setData] = useState([]);
-  const { id } = useParams();
+  const { idMovie } = useParams();
   useEffect(() => {
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=dc4fa11dbb0888468121f0e93ac98077&language=en-US&query=`
+        `https://api.themoviedb.org/3/movie/${idMovie}?api_key=dc4fa11dbb0888468121f0e93ac98077&language=en-US&query=`
       )
       .then((res) => setData(res.data));
-  }, [id]);
+  }, [idMovie]);
 
   console.log(data);
   return (

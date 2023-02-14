@@ -2,15 +2,15 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const Card = ({ Movies }) => {
-  const [id, setId] = useState("");
+  const [idMovie, setIdMovie] = useState("");
 
   useEffect(() => {
-    setId(Movies.id);
+    setIdMovie(Movies.id);
   }, [Movies.id]);
   return (
     <div>
       <div className="card">
-        <NavLink to={`/Movie/${id}`}>
+        <NavLink to={`/Movie/${idMovie}`}>
           <div className="card-popular">
             <div className="profile-popular">
               <img
