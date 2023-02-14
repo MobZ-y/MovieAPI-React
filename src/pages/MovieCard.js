@@ -10,7 +10,7 @@ const MovieCard = () => {
   useEffect(() => {
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/${idMovie}?api_key=dc4fa11dbb0888468121f0e93ac98077&language=en-US&query=`
+        `https://api.themoviedb.org/3/movie/${idMovie}?api_key=dc4fa11dbb0888468121f0e93ac98077&language=fr-FR&query=`
       )
       .then((res) => setData(res.data));
   }, [idMovie]);

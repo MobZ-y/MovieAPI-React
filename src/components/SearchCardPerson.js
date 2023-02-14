@@ -14,7 +14,7 @@ const SearchCard = ({ Search, Credits, CreditsCombined }) => {
     setId(Search.id);
   }, [Search.id]);
 
-  console.log(Credits);
+  console.log(Search);
 
   React.useEffect(() => {
     const sorted = [...Credits].sort((a, b) => b.popularity - a.popularity);
@@ -62,7 +62,8 @@ const SearchCard = ({ Search, Credits, CreditsCombined }) => {
             <br />
             <h4>Alias</h4>
             <ul>
-              <li>{Search.also_known_as}</li>
+              {Search.also_known_as &&
+                Search.also_known_as.map((Alias) => <li>{Alias}</li>)}
             </ul>
           </div>
           <div className="Details">

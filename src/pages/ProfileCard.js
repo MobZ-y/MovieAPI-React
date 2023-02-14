@@ -13,7 +13,7 @@ const ProfileCard = () => {
   useEffect(() => {
     axios
       .get(
-        `https://api.themoviedb.org/3/person/${id}?api_key=dc4fa11dbb0888468121f0e93ac98077&language=en-US&query=`
+        `https://api.themoviedb.org/3/person/${id}?api_key=dc4fa11dbb0888468121f0e93ac98077&language=fr-FR&query=`
       )
       .then((res) => setData(res.data));
   }, [id]);
@@ -21,7 +21,7 @@ const ProfileCard = () => {
   useEffect(() => {
     axios
       .get(
-        `https://api.themoviedb.org/3/person/${id}/movie_credits?api_key=dc4fa11dbb0888468121f0e93ac98077&language=en-US`
+        `https://api.themoviedb.org/3/person/${id}/movie_credits?api_key=dc4fa11dbb0888468121f0e93ac98077&language=fr-FR`
       )
       .then((res) => setCredits(res.data.cast));
   }, [id]);
@@ -29,7 +29,7 @@ const ProfileCard = () => {
   useEffect(() => {
     axios
       .get(
-        `https://api.themoviedb.org/3/person/${id}/combined_credits?api_key=dc4fa11dbb0888468121f0e93ac98077&language=en-US`
+        `https://api.themoviedb.org/3/person/${id}/combined_credits?api_key=dc4fa11dbb0888468121f0e93ac98077&language=fr-FR`
       )
       .then((res) => setCreditsCombined(res.data.cast));
   }, [id]);

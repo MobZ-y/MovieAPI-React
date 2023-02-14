@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import videoBg from "../assets/video/babylon.mp4";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { NavLink } from "react-router-dom";
 
 const SearchTest = () => {
   return (
@@ -8,7 +9,9 @@ const SearchTest = () => {
       <video src={videoBg} autoPlay loop muted />
       <div className="content-bg">
         <h2>BABYLON</h2>
-        <p>Plus infos</p>
+        <NavLink to="/Movie/615777">
+          <p>Plus infos</p>
+        </NavLink>
         <FontAwesomeIcon icon="fa-regular fa-circle-info" />
       </div>
     </div>

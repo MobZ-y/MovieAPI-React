@@ -15,7 +15,7 @@ const SearchTestPage = () => {
   useEffect(() => {
     axios
       .get(
-        `https://api.themoviedb.org/3/search/multi?api_key=dc4fa11dbb0888468121f0e93ac98077&language=en-US&query=${People}`
+        `https://api.themoviedb.org/3/search/multi?api_key=dc4fa11dbb0888468121f0e93ac98077&language=fr-FR&query=${People}`
       )
       .then((res) => setData(res.data.results));
   }, [People]);
