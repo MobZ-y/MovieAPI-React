@@ -2,8 +2,7 @@
 .Preview-Content {
   align-items: center;
   display: flex;
-  margin-top: 70px;
-
+  margin-top: 25px;
   a:-webkit-any-link {
     color: black;
     cursor: pointer;
@@ -37,12 +36,13 @@
 }
 
 .Cards {
-  margin-top: 90px;
+  margin-top: 70px;
 }
 //**********************************************************Search FINDER for Movie
 .Preview-Content-movie {
   align-items: center;
   display: flex;
+  margin-top: 25px;
 
   a:-webkit-any-link {
     color: black;

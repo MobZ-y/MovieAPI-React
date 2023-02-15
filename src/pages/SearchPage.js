@@ -20,6 +20,13 @@ const SearchTestPage = () => {
       .then((res) => setData(res.data.results));
   }, [People]);
 
+  // Check if the first element is a movie
+  useEffect(() => {
+    if (data.length > 0 && data[0].media_type === "movie") {
+      setSelectedTab("movie");
+    }
+  }, [data]);
+
   /// Sort for Movie and Person
   const sortedData = data.sort((a, b) => {
     if (a.media_type === "movie" && b.media_type === "person") {
@@ -48,10 +55,10 @@ const SearchTestPage = () => {
       <div className="content-wrapper">
         <div className="selector-content">
           <div className="selector">
-            <h3>Resultats</h3>
+            <h3>Résultats</h3>
             <ul>
-              <li onClick={() => setSelectedTab("person")}>Actors</li>
-              <li onClick={() => setSelectedTab("movie")}>Movie</li>
+              <li onClick={() => setSelectedTab("person")}>Acteurs</li>
+              <li onClick={() => setSelectedTab("movie")}>Films</li>
             </ul>
           </div>
         </div>

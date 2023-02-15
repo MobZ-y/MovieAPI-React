@@ -6,7 +6,7 @@ video {
 
 .content-bg {
   position: absolute;
-  bottom: 260px;
+  bottom: 360px;
   padding-left: 50px;
   left: 0px;
   color: white;
@@ -19,12 +19,17 @@ video {
 
   p {
     font-size: 20px;
-    width: 40%;
+    width: 32%;
     display: flex;
     justify-content: center;
     cursor: pointer;
     border-radius: 10px;
     background-color: rgb(201, 201, 201);
     color: black;
+    transition: 0.2s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 }

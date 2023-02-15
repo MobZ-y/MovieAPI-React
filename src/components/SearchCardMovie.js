@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const SearchCardMovie = ({ SearchMovie, Credits }) => {
   const runtimeInMinutes = SearchMovie.runtime;
   const hours = Math.floor(runtimeInMinutes / 60);
   const minutes = runtimeInMinutes % 60;
   const [sortedArray, setSortedArray] = useState([]);
+
+  const [id, setId] = useState("");
+
+  useEffect(() => {
+    setId(Credits.id);
+  }, [Credits.id]);
+
+  console.log(id);
 
   const divStyle = {
     backgroundImage: `url(https://image.tmdb.org/t/p/w500/${SearchMovie.backdrop_path})`,
@@ -26,9 +35,12 @@ const SearchCardMovie = ({ SearchMovie, Credits }) => {
         <div className="search-movie">
           <div className="Profile-movie">
             <img
-              src={`https://image.tmdb.org/t/p/w500${SearchMovie.poster_path}`}
-              alt="drapeau"
-              id="pp"
+              src={
+                SearchMovie.poster_path
+                  ? "https://image.tmdb.org/t/p/w500" + SearchMovie.poster_path
+                  : "/src/assets/img/babylon.jpg"
+              }
+              alt=""
             />
           </div>
           <div className="details-movie">
@@ -65,7 +77,11 @@ const SearchCardMovie = ({ SearchMovie, Credits }) => {
             <i>{SearchMovie.tagline}</i>
             <h4 id="Synopsis">Synopsis</h4>
 
-            <p>{SearchMovie.overview}</p>
+            <p>
+              {SearchMovie.overview
+                ? SearchMovie.overview
+                : "Pas d'information"}
+            </p>
           </div>
         </div>
         <div className="flex-details">
@@ -77,11 +93,13 @@ const SearchCardMovie = ({ SearchMovie, Credits }) => {
                   <div className="card">
                     <div className="card-popular">
                       <div className="profile-popular">
-                        <img
-                          src={`https://image.tmdb.org/t/p/w500${item.profile_path}`}
-                          alt="drapeau"
-                          id="pp"
-                        />
+                        <NavLink>
+                          <img
+                            src={`https://image.tmdb.org/t/p/w500${item.profile_path}`}
+                            alt="drapeau"
+                            id="pp"
+                          />
+                        </NavLink>
                       </div>
 
                       <div className="profile-meta">
