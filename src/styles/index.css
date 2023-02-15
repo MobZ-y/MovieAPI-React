@@ -34,10 +34,11 @@ nav {
   display: flex;
   height: 70px;
   align-items: center;
-  position: absolute;
-  background-color: black;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
   width: 100%;
+  top: 0;
 }
 nav ul {
   display: flex;
@@ -143,6 +144,7 @@ nav ul .nav-active::after {
 .search-wrap {
   margin-top: 0;
   margin-bottom: 0;
+  margin-top: 70px;
   width: 100%;
 }
 .search-wrap .search {
@@ -270,7 +272,7 @@ nav ul .nav-active::after {
 .search-movie {
   display: flex;
   width: 80%;
-  margin: 0px 200px;
+  margin: 70px 200px;
   padding-top: 20px;
 }
 .search-movie .details-movie {
@@ -520,6 +522,7 @@ nav ul .nav-active::after {
   padding-right: 200px;
   padding-top: 0;
   padding-bottom: 0;
+  margin-top: 70px;
 }
 .content h2 {
   margin-top: 20px;

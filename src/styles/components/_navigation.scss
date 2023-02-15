@@ -2,10 +2,11 @@ nav {
   display: flex;
   height: 70px;
   align-items: center;
-  position: absolute;
-  background-color: black;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
   width: 100%;
+  top: 0;
 
   ul {
     display: flex;
