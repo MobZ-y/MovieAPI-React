@@ -7,11 +7,6 @@ const SearchCardMovie = ({ SearchMovie, Credits }) => {
   const minutes = runtimeInMinutes % 60;
   const [sortedArray, setSortedArray] = useState([]);
 
-  const bud = SearchMovie.budget;
-  const formattedBudget = bud.toLocaleString();
-  const rev = SearchMovie.revenue;
-  const formattedRevenue = rev.toLocaleString();
-
   const divStyle = {
     backgroundImage: `url(https://image.tmdb.org/t/p/w500/${SearchMovie.backdrop_path})`,
     backgroundSize: "cover",
@@ -101,10 +96,10 @@ const SearchCardMovie = ({ SearchMovie, Credits }) => {
           </div>
           <div className="details-movie">
             <h4>Budget</h4>
-            <p>${formattedBudget}</p>
+            <p>${SearchMovie.budget}</p>
             <br />
             <h4>Revenu</h4>
-            <p>${formattedRevenue}</p>
+            <p>${SearchMovie.revenue}</p>
             <br />
             <h4>Langue d'origine</h4>
             <p>{SearchMovie.original_language}</p>
