@@ -76,7 +76,7 @@ nav ul .nav-active::after {
 .Preview-Content {
   align-items: center;
   display: flex;
-  margin-top: 10px;
+  margin-top: 70px;
 }
 .Preview-Content a:-webkit-any-link {
   color: black;
@@ -112,7 +112,7 @@ nav ul .nav-active::after {
 .Preview-Content-movie {
   align-items: center;
   display: flex;
-  margin-top: 10px;
+  margin-top: 70px;
 }
 .Preview-Content-movie a:-webkit-any-link {
   color: black;
@@ -246,7 +246,7 @@ nav ul .nav-active::after {
 
 .selector-content {
   margin: 50px;
-  margin-top: 20px;
+  margin-top: 90px;
 }
 .selector-content .selector {
   border: 1px solid black;
@@ -592,7 +592,7 @@ nav ul .nav-active::after {
 
 .input-form {
   width: 100%;
-  margin-top: 20px;
+  margin-top: 70px;
 }
 .input-form input {
   display: block;
@@ -644,7 +644,7 @@ video {
 }
 
 .back-profile {
-  margin: 20px 90px;
+  margin: 70px 90px;
   width: 130px;
 }
 

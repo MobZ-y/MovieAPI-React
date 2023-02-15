@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 const Navigation = () => {
   const [People, setPeople] = useState("");
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [inputWidth, setInputWidth] = useState("0px");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,9 +20,18 @@ const Navigation = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
+    // Navigue vers la page de recherche avec les paramètres spécifiés
+    navigate(`/SearchPage/${People}`);
+  };
   const navBackgroundColor =
-    scrollPosition > 100 ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0.5)";
+    scrollPosition > 100 ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0.3)";
+
+  function handleIconClick() {
+    setInputWidth(inputWidth === "0px" ? "200px" : "0px");
+  }
   return (
     <header>
       <nav style={{ backgroundColor: navBackgroundColor }}>
@@ -50,15 +62,28 @@ const Navigation = () => {
             <li>Favorite</li>
           </NavLink>
           <div className="input-search">
-            <input
-              type="text"
-              id="inputSearch"
-              placeholder="Rechercher, acteurs, réalisateur"
-              onChange={(e) => setPeople(e.target.value)}
-            />
-            <NavLink to={`/SearchPage/${People}`}>
-              <FontAwesomeIcon icon={faMagnifyingGlass} id="icon" />
-            </NavLink>
+            <form onSubmit={handleSubmit}>
+              <label htmlFor="inputSearch">
+                <FontAwesomeIcon
+                  icon={faMagnifyingGlass}
+                  id="icon"
+                  onClick={handleIconClick}
+                />
+              </label>
+              <input
+                type="text"
+                id="inputSearch"
+                placeholder="Rechercher, acteurs, réalisateur"
+                required
+                value={People}
+                onChange={(e) => setPeople(e.target.value)}
+                style={{
+                  width: inputWidth,
+                  border: "none",
+                  transition: "width 0.3s ease-in-out",
+                }}
+              />
+            </form>
           </div>
         </ul>
       </nav>

@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import videoBg from "../assets/video/babylon.mp4";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 const SearchTest = () => {
-  const [People, setPeople] = useState("");
   return (
     <div className="main">
       <video src={videoBg} autoPlay loop muted />
