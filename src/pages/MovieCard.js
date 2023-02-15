@@ -28,9 +28,8 @@ const MovieCard = () => {
   return (
     <div>
       <Navigation />
-      <div className="ff">
-        <SearchCardMovie key={0} SearchMovie={data} Credits={credits} />
-      </div>
+
+      <SearchCardMovie key={0} SearchMovie={data} Credits={credits} />
     </div>
   );
 };

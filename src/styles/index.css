@@ -265,50 +265,45 @@ nav ul .nav-active::after {
   color: white;
 }
 
-.search-wrap-movie {
-  margin-top: 0;
-  margin-bottom: 0;
-  width: 100%;
-}
-.search-wrap-movie .search-movie {
+.search-movie {
   display: flex;
   width: 80%;
-  position: absolute;
-  left: 50%;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin: 0px 200px;
   margin-top: 20px;
-  transform: translateX(-50%);
 }
-.search-wrap-movie .search-movie .details-movie {
+.search-movie .details-movie {
   margin: 15px;
   overflow: hidden;
 }
-.search-wrap-movie .search-movie .details-movie h3 {
+.search-movie .details-movie h3 {
   margin-bottom: 50px;
   font-size: 30px;
 }
-.search-wrap-movie .search-movie .details-movie h1 {
+.search-movie .details-movie h1 {
   margin-left: 5px;
 }
-.search-wrap-movie .search-movie .Profile-movie img {
+.search-movie .Profile-movie img {
   width: 300px;
   border-radius: 20px;
 }
-.search-wrap-movie img {
+.search-movie img {
   width: 60px;
 }
-.search-wrap-movie ul {
+.search-movie ul {
   display: flex;
 }
-.search-wrap-movie ul li {
+.search-movie ul li {
   padding: 0px 5px;
 }
-.search-wrap-movie .second-container {
+.search-movie .second-container {
   display: flex;
 }
-.search-wrap-movie .second-container p {
+.search-movie .second-container p {
   margin: 20px 0px;
 }
-.search-wrap-movie #Synopsis {
+.search-movie #Synopsis {
   margin: 20px 0px;
 }
 
@@ -325,13 +320,51 @@ nav ul .nav-active::after {
   align-items: center;
 }
 
-.ff {
-  width: 500px;
-  height: 600px;
+.lower-content-Carousel-movie {
+  width: 50%;
+  margin: 0px 300px;
 }
-
-.gg {
-  display: f;
+.lower-content-Carousel-movie .carousel-movie {
+  overflow: hidden;
+  margin: 0px 200px;
+  width: 100%;
+}
+.lower-content-Carousel-movie .carousel-movie .search-carousel-movie {
+  display: flex;
+  width: 100%;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+}
+.lower-content-Carousel-movie .carousel-movie .search-carousel-movie .card {
+  margin: 10px;
+  height: 220px;
+}
+.lower-content-Carousel-movie .carousel-movie .search-carousel-movie .card .card-popular {
+  color: white;
+}
+.lower-content-Carousel-movie .carousel-movie .search-carousel-movie .card .card-popular .profile-popular {
+  width: 135px;
+  height: 195px;
+}
+.lower-content-Carousel-movie .carousel-movie .search-carousel-movie .card .card-popular .profile-popular img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+.lower-content-Carousel-movie .carousel-movie .search-carousel-movie .card .card-popular .profile-meta {
+  justify-content: center;
+  font-size: 10px;
+  position: relative;
+  overflow: hidden;
+  height: 30px;
+}
+.lower-content-Carousel-movie .carousel-movie .search-carousel-movie .card .card-popular .profile-meta h3 {
+  font-size: 10px;
+}
+.lower-content-Carousel-movie .carousel-movie .slide {
+  width: 100%;
+  scroll-snap-align: start;
 }
 
 .movies-trending {
