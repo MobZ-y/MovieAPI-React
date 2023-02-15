@@ -7,7 +7,6 @@ import Search from "../components/Search";
 const Home = () => {
   return (
     <div>
-      <Navigation />
       <Search />
       <MoviesAndTV />
       <Actors />
