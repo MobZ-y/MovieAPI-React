@@ -251,6 +251,10 @@
         margin-bottom: 50px;
         font-size: 30px;
       }
+
+      h1 {
+        margin-left: 5px;
+      }
     }
 
     .Profile-movie {
@@ -264,4 +268,45 @@
   img {
     width: 60px;
   }
+
+  ul {
+    display: flex;
+
+    li {
+      padding: 0px 5px;
+    }
+  }
+
+  .second-container {
+    display: flex;
+
+    p {
+      margin: 20px 0px;
+    }
+  }
+
+  #Synopsis {
+    margin: 20px 0px;
+  }
+}
+
+#canvas-movie {
+  border: 4px solid black;
+  color: azure;
+  border-radius: 150px;
+  width: 70px;
+  font-size: 35px;
+  height: 70px;
+  display: flex;
+  margin: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.ff {
+  width: 500px;
+  height: 600px;
+}
+.gg {
+  display: f;
 }

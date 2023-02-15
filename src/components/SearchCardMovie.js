@@ -1,6 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 
-const SearchCardMovie = ({ SearchMovie }) => {
+const SearchCardMovie = ({ SearchMovie, Credits }) => {
+  const runtimeInMinutes = SearchMovie.runtime;
+  const hours = Math.floor(runtimeInMinutes / 60);
+
+  const minutes = runtimeInMinutes % 60;
+  const [sortedArray, setSortedArray] = useState([]);
+
+  React.useEffect(() => {
+    const castArray = Array.isArray(Credits.cast) ? Credits.cast : [];
+
+    const sorted = castArray.sort((a, b) => a.order - b.order);
+    setSortedArray(sorted.slice(0, 8));
+  }, [Credits]);
+  console.log(Credits);
+
+  const formattedRuntime = `${hours}h ${minutes}min`;
   return (
     <div>
       <div className="search-wrap-movie">
@@ -14,11 +29,63 @@ const SearchCardMovie = ({ SearchMovie }) => {
               />
             </div>
             <div className="details-movie">
-              <h1>{SearchMovie.original_title}</h1>
-              <br />
+              <h1>
+                {SearchMovie.original_title} (
+                {new Date(SearchMovie.release_date).getFullYear()})
+              </h1>
+              <ul>
+                {SearchMovie.genres &&
+                  SearchMovie.genres.map((info) => <li>{info.name}</li>)}
+                <li>{formattedRuntime}</li>
+              </ul>
+
+              <div className="second-container">
+                <div
+                  id="canvas-movie"
+                  className={
+                    SearchMovie.vote_average === 0
+                      ? "grey"
+                      : SearchMovie.vote_average > 6
+                      ? "green"
+                      : SearchMovie.vote_average >= 2 &&
+                        SearchMovie.vote_average < 3
+                      ? "red"
+                      : "orange"
+                  }
+                >
+                  {SearchMovie.vote_average === 0
+                    ? ""
+                    : Math.floor(SearchMovie.vote_average * 10).toFixed(0)}
+                </div>
+                <p>Notes des utilisateurs</p>
+              </div>
               <i>{SearchMovie.tagline}</i>
-              <h4>Synopsis</h4>
+              <h4 id="Synopsis">Synopsis</h4>
+
               <p>{SearchMovie.overview}</p>
+              <div className="lower-content-Carousel">
+                <div className="carousel">
+                  <div className="search-carousel">
+                    {sortedArray.map((item) => (
+                      <div className="card">
+                        <div className="card-popular">
+                          <div className="profile-popular">
+                            <img
+                              src={`https://image.tmdb.org/t/p/w500${item.profile_path}`}
+                              alt="drapeau"
+                              id="pp"
+                            />
+                          </div>
+
+                          <div className="profile-meta">
+                            <h3>{item.name}</h3>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
