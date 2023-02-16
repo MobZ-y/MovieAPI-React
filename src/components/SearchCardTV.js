@@ -28,7 +28,7 @@ const SearchCardTV = ({ Details }) => {
           </div>
           <div className="details-movie">
             <h1>
-              {Details.original_name} (
+              {Details.name ? Details.name : Details.original_name} (
               {new Date(Details.first_air_date).getFullYear()})
             </h1>
             <ul>

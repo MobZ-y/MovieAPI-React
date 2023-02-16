@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
-import Card from "./Card";
+import CardMovie from "./CardMovie";
+import CardTV from "./CardTV";
 
 const MoviesAndTV = () => {
   const [data, setData] = useState([]);
   const [Movie, setMovie] = useState([]);
+  const [Tv, setTv] = useState([]);
   const [url, setUrl] = useState(
     "https://api.themoviedb.org/3/trending/all/day?api_key=dc4fa11dbb0888468121f0e93ac98077&page=1"
   );
@@ -26,14 +28,21 @@ const MoviesAndTV = () => {
         "https://api.themoviedb.org/3/movie/popular?api_key=dc4fa11dbb0888468121f0e93ac98077"
       )
       .then((res) => setMovie(res.data.results));
-  });
+  }, []);
 
   useEffect(() => {
-    axios.get(url).then((res) => setData(res.data.results));
+    axios.get(url).then((res) => {
+      if (url.includes("tv")) {
+        setTv(res.data.results);
+      } else {
+        setData(res.data.results);
+      }
+    });
   }, [url]);
 
   const handleNavLinkClick = (contentType) => {
-    setUrl(contentTypes.find((type) => type.name === contentType).url);
+    const content = contentTypes.find((type) => type.name === contentType);
+    setUrl(content.url);
   };
 
   return (
@@ -52,9 +61,11 @@ const MoviesAndTV = () => {
         </div>
         <div className="carousel">
           <div className="trending">
-            {data.map((Movies, index) => (
-              <Card key={index} Movies={Movies} />
-            ))}
+            {url.includes("tv")
+              ? Tv.map((tvShow, index) => <CardTV key={index} Tv={tvShow} />)
+              : data.map((movie, index) => (
+                  <CardMovie key={index} Movies={movie} />
+                ))}
           </div>
         </div>
       </div>
@@ -62,8 +73,8 @@ const MoviesAndTV = () => {
         <div className="carousel">
           <h3>Films Populaires</h3>
           <div className="trending">
-            {Movie.map((Movies, index) => (
-              <Card key={index} Movies={Movies} />
+            {Movie.map((movie2, index) => (
+              <CardMovie key={index} Movies={movie2} />
             ))}
           </div>
         </div>

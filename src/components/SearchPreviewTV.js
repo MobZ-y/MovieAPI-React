@@ -22,7 +22,7 @@ const SearchPreviewTV = ({ tv }) => {
         </div>
         <div className="text-preview-content-movie">
           <NavLink to={`/Tv/${idTv}`}>
-            <h2>{tv.original_name}</h2>
+            <h2>{tv.name ? tv.name : tv.original_name}</h2>
           </NavLink>
           <h4>{tv.first_air_date}</h4>
           <p>{tv.overview}</p>

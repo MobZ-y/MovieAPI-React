@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
 
 const CardPerson = ({ Person }) => {
   const [id, setId] = useState("");
@@ -7,6 +9,7 @@ const CardPerson = ({ Person }) => {
   useEffect(() => {
     setId(Person.id);
   }, [Person.id]);
+
   return (
     <div>
       <div className="card">
