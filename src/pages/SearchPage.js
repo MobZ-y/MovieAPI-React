@@ -9,6 +9,7 @@ import SearchPreviewTV from "../components/SearchPreviewTV";
 const SearchTestPage = () => {
   const { People } = useParams();
   const [data, setData] = useState([]);
+  const [countByType, setCountByType] = useState({});
 
   const [selectedTab, setSelectedTab] = useState("person");
 
@@ -20,7 +21,7 @@ const SearchTestPage = () => {
       .then((res) => setData(res.data.results));
   }, [People]);
 
-  // Check if the first element is a movie
+  // Vérifie le premier élement pour l'affichage
   useEffect(() => {
     if (data.length > 0) {
       if (data[0].media_type === "movie") {
@@ -31,7 +32,7 @@ const SearchTestPage = () => {
     }
   }, [data]);
 
-  /// Sort for Movie and Person
+  /// Sort pour Movie et Person
   const sortedData = data.sort((a, b) => {
     if (a.media_type === "movie" && b.media_type === "person") {
       return -1;
@@ -60,6 +61,23 @@ const SearchTestPage = () => {
 
   console.log(tvShows);
 
+  // Affichage du nombre par catégorie sur sélector
+
+  useEffect(() => {
+    // Count the items in the data array by media type
+    const newCountByType = data.reduce((counts, item) => {
+      if (!counts[item.media_type]) {
+        counts[item.media_type] = 1;
+      } else {
+        counts[item.media_type]++;
+      }
+      return counts;
+    }, {});
+
+    // Update the state with the new counts
+    setCountByType(newCountByType);
+  }, [data]);
+  console.log(countByType);
   return (
     <div>
       <Navigation />
@@ -68,9 +86,18 @@ const SearchTestPage = () => {
           <div className="selector">
             <h3>Résultats</h3>
             <ul>
-              <li onClick={() => setSelectedTab("person")}>Acteurs</li>
-              <li onClick={() => setSelectedTab("movie")}>Films</li>
-              <li onClick={() => setSelectedTab("tv")}>TV</li>
+              <li onClick={() => setSelectedTab("person")}>
+                <p>Acteurs</p>
+                <span>{countByType["person"] || 0}</span>
+              </li>
+              <li onClick={() => setSelectedTab("movie")}>
+                <p>Films</p>
+                <span>{countByType["movie"] || 0}</span>
+              </li>
+              <li onClick={() => setSelectedTab("tv")}>
+                <p>TV</p>
+                <span>{countByType["tv"] || 0}</span>
+              </li>
             </ul>
           </div>
         </div>
