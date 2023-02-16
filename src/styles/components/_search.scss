@@ -43,6 +43,7 @@
   align-items: center;
   display: flex;
   margin-top: 25px;
+  width: 70%;
 
   a:-webkit-any-link {
     color: black;
@@ -202,11 +203,12 @@
 
 .selector-content {
   margin: 50px;
+  margin-left: 200px;
   margin-top: 90px;
 
   .selector {
     border: 1px solid black;
-    height: 150px;
+    height: 180px;
     width: 130px;
     border-radius: 10px;
 
