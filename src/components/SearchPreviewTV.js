@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const SearchPreviewTV = ({ tv }) => {
+  const [idTv, setIdTv] = useState("");
+
+  useEffect(() => {
+    setIdTv(tv.id);
+  }, [tv.id]);
   return (
     <div>
       <div className="Preview-Content-movie">
@@ -15,9 +21,10 @@ const SearchPreviewTV = ({ tv }) => {
           />
         </div>
         <div className="text-preview-content-movie">
-          <h2>{tv.original_name}</h2>
-
-          <h4>{tv.release_date}</h4>
+          <NavLink to={`/Tv/${idTv}`}>
+            <h2>{tv.original_name}</h2>
+          </NavLink>
+          <h4>{tv.first_air_date}</h4>
           <p>{tv.overview}</p>
         </div>
       </div>
