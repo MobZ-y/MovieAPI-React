@@ -8,37 +8,28 @@ import CardPerson from "../components/CardPerson";
 
 const LikePage = () => {
   const [listData, setListData] = useState([]);
-  const [listPerson, setListPerson] = useState([]);
 
   useEffect(() => {
-    let moviesId = window.localStorage.movies
-      ? window.localStorage.movies.split(",")
-      : [];
+    const fetchMovieData = async () => {
+      let moviesId = window.localStorage.movies
+        ? window.localStorage.movies.split(",")
+        : [];
 
-    for (let i = 0; i < moviesId.length; i++) {
-      axios
-        .get(
-          `https://api.themoviedb.org/3/movie/${moviesId[i]}?api_key=ed82f4c18f2964e75117c2dc65e2161d&language=fr-FR`
+      const promises = moviesId.map((id) =>
+        axios.get(
+          `https://api.themoviedb.org/3/movie/${id}?api_key=ed82f4c18f2964e75117c2dc65e2161d&language=fr-FR`
         )
-        .then((res) => setListData((listData) => [...listData, res.data]));
-    }
-  }, []);
+      );
 
-  useEffect(() => {
-    let personId = window.localStorage.person
-      ? window.localStorage.person.split(",")
-      : [];
+      const results = await Promise.all(promises);
+      const data = results.map((result) => result.data);
 
-    for (let i = 0; i < personId.length; i++) {
-      axios
-        .get(
-          `https://api.themoviedb.org/3/person/${personId[i]}?api_key=ed82f4c18f2964e75117c2dc65e2161d&language=fr-FR`
-        )
-        .then((res) =>
-          setListPerson((listPerson) => [...listPerson, res.data])
-        );
-    }
+      setListData(data);
+    };
+
+    fetchMovieData();
   }, []);
+  console.log(listData);
 
   return (
     <div className="user-list-page">
@@ -49,13 +40,13 @@ const LikePage = () => {
         ) : (
           <h2>Aucun coup de coeur pour le moment</h2>
         )}
-        {listPerson.length > 0 ? (
+        {/* {listPerson.length > 0 ? (
           listPerson.map((Person) => (
             <CardPerson Person={Person} key={Person.id} />
           ))
         ) : (
           <h2>Aucun coup de coeur pour le moment</h2>
-        )}
+        )} */}
       </div>
     </div>
   );

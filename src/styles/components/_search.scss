@@ -3,6 +3,7 @@
   align-items: center;
   display: flex;
   margin-top: 25px;
+  color: rgb(241, 241, 241);
   a:-webkit-any-link {
     color: black;
     cursor: pointer;
@@ -31,6 +32,7 @@
   .text-preview-content {
     h2 {
       font-size: 20px;
+      color: rgb(241, 241, 241);
     }
   }
 }
@@ -44,6 +46,7 @@
   display: flex;
   margin-top: 25px;
   width: 75%;
+  color: rgb(241, 241, 241);
 
   a:-webkit-any-link {
     color: black;
@@ -73,6 +76,7 @@
   .text-preview-content-movie {
     h2 {
       font-size: 20px;
+      color: rgb(241, 241, 241);
     }
   }
 }
@@ -82,6 +86,7 @@
   margin-bottom: 0;
   margin-top: 70px;
   width: 100%;
+  color: rgb(241, 241, 241);
 
   .search {
     display: flex;
@@ -205,9 +210,11 @@
   margin: 50px;
   margin-left: 200px;
   margin-top: 90px;
+  color: rgb(241, 241, 241);
 
   .selector {
     border: 1px solid black;
+    color: rgb(241, 241, 241);
     height: 180px;
     width: 120px;
     border-radius: 10px;
@@ -243,6 +250,7 @@
   width: 80%;
   margin: 70px 200px;
   padding-top: 20px;
+  color: rgb(241, 241, 241);
   .details-movie {
     margin: 15px;
     overflow: hidden;
@@ -278,6 +286,7 @@
 
   .second-container {
     display: flex;
+    color: rgb(241, 241, 241);
 
     p {
       margin: 20px 0px;
@@ -374,6 +383,7 @@
   display: flex;
   flex-direction: row;
   margin-top: 20px;
+  color: rgb(241, 241, 241);
 
   .details-movie {
     margin: 0px 400px;

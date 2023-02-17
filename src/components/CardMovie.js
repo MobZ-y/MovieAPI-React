@@ -1,32 +1,40 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import { faHeart as faRegularHeart } from "@fortawesome/free-regular-svg-icons";
+import { faHeart as faSolidHeart } from "@fortawesome/free-solid-svg-icons";
 
 const CardMovie = ({ Movies }) => {
   const [idMovie, setIdMovie] = useState("");
+  const [isAdded, setIsAdded] = useState(false);
 
   useEffect(() => {
     setIdMovie(Movies.id);
+    let storedData = window.localStorage.movies
+      ? window.localStorage.movies.split(",")
+      : [];
+    setIsAdded(storedData.includes(Movies.id.toString()));
   }, [Movies.id]);
 
   const addStorage = () => {
     let storedData = window.localStorage.movies
       ? window.localStorage.movies.split(",")
       : [];
-
     if (!storedData.includes(Movies.id.toString())) {
       storedData.push(Movies.id);
       window.localStorage.movies = storedData;
+      setIsAdded(true);
     }
   };
 
   const deleteStorage = () => {
     let storedData = window.localStorage.movies.split(",");
     let newData = storedData.filter((id) => id != Movies.id);
-
     window.localStorage.movies = newData;
+    setIsAdded(false);
   };
+
+  console.log(Movies);
 
   return (
     <div>
@@ -44,8 +52,13 @@ const CardMovie = ({ Movies }) => {
               {Movies.name === undefined ? Movies.title : Movies.name}
             </p>
             {Movies.genre_ids ? (
-              <div className="btn-add" onClick={() => addStorage()}>
-                <FontAwesomeIcon icon={faHeart} />
+              <div
+                className={"btn-add" + (isAdded ? "red" : "")}
+                onClick={isAdded ? deleteStorage : addStorage}
+              >
+                <FontAwesomeIcon
+                  icon={isAdded ? faSolidHeart : faRegularHeart}
+                />
               </div>
             ) : (
               <div

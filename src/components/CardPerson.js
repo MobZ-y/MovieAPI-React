@@ -5,31 +5,29 @@ import { faHeart } from "@fortawesome/free-regular-svg-icons";
 
 const CardPerson = ({ Person }) => {
   const [id, setId] = useState("");
-  const isOnLikePage = window.location.pathname === "/like-page";
 
   useEffect(() => {
     setId(Person.id);
   }, [Person.id]);
 
-  const addStorage = () => {
-    let storedData = window.localStorage.person
-      ? window.localStorage.person.split(",")
-      : [];
+  // const addStorage = () => {
+  //   let storedData = window.localStorage.person
+  //     ? window.localStorage.person.split(",")
+  //     : [];
 
-    if (!storedData.includes(Person.id.toString())) {
-      storedData.push(Person.id);
-      window.localStorage.person = storedData;
-    }
-  };
+  //   if (!storedData.includes(Person.id.toString())) {
+  //     storedData.push(Person.id);
+  //     window.localStorage.person = storedData;
+  //   }
+  // };
 
-  const deleteStorage = () => {
-    let storedData = window.localStorage.person.split(",");
-    let newData = storedData.filter((id) => id != Person.id);
+  // const deleteStorage = () => {
+  //   let storedData = window.localStorage.person.split(",");
+  //   let newData = storedData.filter((id) => id != Person.id);
 
-    window.localStorage.person = newData;
-  };
+  //   window.localStorage.person = newData;
+  // };
 
-  console.log(Person);
   return (
     <div>
       <div className="card">
@@ -45,7 +43,7 @@ const CardPerson = ({ Person }) => {
         </div>
         <div className="profile-meta">
           <p>{Person.name}</p>
-          {Person.id ? (
+          {/* {Person.id ? (
             <div className="btn-add" onClick={() => addStorage()}>
               <FontAwesomeIcon icon={faHeart} />
             </div>
@@ -59,7 +57,7 @@ const CardPerson = ({ Person }) => {
             >
               Supprimer de la liste
             </div>
-          )}
+          )} */}
         </div>
       </div>
     </div>
