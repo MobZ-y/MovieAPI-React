@@ -27,6 +27,7 @@ const CardMovie = ({ Movies }) => {
 
     window.localStorage.movies = newData;
   };
+
   return (
     <div>
       <div className="card">
@@ -43,7 +44,7 @@ const CardMovie = ({ Movies }) => {
               {Movies.name === undefined ? Movies.title : Movies.name}
             </p>
             {Movies.genre_ids ? (
-              <div className="btn" onClick={() => addStorage()}>
+              <div className="btn-add" onClick={() => addStorage()}>
                 <FontAwesomeIcon icon={faHeart} />
               </div>
             ) : (
