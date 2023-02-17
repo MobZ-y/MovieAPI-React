@@ -24,7 +24,7 @@ const Navigation = () => {
     e.preventDefault();
 
     // Navigue vers la page de recherche avec les paramètres spécifiés
-    navigate(`/SearchPage/${People}`);
+    navigate(`/search/${People}`);
   };
   const navBackgroundColor =
     scrollPosition > 100 ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0.3)";

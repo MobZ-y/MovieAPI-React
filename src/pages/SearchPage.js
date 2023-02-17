@@ -6,7 +6,7 @@ import SearchPreviewMovie from "../components/SearchPreviewMovie";
 import SearchPreviewPerson from "../components/SearchPreviewPerson";
 import SearchPreviewTV from "../components/SearchPreviewTV";
 
-const SearchTestPage = () => {
+const SearchPage = () => {
   const { People } = useParams();
   const [data, setData] = useState([]);
   const [countByType, setCountByType] = useState({});
@@ -118,4 +118,4 @@ const SearchTestPage = () => {
   );
 };
 
-export default SearchTestPage;
+export default SearchPage;

@@ -22,3 +22,40 @@
 .nav-profile {
   margin: 10px 0px 0px 390px;
 }
+
+.selector-content {
+  margin: 50px;
+  margin-left: 200px;
+  margin-top: 90px;
+  color: rgb(241, 241, 241);
+
+  .selector {
+    border: 1px solid black;
+    color: rgb(241, 241, 241);
+    height: 180px;
+    width: 120px;
+    border-radius: 10px;
+
+    ul {
+      margin-top: 20px;
+      height: 80px;
+
+      li {
+        display: flex;
+        width: 100%;
+        font-size: 20px;
+        padding: 10px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgb(201, 201, 201);
+          color: white;
+        }
+      }
+    }
+
+    span {
+      padding: 0px 10px;
+    }
+  }
+}
