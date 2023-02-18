@@ -103,15 +103,18 @@ const SearchPage = () => {
         </div>
         <div className="Cards">
           {selectedTab === "person" &&
-            people.map((SearchPerson, index) => (
-              <SearchPreviewPerson key={index} SearchPerson={SearchPerson} />
+            people.map((SearchPerson) => (
+              <SearchPreviewPerson
+                key={people.id}
+                SearchPerson={SearchPerson}
+              />
             ))}
           {selectedTab === "movie" &&
-            movies.map((SearchMovie, index) => (
-              <SearchPreviewMovie key={index} SearchMovie={SearchMovie} />
+            movies.map((SearchMovie) => (
+              <SearchPreviewMovie key={movies.id} SearchMovie={SearchMovie} />
             ))}
           {selectedTab === "tv" &&
-            tvShows.map((tv, index) => <SearchPreviewTV key={index} tv={tv} />)}
+            tvShows.map((tv) => <SearchPreviewTV key={tvShows.id} tv={tv} />)}
         </div>
       </div>
     </div>

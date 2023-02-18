@@ -42,6 +42,7 @@ const CardMovie = ({ Movies }) => {
             <NavLink to={`/Movie/${idMovie}`}>
               <img
                 src={`https://image.tmdb.org/t/p/w500${Movies.poster_path}`}
+                alt={Movies.name}
               />
             </NavLink>
           </div>

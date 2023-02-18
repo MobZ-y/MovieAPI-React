@@ -7,6 +7,7 @@ import SearchCardMovie from "../components/SearchCardMovie";
 const MovieCard = () => {
   const [data, setData] = useState([]);
   const [credits, setCredits] = useState([]);
+  const [review, setReview] = useState([]);
   const { idMovie } = useParams();
   useEffect(() => {
     axios
@@ -24,12 +25,25 @@ const MovieCard = () => {
       .then((res) => setCredits(res.data));
   }, [idMovie]);
 
-  console.log(data);
+  useEffect(() => {
+    axios
+      .get(
+        `https://api.themoviedb.org/3/movie/${idMovie}/reviews?api_key=dc4fa11dbb0888468121f0e93ac98077&language=fr-FR&query=`
+      )
+      .then((res) => setReview(res.data));
+  }, [idMovie]);
+
+  console.log(review);
   return (
     <div>
       <Navigation />
 
-      <SearchCardMovie key={0} SearchMovie={data} Credits={credits} />
+      <SearchCardMovie
+        key={data.id}
+        SearchMovie={data}
+        Credits={credits}
+        Review={review}
+      />
     </div>
   );
 };
