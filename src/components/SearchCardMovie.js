@@ -13,8 +13,6 @@ const SearchCardMovie = ({ SearchMovie, Credits }) => {
     setId(Credits.id);
   }, [Credits.id]);
 
-  console.log(SearchMovie);
-
   const divStyle = {
     backgroundImage: `url(https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/${SearchMovie.backdrop_path})`,
     borderBottom: "1px solid var(--primaryColor)",
@@ -28,7 +26,6 @@ const SearchCardMovie = ({ SearchMovie, Credits }) => {
     const sorted = castArray.sort((a, b) => a.order - b.order);
     setSortedArray(sorted.slice(0, 8));
   }, [Credits]);
-  console.log(Credits);
 
   const formattedRuntime = `${hours}h ${minutes}min`;
   return (
@@ -55,7 +52,7 @@ const SearchCardMovie = ({ SearchMovie, Credits }) => {
               <ul>
                 {SearchMovie.genres &&
                   SearchMovie.genres.map((info) => <li>{info.name}</li>)}
-                <li>{formattedRuntime}</li>
+                <p>{formattedRuntime}</p>
               </ul>
 
               <div className="second-container">
@@ -92,9 +89,9 @@ const SearchCardMovie = ({ SearchMovie, Credits }) => {
             <div className="lower-content-Carousel-movie">
               <div className="carousel-movie">
                 <p>Têtes d'affiches</p>
-                <div className="search-carousel-movie">
+                <ul className="search-carousel-movie">
                   {sortedArray.map((item) => (
-                    <div className="card">
+                    <li className="card">
                       <div className="card-popular">
                         <div className="profile-popular">
                           <NavLink>
@@ -110,9 +107,12 @@ const SearchCardMovie = ({ SearchMovie, Credits }) => {
                           <h3>{item.name}</h3>
                         </div>
                       </div>
-                    </div>
+                    </li>
                   ))}
-                </div>
+                  <NavLink to={`/Cast/${id}`}>
+                    <p>Têtes d'affiches</p>
+                  </NavLink>
+                </ul>
               </div>
             </div>
             <div className="details-movie">

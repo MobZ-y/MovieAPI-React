@@ -41,7 +41,7 @@ const ProfileCard = () => {
       <Navigation />
       <div className="ff">
         <SearchCardPerson
-          key={0}
+          key={data.id}
           Search={data}
           Credits={Credits}
           CreditsCombined={CreditsCombined}

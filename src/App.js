@@ -10,6 +10,7 @@ import SearchPage from "./pages/SearchPage";
 import PhotoPerson from "./pages/PhotoPerson";
 import MovieCard from "./pages/MovieCard";
 import TVCard from "./pages/TVCard";
+import Cast from "./pages/Cast";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/PhotoPerson/:id" element={<PhotoPerson />}></Route>
           <Route path="/Movie/:idMovie" element={<MovieCard />}></Route>
           <Route path="/Tv/:idTv" element={<TVCard />}></Route>
+          <Route path="/cast/:id" element={<Cast />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

@@ -4,9 +4,10 @@
   margin: 70px 200px;
   padding-top: 20px;
   color: rgb(241, 241, 241);
+
   .details-movie {
-    margin: 15px;
     overflow: hidden;
+    margin: 20px;
 
     h3 {
       margin-bottom: 50px;
@@ -15,6 +16,19 @@
 
     h1 {
       margin-left: 5px;
+    }
+
+    p {
+      padding: 5px;
+      margin: 4px 0px;
+    }
+    ul {
+      li {
+        background-color: gray;
+        border-radius: 70px;
+        padding: 5px;
+        margin: 4px;
+      }
     }
   }
 
@@ -93,7 +107,7 @@
 }
 
 .lower-content-Carousel-movie {
-  width: 50%;
+  width: 60%;
 
   .carousel-movie {
     overflow: hidden;
@@ -102,7 +116,6 @@
 
     .search-carousel-movie {
       display: flex;
-      width: 100%;
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
       overflow-x: scroll;
@@ -153,4 +166,33 @@
     rgba(31.5, 10.5, 10.5, 0.84) 30%,
     rgba(31.5, 10.5, 10.5, 0.84) 100%
   );
+}
+
+#canvas-movie {
+  border: 4px solid black;
+  color: azure;
+  border-radius: 150px;
+  width: 70px;
+  font-size: 35px;
+  height: 70px;
+  display: flex;
+  margin: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-movie {
+  width: 100%;
+  height: 490px;
+}
+
+.flex-details {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  color: rgb(241, 241, 241);
+
+  .details-movie {
+    margin: 0px 260px;
+  }
 }

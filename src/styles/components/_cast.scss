@@ -1,0 +1,20 @@
+.cast-members {
+  margin-top: 70px;
+  width: 299px;
+  height: 1000px;
+}
+
+.cast-cards {
+  width: 299px;
+  height: 100%;
+
+  li {
+    display: flex;
+  }
+
+  .profile-members {
+    img {
+      width: 50px;
+    }
+  }
+}

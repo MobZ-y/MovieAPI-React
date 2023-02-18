@@ -1,6 +1,5 @@
 import React from "react";
 import videoBg from "../assets/video/babylon.mp4";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
 
 const SearchTest = () => {
@@ -12,7 +11,6 @@ const SearchTest = () => {
         <NavLink to="/Movie/615777">
           <p>Plus infos</p>
         </NavLink>
-        <FontAwesomeIcon icon="fa-regular fa-circle-info" />
       </div>
     </div>
   );

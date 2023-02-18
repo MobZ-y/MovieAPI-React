@@ -34,8 +34,6 @@ const CardMovie = ({ Movies }) => {
     setIsAdded(false);
   };
 
-  console.log(Movies);
-
   return (
     <div>
       <div className="card">
