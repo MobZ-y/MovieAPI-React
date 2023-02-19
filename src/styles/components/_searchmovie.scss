@@ -214,8 +214,22 @@
   padding-bottom: 30px;
 }
 .details-second {
-  min-width: 360px;
-  width: 360px;
+  min-width: 300px;
+  width: 300px;
+
+  ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    li {
+      background-color: gray;
+      border-radius: 5px;
+      padding: 5px;
+      margin: 2px;
+    }
+  }
 }
 .review-part {
   padding: 20px 0px 0px 0px;
@@ -232,9 +246,15 @@
   }
   .profile {
     width: 80px;
+    position: relative;
     span {
-      padding: 10px;
-      background-color: red;
+      position: absolute;
+      width: 70px;
+      margin: 10px 10px 10px 10px;
+      height: 70px;
+      background-color: rgb(212, 212, 212);
+      padding: 20px;
+      border-radius: 60px;
     }
   }
 
@@ -257,4 +277,32 @@
       }
     }
   }
+}
+
+#no-comment {
+  padding: 20px 0px;
+}
+
+.btn-add-movie {
+  font-size: 20px;
+  right: 0px;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.btn-add-moviered {
+  top: -20px;
+  font-size: 20px;
+  right: 0px;
+  cursor: pointer;
+  transition: 0.2s;
+  color: red;
+}
+
+.title {
+  display: flex;
 }

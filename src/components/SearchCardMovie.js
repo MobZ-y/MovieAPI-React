@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart as faRegularHeart } from "@fortawesome/free-regular-svg-icons";
+import { faHeart as faSolidHeart } from "@fortawesome/free-solid-svg-icons";
 
 const SearchCardMovie = ({ SearchMovie, Credits, Review, Keywords }) => {
   const runtimeInMinutes = SearchMovie.runtime;
@@ -7,7 +10,7 @@ const SearchCardMovie = ({ SearchMovie, Credits, Review, Keywords }) => {
   const minutes = runtimeInMinutes % 60;
   const [sortedArray, setSortedArray] = useState([]);
   const formattedRuntime = `${hours}h ${minutes}min`;
-
+  const [isAdded, setIsAdded] = useState(false);
   const [id, setId] = useState("");
 
   useEffect(() => {
@@ -28,6 +31,34 @@ const SearchCardMovie = ({ SearchMovie, Credits, Review, Keywords }) => {
     setSortedArray(sorted.slice(0, 8));
   }, [Credits]);
 
+  console.log(SearchMovie.id);
+
+  useEffect(() => {
+    if (SearchMovie?.id) {
+      let storedData = window.localStorage.movies
+        ? window.localStorage.movies.split(",")
+        : [];
+      setIsAdded(storedData.includes(SearchMovie.id.toString()));
+    }
+  }, [SearchMovie]);
+  const addStorage = () => {
+    let storedData = window.localStorage.movies
+      ? window.localStorage.movies.split(",")
+      : [];
+    if (!storedData.includes(SearchMovie.id.toString())) {
+      storedData.push(SearchMovie.id);
+      window.localStorage.movies = storedData;
+      setIsAdded(true);
+    }
+  };
+
+  const deleteStorage = () => {
+    let storedData = window.localStorage.movies.split(",");
+    let newData = storedData.filter((id) => id != SearchMovie.id);
+    window.localStorage.movies = newData;
+    setIsAdded(false);
+  };
+
   return (
     <div>
       <div className="card-movie">
@@ -47,10 +78,20 @@ const SearchCardMovie = ({ SearchMovie, Credits, Review, Keywords }) => {
                   />
                 </div>
                 <div className="details-movie">
-                  <h1>
-                    {SearchMovie.original_title} (
-                    {new Date(SearchMovie.release_date).getFullYear()})
-                  </h1>
+                  <div className="title">
+                    <h1>
+                      {SearchMovie.original_title}({""}
+                      {new Date(SearchMovie.release_date).getFullYear()})
+                    </h1>
+                    <div
+                      className={"btn-add-movie" + (isAdded ? "red" : "")}
+                      onClick={isAdded ? deleteStorage : addStorage}
+                    >
+                      <FontAwesomeIcon
+                        icon={isAdded ? faSolidHeart : faRegularHeart}
+                      />
+                    </div>
+                  </div>
                   <ul>
                     {SearchMovie.genres &&
                       SearchMovie.genres.map((info) => <li>{info.name}</li>)}
@@ -125,22 +166,28 @@ const SearchCardMovie = ({ SearchMovie, Credits, Review, Keywords }) => {
                   <li>Critique</li>
                 </ul>
               </div>
-              {Review.map((review) => (
-                <div className="review-container">
-                  <div className="personal-info">
-                    <div className="profile">
-                      <span></span>
+              {Review.length === 0 ? (
+                <h3 id="no-comment">Aucun Avis pour le moment</h3>
+              ) : (
+                Review.map((review) => (
+                  <div className="review-container">
+                    <div className="personal-info">
+                      <div className="profile">
+                        <span>?</span>
+                      </div>
+                      <div className="info">
+                        <h3>Critique de {review.author}</h3>
+                        <p>
+                          Rédigé par {review.author} le {review.created_at}
+                        </p>
+                      </div>
                     </div>
-                    <div className="info">
-                      <h3>Critique de {review.author}</h3>
-                      <p>{review.created_at}</p>
+                    <div className="text-info">
+                      <p>{review.content}</p>
                     </div>
                   </div>
-                  <div className="text-info">
-                    <p>{review.content}</p>
-                  </div>
-                </div>
-              ))}
+                ))
+              )}
             </div>
           </div>
           <div className="details-second">
