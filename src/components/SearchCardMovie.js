@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
-const SearchCardMovie = ({ SearchMovie, Credits, Rewiew }) => {
+const SearchCardMovie = ({ SearchMovie, Credits, Review }) => {
   const runtimeInMinutes = SearchMovie.runtime;
   const hours = Math.floor(runtimeInMinutes / 60);
   const minutes = runtimeInMinutes % 60;
   const [sortedArray, setSortedArray] = useState([]);
+  const formattedRuntime = `${hours}h ${minutes}min`;
 
   const [id, setId] = useState("");
 
@@ -27,7 +28,6 @@ const SearchCardMovie = ({ SearchMovie, Credits, Rewiew }) => {
     setSortedArray(sorted.slice(0, 8));
   }, [Credits]);
 
-  const formattedRuntime = `${hours}h ${minutes}min`;
   return (
     <div>
       <div className="card-movie">
@@ -91,7 +91,7 @@ const SearchCardMovie = ({ SearchMovie, Credits, Rewiew }) => {
           </div>
         </div>
         <div className="flex-details">
-          <div className="lower-content-Carousel-movie">
+          <div className="details">
             <div className="carousel-movie">
               <p>Têtes d'affiches</p>
               <ul className="search-carousel-movie">
@@ -102,8 +102,7 @@ const SearchCardMovie = ({ SearchMovie, Credits, Rewiew }) => {
                         <NavLink>
                           <img
                             src={`https://image.tmdb.org/t/p/w500${item.profile_path}`}
-                            alt="drapeau"
-                            id="pp"
+                            alt={item.name}
                           />
                         </NavLink>
                       </div>
@@ -119,6 +118,30 @@ const SearchCardMovie = ({ SearchMovie, Credits, Rewiew }) => {
                 </NavLink>
               </ul>
             </div>
+            <div className="review-part">
+              <div className="header-rewiew">
+                <ul>
+                  <li>Avis</li>
+                  <li>Critique</li>
+                </ul>
+              </div>
+              {Review.map((review) => (
+                <div className="review-container">
+                  <div className="personal-info">
+                    <div className="profile">
+                      <span></span>
+                    </div>
+                    <div className="info">
+                      <h3>Critique de {review.author}</h3>
+                      <p>{review.created_at}</p>
+                    </div>
+                  </div>
+                  <div className="text-info">
+                    <p>{review.content}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
           <div className="details-movie">
             <h4>Budget</h4>
@@ -130,9 +153,6 @@ const SearchCardMovie = ({ SearchMovie, Credits, Rewiew }) => {
             <h4>Langue d'origine</h4>
             <p>{SearchMovie.original_language}</p>
           </div>
-        </div>
-        <div className="review-part">
-          <h3>Avis</h3>
         </div>
       </div>
     </div>
