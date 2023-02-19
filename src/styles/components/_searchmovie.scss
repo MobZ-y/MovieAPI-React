@@ -208,14 +208,17 @@
   color: rgb(241, 241, 241);
   margin-top: 20px;
   width: 100%;
-  padding-left: 230px;
-  padding-right: 450px;
+  padding-left: 200px;
+  padding-right: 440px;
   padding-top: 30px;
   padding-bottom: 30px;
 }
-
+.details-second {
+  min-width: 360px;
+  width: 360px;
+}
 .review-part {
-  padding: 20px;
+  padding: 20px 0px 0px 0px;
 
   .review-container {
     background-color: rgb(77, 77, 77);

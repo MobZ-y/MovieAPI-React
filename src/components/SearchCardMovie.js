@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
-const SearchCardMovie = ({ SearchMovie, Credits, Review }) => {
+const SearchCardMovie = ({ SearchMovie, Credits, Review, Keywords }) => {
   const runtimeInMinutes = SearchMovie.runtime;
   const hours = Math.floor(runtimeInMinutes / 60);
   const minutes = runtimeInMinutes % 60;
@@ -143,7 +143,7 @@ const SearchCardMovie = ({ SearchMovie, Credits, Review }) => {
               ))}
             </div>
           </div>
-          <div className="details-movie">
+          <div className="details-second">
             <h4>Budget</h4>
             <p>${SearchMovie.budget}</p>
             <br />
@@ -152,6 +152,13 @@ const SearchCardMovie = ({ SearchMovie, Credits, Review }) => {
             <br />
             <h4>Langue d'origine</h4>
             <p>{SearchMovie.original_language}</p>
+            <br />
+            <h4>Mots clés</h4>
+            <ul>
+              {Keywords.map((keywords) => (
+                <li>{keywords.name}</li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

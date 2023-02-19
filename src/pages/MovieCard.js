@@ -8,6 +8,7 @@ const MovieCard = () => {
   const [data, setData] = useState([]);
   const [credits, setCredits] = useState([]);
   const [review, setReview] = useState([]);
+  const [keywords, setKeywords] = useState([]);
   const { idMovie } = useParams();
   useEffect(() => {
     axios
@@ -33,7 +34,15 @@ const MovieCard = () => {
       .then((res) => setReview(res.data.results));
   }, [idMovie]);
 
-  console.log(review);
+  useEffect(() => {
+    axios
+      .get(
+        `https://api.themoviedb.org/3/movie/${idMovie}/keywords?api_key=dc4fa11dbb0888468121f0e93ac98077&language=fr-FR&query=`
+      )
+      .then((res) => setKeywords(res.data.keywords));
+  }, [idMovie]);
+
+  console.log(keywords);
   return (
     <div>
       <Navigation />
@@ -43,6 +52,7 @@ const MovieCard = () => {
         SearchMovie={data}
         Credits={credits}
         Review={review}
+        Keywords={keywords}
       />
     </div>
   );
