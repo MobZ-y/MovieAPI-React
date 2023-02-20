@@ -38,11 +38,21 @@
 
 // Card after search
 .search-wrap {
-  margin-top: 0;
-  margin-bottom: 0;
   margin-top: 70px;
   width: 100%;
   color: rgb(241, 241, 241);
+
+  .nav-profile {
+    margin-top: 20px;
+
+    p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 20px;
+      color: white;
+    }
+  }
 
   .search {
     display: flex;
@@ -141,12 +151,12 @@
   }
 
   .separator {
-    width: 24px;
     span {
-      border: 1px solid black;
-      width: 20px;
-      background-color: rgb(85, 85, 85);
-      padding-left: 20px;
+      border: 2px solid black;
+      display: flex;
+
+      width: 10px;
+      height: 10px;
       border-radius: 150px;
     }
   }
@@ -155,7 +165,20 @@
     padding: 0px 20px;
   }
 
-  .originalTitle {
+  .original-title {
     padding: 0px 20px;
+    display: flex;
   }
+}
+
+#incarne-name {
+  display: flex;
+  padding-left: 5px;
+  color: rgb(187, 187, 187);
+}
+
+#original-title-tile {
+  padding-right: 5px;
+  color: black;
+  font-weight: bold;
 }

@@ -40,7 +40,7 @@ const SearchCard = ({ Search, Credits, CreditsCombined }) => {
       <div className="search-wrap">
         <div className="nav-profile">
           <NavLink to={`/PhotoPerson/${id}`}>
-            <p>Images</p>
+            <p>Médias</p>
           </NavLink>
         </div>
         <div className="search">
@@ -96,7 +96,7 @@ const SearchCard = ({ Search, Credits, CreditsCombined }) => {
               </div>
             </div>
             <div className="table">
-              <h2>Historique</h2>
+              <h2>Interprétation</h2>
               {CreditsCombined.map((info) => (
                 <table className="fristLine">
                   <tbody>
@@ -106,16 +106,18 @@ const SearchCard = ({ Search, Credits, CreditsCombined }) => {
                           ? new Date(info.release_date).getFullYear()
                           : info.first_air_date
                           ? new Date(info.first_air_date).getFullYear()
-                          : "TBA"}{" "}
+                          : "TBA-"}{" "}
                       </td>
                       <td className="separator">
                         <span></span>
                       </td>
-                      <td className="originalTitle">
-                        {info.original_title
-                          ? info.original_title
-                          : info.original_name}
-                        ,incarne {info.character}
+                      <td className="original-title">
+                        <p id="original-title-tile">
+                          {info.original_title
+                            ? info.original_title
+                            : info.original_name}
+                        </p>
+                        incarnant <p id="incarne-name">{info.character}</p>
                       </td>
                     </tr>
                   </tbody>
