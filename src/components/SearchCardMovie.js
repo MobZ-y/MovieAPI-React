@@ -31,8 +31,6 @@ const SearchCardMovie = ({ SearchMovie, Credits, Review, Keywords }) => {
     setSortedArray(sorted.slice(0, 8));
   }, [Credits]);
 
-  console.log(SearchMovie.id);
-
   useEffect(() => {
     if (SearchMovie?.id) {
       let storedData = window.localStorage.movies
@@ -79,10 +77,12 @@ const SearchCardMovie = ({ SearchMovie, Credits, Review, Keywords }) => {
                 </div>
                 <div className="details-movie">
                   <div className="title">
-                    <h1>
-                      {SearchMovie.original_title}({""}
+                    <h2 id="name">{SearchMovie.original_title}</h2>
+                    <h4 id="release">
+                      {" "}
+                      ({""}
                       {new Date(SearchMovie.release_date).getFullYear()})
-                    </h1>
+                    </h4>
                     <div
                       className={"btn-add-movie" + (isAdded ? "red" : "")}
                       onClick={isAdded ? deleteStorage : addStorage}
@@ -116,7 +116,7 @@ const SearchCardMovie = ({ SearchMovie, Credits, Review, Keywords }) => {
                         ? ""
                         : Math.floor(SearchMovie.vote_average * 10).toFixed(0)}
                     </div>
-                    <p>Notes des utilisateurs</p>
+                    <p id="rate">Notes des utilisateurs</p>
                   </div>
                   <i>{SearchMovie.tagline}</i>
                   <h4 id="Synopsis">Synopsis</h4>
@@ -163,7 +163,6 @@ const SearchCardMovie = ({ SearchMovie, Credits, Review, Keywords }) => {
               <div className="header-rewiew">
                 <ul>
                   <li>Avis</li>
-                  <li>Critique</li>
                 </ul>
               </div>
               {Review.length === 0 ? (
@@ -191,6 +190,9 @@ const SearchCardMovie = ({ SearchMovie, Credits, Review, Keywords }) => {
             </div>
           </div>
           <div className="details-second">
+            <h4>Status du film</h4>
+            <p>{SearchMovie.status}</p>
+            <br />
             <h4>Budget</h4>
             <p>${SearchMovie.budget}</p>
             <br />

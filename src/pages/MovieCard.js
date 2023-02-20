@@ -42,7 +42,7 @@ const MovieCard = () => {
       .then((res) => setKeywords(res.data.keywords));
   }, [idMovie]);
 
-  console.log(keywords);
+  console.log(data);
   return (
     <div>
       <Navigation />

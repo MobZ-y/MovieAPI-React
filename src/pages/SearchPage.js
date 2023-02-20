@@ -84,10 +84,10 @@ const SearchPage = () => {
       <div className="content-wrapper">
         <div className="selector-content">
           <div className="selector">
-            <h3>Résultats</h3>
+            <h4>Résultats de votre recherche</h4>
             <ul>
               <li onClick={() => setSelectedTab("person")}>
-                <p>Acteurs</p>
+                <p>Artistes</p>
                 <span>{countByType["person"] || 0}</span>
               </li>
               <li onClick={() => setSelectedTab("movie")}>
@@ -95,7 +95,7 @@ const SearchPage = () => {
                 <span>{countByType["movie"] || 0}</span>
               </li>
               <li onClick={() => setSelectedTab("tv")}>
-                <p>TV</p>
+                <p>Émission télévisée</p>
                 <span>{countByType["tv"] || 0}</span>
               </li>
             </ul>

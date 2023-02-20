@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faMoon } from "@fortawesome/free-regular-svg-icons";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
 const Navigation = () => {
@@ -23,7 +25,6 @@ const Navigation = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Navigue vers la page de recherche avec les paramètres spécifiés
     navigate(`/search/${People}`);
   };
   const navBackgroundColor =
