@@ -34,7 +34,7 @@ const ProfileCard = () => {
       .then((res) => setCreditsCombined(res.data.cast));
   }, [id]);
 
-  console.log(CreditsCombined);
+  console.log(data);
 
   return (
     <div>

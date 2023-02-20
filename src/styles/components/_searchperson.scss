@@ -51,6 +51,10 @@
       align-items: center;
       padding-top: 20px;
       color: white;
+
+      &:hover {
+        color: black;
+      }
     }
   }
 

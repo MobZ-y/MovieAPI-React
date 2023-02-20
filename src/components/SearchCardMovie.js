@@ -140,7 +140,7 @@ const SearchCardMovie = ({ SearchMovie, Credits, Review, Keywords }) => {
                   <li className="card">
                     <div className="card-popular">
                       <div className="profile-popular">
-                        <NavLink>
+                        <NavLink to={`/ProfileCard/${item.id}`}>
                           <img
                             src={`https://image.tmdb.org/t/p/w500${item.profile_path}`}
                             alt={item.name}

@@ -4,17 +4,10 @@ import { NavLink } from "react-router-dom";
 const SearchCard = ({ Search, Credits, CreditsCombined }) => {
   const [sortedArray, setSortedArray] = useState([]);
   const [id, setId] = useState("");
-  const [idMovie, setIdMovie] = useState("");
-
-  useEffect(() => {
-    setIdMovie(Credits.id);
-  }, [Credits.id]);
 
   useEffect(() => {
     setId(Search.id);
   }, [Search.id]);
-
-  console.log(Search);
 
   React.useEffect(() => {
     const sorted = [...Credits].sort((a, b) => b.popularity - a.popularity);
@@ -77,7 +70,7 @@ const SearchCard = ({ Search, Credits, CreditsCombined }) => {
                   {sortedArray.map((item) => (
                     <div className="card">
                       <div className="card-popular">
-                        <NavLink to={`/Movie/${idMovie}`}>
+                        <NavLink to={`/Movie/${item.id}`}>
                           <div className="profile-popular">
                             <img
                               src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
