@@ -26,7 +26,7 @@ const TVCard = () => {
       .then((res) => setCredits(res.data));
   }, [idTv]);
 
-  console.log(Credits);
+  console.log(Details);
   return (
     <div>
       <Navigation />

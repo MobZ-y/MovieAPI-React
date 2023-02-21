@@ -58,16 +58,32 @@ const LikePage = () => {
     <div className="user-list-page">
       <Navigation />
       <div className="result">
-        {listData.length > 0 ? (
-          listData.map((movie) => <CardMovie Movies={movie} key={movie.id} />)
-        ) : (
-          <h2>Aucun coup de coeur pour le moment</h2>
-        )}
-        {listDataTv.length > 0 ? (
-          listDataTv.map((Tv) => <CardTV Tv={Tv} key={Tv.id} />)
-        ) : (
-          <h2>Aucun coup de coeur pour le moment</h2>
-        )}
+        <div className="movie">
+          <div className="movie-info">
+            <h3>Vos Films</h3>
+          </div>
+          <div className="movie-fav">
+            {listData.length > 0 ? (
+              listData.map((movie) => (
+                <CardMovie Movies={movie} key={movie.id} />
+              ))
+            ) : (
+              <h2>Aucun coup de coeur pour le moment</h2>
+            )}
+          </div>
+        </div>
+        <div className="tv">
+          <div className="tv-info">
+            <h3>Vos émissions Tv</h3>
+          </div>
+          <div className="tv-fav">
+            {listDataTv.length > 0 ? (
+              listDataTv.map((Tv) => <CardTV Tv={Tv} key={Tv.id} />)
+            ) : (
+              <h2>Aucun coup de coeur pour le moment</h2>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );

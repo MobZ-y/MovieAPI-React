@@ -5,7 +5,7 @@ import { faHeart as faRegularHeart } from "@fortawesome/free-regular-svg-icons";
 import { faHeart as faSolidHeart } from "@fortawesome/free-solid-svg-icons";
 
 const SearchCardTV = ({ Details, Credits }) => {
-  const runtimeInMinutes = Details.runtime;
+  const runtimeInMinutes = Details.episode_run_time[0];
   const hours = Math.floor(runtimeInMinutes / 60);
   const minutes = runtimeInMinutes % 60;
   const formattedRuntime = `${hours}h ${minutes}min`;
@@ -154,12 +154,7 @@ const SearchCardTV = ({ Details, Credits }) => {
           <h4>Status du film</h4>
           <p>{Details.status}</p>
           <br />
-          <h4>Budget</h4>
-          <p>${Details.budget}</p>
-          <br />
-          <h4>Revenu</h4>
-          <p>${Details.revenue}</p>
-          <br />
+
           <h4>Langue d'origine</h4>
           <p>{Details.original_language}</p>
           <br />

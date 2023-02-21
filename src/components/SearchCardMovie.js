@@ -162,7 +162,7 @@ const SearchCardMovie = ({ SearchMovie, Credits, Review, Keywords }) => {
             <div className="review-part">
               <div className="header-rewiew">
                 <ul>
-                  <li>Avis</li>
+                  <li id="header">Review</li>
                 </ul>
               </div>
               {Review.length === 0 ? (
