@@ -4,10 +4,12 @@ import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import CardMovie from "../components/CardMovie";
-import CardPerson from "../components/CardPerson";
+
+import CardTV from "../components/CardTV";
 
 const LikePage = () => {
   const [listData, setListData] = useState([]);
+  const [listDataTv, setListDataTv] = useState([]);
 
   useEffect(() => {
     const fetchMovieData = async () => {
@@ -29,6 +31,27 @@ const LikePage = () => {
 
     fetchMovieData();
   }, []);
+
+  useEffect(() => {
+    const fetchMovieDatatv = async () => {
+      let tvId = window.localStorage.tv
+        ? window.localStorage.tv.split(",")
+        : [];
+
+      const promises = tvId.map((id) =>
+        axios.get(
+          `https://api.themoviedb.org/3/tv/${id}?api_key=ed82f4c18f2964e75117c2dc65e2161d&language=fr-FR`
+        )
+      );
+
+      const results = await Promise.all(promises);
+      const data = results.map((result) => result.data);
+
+      setListDataTv(data);
+    };
+
+    fetchMovieDatatv();
+  }, []);
   console.log(listData);
 
   return (
@@ -40,13 +63,11 @@ const LikePage = () => {
         ) : (
           <h2>Aucun coup de coeur pour le moment</h2>
         )}
-        {/* {listPerson.length > 0 ? (
-          listPerson.map((Person) => (
-            <CardPerson Person={Person} key={Person.id} />
-          ))
+        {listDataTv.length > 0 ? (
+          listDataTv.map((Tv) => <CardTV Tv={Tv} key={Tv.id} />)
         ) : (
           <h2>Aucun coup de coeur pour le moment</h2>
-        )} */}
+        )}
       </div>
     </div>
   );
