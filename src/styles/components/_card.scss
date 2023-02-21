@@ -2,10 +2,6 @@
   margin: 40px auto;
 }
 
-.tv-trending {
-  margin: 40px auto;
-}
-
 .card {
   margin: 5px;
 
@@ -39,23 +35,10 @@
   margin: 0 auto;
   overflow: hidden;
 
-  .trending {
-    display: flex;
-    width: 100%;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    overflow-x: scroll;
+  h3 {
+    color: white;
+    padding-bottom: 10px;
   }
-  .slide {
-    width: 100%;
-    scroll-snap-align: start;
-  }
-}
-
-.carousel-tv {
-  width: 95%;
-  margin: 0 auto;
-  overflow: hidden;
 
   .trending {
     display: flex;
@@ -152,7 +135,7 @@
   position: absolute;
   top: -29px;
   left: -1px;
-  z-index: 1000;
+  z-index: 1;
   width: 30px;
   height: 30px;
   display: flex;

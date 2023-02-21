@@ -45,8 +45,8 @@ const MoviesAndTV = () => {
           </div>
         </div>
       </div>
-      <div className="tv-trending">
-        <div className="carousel-tv">
+      <div className="movies-trending">
+        <div className="carousel">
           <h3>Emisions télévisé Populaires</h3>
           <div className="trending">
             {Tv.map((movie2, index) => (
