@@ -7,7 +7,7 @@ import CardTV from "./CardTV";
 const MoviesAndTV = () => {
   const [data, setData] = useState([]);
   const [Movie, setMovie] = useState([]);
-  const [Tv, setTv] = useState([]);
+  const [tv, setTv] = useState([]);
 
   useEffect(() => {
     axios
@@ -49,8 +49,8 @@ const MoviesAndTV = () => {
         <div className="carousel">
           <h3>Emisions télévisé Populaires</h3>
           <div className="trending">
-            {Tv.map((movie2, index) => (
-              <CardMovie key={index} Movies={movie2} />
+            {tv.map((tv) => (
+              <CardTV key={tv.id} Tv={tv} />
             ))}
           </div>
         </div>
