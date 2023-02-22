@@ -63,7 +63,11 @@ const SearchCard = ({ Search, Credits, CreditsCombined }) => {
             <h3>{Search.name}</h3>
             <p>Biographie :</p>
             <br />
-            <p>{Search.biography}</p>
+            <p>
+              {Search.biography
+                ? Search.biography
+                : "Aucune biographie pour le moment"}
+            </p>
             <div className="lower-content-Carousel">
               <div className="carousel">
                 <div className="search-carousel">

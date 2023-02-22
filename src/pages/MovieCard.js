@@ -9,7 +9,7 @@ const MovieCard = () => {
   const [credits, setCredits] = useState([]);
   const [review, setReview] = useState([]);
   const [keywords, setKeywords] = useState([]);
-  const [recommendations, setRecommendations] = useState([]);
+  const [images, setImages] = useState([]);
   const { idMovie } = useParams();
   useEffect(() => {
     axios
@@ -38,9 +38,9 @@ const MovieCard = () => {
   useEffect(() => {
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/${idMovie}/recommendations?api_key=dc4fa11dbb0888468121f0e93ac98077&language=fr-FR&query=`
+        `https://api.themoviedb.org/3/movie/${idMovie}/images?api_key=dc4fa11dbb0888468121f0e93ac98077&language=fr-FR&query=`
       )
-      .then((res) => setRecommendations(res.data.results));
+      .then((res) => setImages(res.data));
   }, [idMovie]);
 
   useEffect(() => {
@@ -51,7 +51,7 @@ const MovieCard = () => {
       .then((res) => setKeywords(res.data.keywords));
   }, [idMovie]);
 
-  console.log(recommendations);
+  console.log(images);
   return (
     <div>
       <Navigation />
@@ -62,6 +62,7 @@ const MovieCard = () => {
         Credits={credits}
         Review={review}
         Keywords={keywords}
+        Images={images}
       />
     </div>
   );

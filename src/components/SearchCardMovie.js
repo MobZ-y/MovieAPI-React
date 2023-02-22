@@ -4,7 +4,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as faRegularHeart } from "@fortawesome/free-regular-svg-icons";
 import { faHeart as faSolidHeart } from "@fortawesome/free-solid-svg-icons";
 
-const SearchCardMovie = ({ SearchMovie, Credits, Review, Keywords }) => {
+const SearchCardMovie = ({
+  SearchMovie,
+  Credits,
+  Review,
+  Keywords,
+  Images,
+}) => {
   const runtimeInMinutes = SearchMovie.runtime;
   const hours = Math.floor(runtimeInMinutes / 60);
   const minutes = runtimeInMinutes % 60;
@@ -188,6 +194,18 @@ const SearchCardMovie = ({ SearchMovie, Credits, Review, Keywords }) => {
                 ))
               )}
             </div>
+            <section className="media-movie">
+              <div className="menu">
+                <h3>Média</h3>
+                <ul>
+                  <li>Vidéo</li>
+                  <li>Images</li>
+                </ul>
+              </div>
+              <div className="menu-content">
+                <div className="video"></div>
+              </div>
+            </section>
           </div>
           <div className="details-second">
             <h4>Status du film</h4>
