@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as faRegularHeart } from "@fortawesome/free-regular-svg-icons";
 import { faHeart as faSolidHeart } from "@fortawesome/free-solid-svg-icons";
+import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 
 const SearchCardMovie = ({
   SearchMovie,
@@ -172,7 +173,10 @@ const SearchCardMovie = ({
                 </ul>
               </div>
               {Review.length === 0 ? (
-                <h3 id="no-comment">Aucun Avis pour le moment</h3>
+                <h3 id="no-comment">
+                  Aucun Avis pour le moment
+                  <FontAwesomeIcon icon={faCircleInfo} id="reviewIcon" />
+                </h3>
               ) : (
                 Review.map((review) => (
                   <div className="review-container">
@@ -212,10 +216,18 @@ const SearchCardMovie = ({
             <p>{SearchMovie.status}</p>
             <br />
             <h4>Budget</h4>
-            <p>${SearchMovie.budget}</p>
+            <p>
+              {SearchMovie.budget !== undefined
+                ? `$${SearchMovie.budget.toLocaleString()}`
+                : "-"}
+            </p>
             <br />
             <h4>Revenu</h4>
-            <p>${SearchMovie.revenue}</p>
+            <p>
+              {SearchMovie.revenue !== undefined
+                ? `$${SearchMovie.revenue.toLocaleString()}`
+                : "-"}
+            </p>
             <br />
             <h4>Langue d'origine</h4>
             <p>{SearchMovie.original_language}</p>

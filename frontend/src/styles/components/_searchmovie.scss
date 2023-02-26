@@ -285,7 +285,12 @@
 }
 
 #no-comment {
-  padding: 20px 0px;
+  margin-top: 10%;
+  padding: 10px 0px;
+}
+
+#reviewIcon{
+  padding-left: 10px;
 }
 
 .btn-add-movie {
@@ -334,6 +339,10 @@
     ul {
       padding: 0px 50px;
       display: flex;
+
+      li{
+        padding-left: 20px;
+      }
     }
   }
 }
