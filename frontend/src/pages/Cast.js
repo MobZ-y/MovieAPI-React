@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import axios from "axios";
 import Navigation from "../components/Navigation";
 import { useParams } from "react-router-dom";
@@ -28,6 +29,11 @@ const Cast = () => {
   return (
     <div>
       <Navigation />
+      <div className="back-profile">
+        <NavLink to={`/Movie/${id}`}>
+          <p>Retour au Film</p>
+        </NavLink>
+      </div>
       <div className="pre-members">
         <div className="members">
           <div className="cast-members">
@@ -36,14 +42,16 @@ const Cast = () => {
               {credits.map((info) => (
                 <div className="card">
                   <div className="profile-members">
-                    {info.profile_path ? (
-                      <img
-                        src={`https://image.tmdb.org/t/p/w500${info.profile_path}`}
-                        alt={info.name}
-                      />
-                    ) : (
-                      <img src="/nopict.png" alt={info.name} />
-                    )}
+                    <NavLink to={`/ProfileCard/${info.id}`}>
+                      {info.profile_path ? (
+                        <img
+                          src={`https://image.tmdb.org/t/p/w500${info.profile_path}`}
+                          alt={info.name}
+                        />
+                      ) : (
+                        <img src="/nopict.png" alt={info.name} />
+                      )}
+                    </NavLink>
                   </div>
                   <div className="info">
                     <li>{info.name}</li>
@@ -59,14 +67,16 @@ const Cast = () => {
               {creditsCrew.map((info) => (
                 <div className="card">
                   <div className="profile-members">
-                    {info.profile_path ? (
-                      <img
-                        src={`https://image.tmdb.org/t/p/w500${info.profile_path}`}
-                        alt={info.name}
-                      />
-                    ) : (
-                      <img src="/nopict.png" alt={info.name} />
-                    )}
+                    <NavLink to={`/ProfileCard/${info.id}`}>
+                      {info.profile_path ? (
+                        <img
+                          src={`https://image.tmdb.org/t/p/w500${info.profile_path}`}
+                          alt={info.name}
+                        />
+                      ) : (
+                        <img src="/nopict.png" alt={info.name} />
+                      )}
+                    </NavLink>
                   </div>
                   <div className="info">
                     <li>{info.name}</li>
