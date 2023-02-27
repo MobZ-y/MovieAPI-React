@@ -148,10 +148,14 @@ const SearchCardMovie = ({
                     <div className="card-popular">
                       <div className="profile-popular">
                         <NavLink to={`/ProfileCard/${item.id}`}>
-                          <img
-                            src={`https://image.tmdb.org/t/p/w500${item.profile_path}`}
-                            alt={item.name}
-                          />
+                          {item.profile_path ? (
+                            <img
+                              src={`https://image.tmdb.org/t/p/w500${item.profile_path}`}
+                              alt={item.name}
+                            />
+                          ) : (
+                            <img src="/nopict.png" alt={item.name} />
+                          )}
                         </NavLink>
                       </div>
 

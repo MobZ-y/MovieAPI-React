@@ -1,20 +1,39 @@
-.cast-members {
-  margin-top: 70px;
-  width: 299px;
-  height: 1000px;
-}
 
-.cast-cards {
-  width: 299px;
-  height: 100%;
-
-  li {
+.pre-members{
+  width: 100%;
     display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.members{
+  margin-top: 70px;
+  display: flex;  
+  align-items: flex-start;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+
+  img {
+    width: 66px;
+    height: 66px;
+    border-radius: 4px;
+    object-fit: cover;
   }
 
-  .profile-members {
-    img {
-      width: 50px;
-    }
+  .card{
+    display: flex;
+    color: white;
+    padding: 10px;
+  }
+
+  .cast-members{
+    padding-right: 100px;
+  }
+
+  .crew-members{
+    padding-left: 100px;
   }
 }
+
