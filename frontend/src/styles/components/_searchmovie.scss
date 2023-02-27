@@ -1,8 +1,8 @@
 .search-movie {
   display: flex;
-  width: 80%;
-  margin: 70px 200px 0px 200px;
-  padding-top: 20px;
+  width: 90%;
+  margin: 70px 55px;
+  
   color: rgb(241, 241, 241);
 
   .search-movie-container {
@@ -10,7 +10,7 @@
     display: flex;
     .details-movie {
       overflow: hidden;
-      margin: 20px;
+      margin: 0px 40px; 
 
       #rate {
         width: 10px;
@@ -20,9 +20,19 @@
 
       h3 {
         margin-bottom: 50px;
-        font-size: 30px;
+        
       }
 
+      #name {
+        font-size: 40px;
+        padding-right: 10px;
+      }
+
+      h4{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
       h1 {
         margin-left: 5px;
       }
@@ -71,7 +81,9 @@
   }
 
   #Synopsis {
-    margin: 20px 0px;
+    font-size: 20px;
+    margin: 15px 0px;
+    display: block;
   }
 }
 
@@ -181,7 +193,7 @@
 }
 
 .background-effet {
-  height: 590px;
+  height: 80vh;
   background-image: linear-gradient(
     to right,
     rgba(31.5, 10.5, 10.5, 1) calc((50vw - 170px) - 340px),
@@ -205,7 +217,7 @@
 
 .header-movie {
   width: 100%;
-  height: 590px;
+  height: 80vh;
 }
 
 .flex-details {
@@ -327,10 +339,7 @@
   font-weight: 400;
 }
 
-#name {
-  font-size: 30px;
-  padding-right: 10px;
-}
+
 
 .media-movie {
   margin-top: 120px;
@@ -345,4 +354,12 @@
       }
     }
   }
+}
+
+
+.profile-meta{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

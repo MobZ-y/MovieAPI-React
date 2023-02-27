@@ -161,6 +161,7 @@ const SearchCardMovie = ({
 
                       <div className="profile-meta">
                         <h3>{item.name}</h3>
+                        <h3>{item.character}</h3>
                       </div>
                     </div>
                   </li>
@@ -204,11 +205,7 @@ const SearchCardMovie = ({
             </div>
             <section className="media-movie">
               <div className="menu">
-                <h3>Média</h3>
-                <ul>
-                  <li>Vidéo</li>
-                  <li>Images</li>
-                </ul>
+                <h3>Recommandations</h3>
               </div>
               <div className="menu-content">
                 <div className="video"></div>
