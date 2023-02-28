@@ -4,7 +4,7 @@ import axios from "axios";
 import CardMovie from "./CardMovie";
 import CardTV from "./CardTV";
 
-const MoviesAndTV = () => {
+const HomeMoviesAndTV = () => {
   const [data, setData] = useState([]);
   const [Movie, setMovie] = useState([]);
   const [tv, setTv] = useState([]);
@@ -69,4 +69,4 @@ const MoviesAndTV = () => {
   );
 };
 
-export default MoviesAndTV;
+export default HomeMoviesAndTV;

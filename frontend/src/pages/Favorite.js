@@ -7,7 +7,7 @@ import CardMovie from "../components/CardMovie";
 
 import CardTV from "../components/CardTV";
 
-const LikePage = () => {
+const Favorite = () => {
   const [listData, setListData] = useState([]);
   const [listDataTv, setListDataTv] = useState([]);
 
@@ -89,4 +89,4 @@ const LikePage = () => {
   );
 };
 
-export default LikePage;
+export default Favorite;

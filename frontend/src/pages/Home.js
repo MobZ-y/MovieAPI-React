@@ -1,15 +1,15 @@
 import React from "react";
-import MoviesAndTV from "../components/MoviesAndTV";
+import HomeMoviesAndTV from "../components/HomeMoviesAndTV";
 import Navigation from "../components/Navigation";
 import HomeActors from "../components/HomeActors";
-import Search from "../components/Search";
+import Homebg from "../components/Homebg";
 
 const Home = () => {
   return (
     <div>
       <Navigation />
-      <Search />
-      <MoviesAndTV />
+      <Homebg />
+      <HomeMoviesAndTV />
       <HomeActors />
     </div>
   );

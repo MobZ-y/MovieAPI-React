@@ -4,12 +4,12 @@ import Artist from "./pages/Artist";
 import Home from "./pages/Home";
 import Films from "./pages/Films";
 import "./styles/index.scss";
-import ProfileCard from "./pages/ProfileCard";
-import LikePage from "./pages/LikePage";
+import SearchPerson from "./pages/SearchPerson";
+import Favorite from "./pages/Favorite";
 import SearchPage from "./pages/SearchPage";
-import PhotoPerson from "./pages/PhotoPerson";
-import MovieCard from "./pages/MovieCard";
-import TVCard from "./pages/TVCard";
+import SearchPersonPhoto from "./pages/SearchPersonPhoto";
+import SearchMovie from "./pages/SearchMovie";
+import SearchTV from "./pages/SearchTV";
 import Cast from "./pages/Cast";
 
 const App = () => {
@@ -20,12 +20,15 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/Artist" element={<Artist />}></Route>
           <Route path="/Films" element={<Films />}></Route>
-          <Route path="/ProfileCard/:id" element={<ProfileCard />}></Route>
-          <Route path="/LikePage" element={<LikePage />}></Route>
+          <Route path="/ProfileCard/:id" element={<SearchPerson />}></Route>
+          <Route path="/Favorite" element={<Favorite />}></Route>
           <Route path="/search/:People" element={<SearchPage />}></Route>
-          <Route path="/PhotoPerson/:id" element={<PhotoPerson />}></Route>
-          <Route path="/Movie/:idMovie" element={<MovieCard />}></Route>
-          <Route path="/Tv/:idTv" element={<TVCard />}></Route>
+          <Route
+            path="/PhotoPerson/:id"
+            element={<SearchPersonPhoto />}
+          ></Route>
+          <Route path="/Movie/:idMovie" element={<SearchMovie />}></Route>
+          <Route path="/Tv/:idTv" element={<SearchTV />}></Route>
           <Route path="/cast/:id" element={<Cast />}></Route>
         </Routes>
       </BrowserRouter>

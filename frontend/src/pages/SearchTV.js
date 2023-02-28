@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import SearchCardTV from "../components/SearchCardTV";
 
-const TVCard = () => {
+const SearchTV = () => {
   const { idTv } = useParams();
   const [Details, setDetails] = useState([]);
   const [Credits, setCredits] = useState([]);
@@ -35,4 +35,4 @@ const TVCard = () => {
   );
 };
 
-export default TVCard;
+export default SearchTV;

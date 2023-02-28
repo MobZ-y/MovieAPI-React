@@ -57,10 +57,10 @@ const Navigation = () => {
             <li>Films</li>
           </NavLink>
           <NavLink
-            to="/LikePage"
+            to="/Favorite"
             className={(nav) => (nav.isActive ? "nav-active" : "")}
           >
-            <li>Favorite</li>
+            <li>Favories</li>
           </NavLink>
           <div className="input-search">
             <form onSubmit={handleSubmit}>

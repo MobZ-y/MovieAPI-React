@@ -3,7 +3,7 @@ import Navigation from "../components/Navigation";
 import axios from "axios";
 import { NavLink, useParams } from "react-router-dom";
 
-const PhotoPerson = () => {
+const SearchPersonPhoto = () => {
   const { id } = useParams();
   const [data, setData] = useState([]);
 
@@ -44,4 +44,4 @@ const PhotoPerson = () => {
   );
 };
 
-export default PhotoPerson;
+export default SearchPersonPhoto;

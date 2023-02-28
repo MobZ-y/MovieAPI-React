@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import SearchCardMovie from "../components/SearchCardMovie";
 
-const MovieCard = () => {
+const SearchMovie = () => {
   const [data, setData] = useState([]);
   const [credits, setCredits] = useState([]);
   const [review, setReview] = useState([]);
@@ -68,4 +68,4 @@ const MovieCard = () => {
   );
 };
 
-export default MovieCard;
+export default SearchMovie;

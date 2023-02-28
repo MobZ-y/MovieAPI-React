@@ -2,7 +2,7 @@ import React from "react";
 import videoBg from "../assets/video/babylon.mp4";
 import { NavLink } from "react-router-dom";
 
-const SearchTest = () => {
+const Homebg = () => {
   return (
     <div className="main">
       <video src={videoBg} autoPlay loop muted />
@@ -16,4 +16,4 @@ const SearchTest = () => {
   );
 };
 
-export default SearchTest;
+export default Homebg;

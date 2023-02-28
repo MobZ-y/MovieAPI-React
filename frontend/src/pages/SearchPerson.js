@@ -4,7 +4,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import SearchCardPerson from "../components/SearchCardPerson";
 
-const ProfileCard = () => {
+const SearchPerson = () => {
   const { id } = useParams();
   const [data, setData] = useState([]);
   const [Credits, setCredits] = useState([]);
@@ -51,4 +51,4 @@ const ProfileCard = () => {
   );
 };
 
-export default ProfileCard;
+export default SearchPerson;
