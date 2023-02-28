@@ -10,7 +10,7 @@ const SearchCardMovie = ({
   Credits,
   Review,
   Keywords,
-  Images,
+  recommendations,
 }) => {
   const runtimeInMinutes = SearchMovie.runtime;
   const hours = Math.floor(runtimeInMinutes / 60);
@@ -124,6 +124,7 @@ const SearchCardMovie = ({
                         : Math.floor(SearchMovie.vote_average * 10).toFixed(0)}
                     </div>
                     <p id="rate">Notes des utilisateurs</p>
+                    <p id="trailer">Bande d'annonce</p>
                   </div>
                   <i>{SearchMovie.tagline}</i>
                   <h4 id="Synopsis">Synopsis</h4>
@@ -179,16 +180,13 @@ const SearchCardMovie = ({
               </div>
               {Review.length === 0 ? (
                 <h3 id="no-comment">
-                  Aucun Avis pour le moment
+                  Aucun avis pour le moment
                   <FontAwesomeIcon icon={faCircleInfo} id="reviewIcon" />
                 </h3>
               ) : (
                 Review.map((review) => (
                   <div className="review-container">
                     <div className="personal-info">
-                      <div className="profile">
-                        <span>?</span>
-                      </div>
                       <div className="info">
                         <h3>Critique de {review.author}</h3>
                         <p>
@@ -207,8 +205,37 @@ const SearchCardMovie = ({
               <div className="menu">
                 <h3>Recommandations</h3>
               </div>
-              <div className="menu-content">
-                <div className="video"></div>
+              <div className="carousel-movie">
+                <ul className="search-carousel-movie">
+                  {recommendations.map((recommendations) => (
+                    <li className="card-recommendations">
+                      <div className="card-popular">
+                        <div className="profile-popular-recommendations">
+                          <NavLink to={`/Movie/${recommendations.id}`}>
+                            {recommendations.backdrop_path ? (
+                              <img
+                                src={`https://image.tmdb.org/t/p/w500${recommendations.backdrop_path}`}
+                                alt={recommendations.name}
+                              />
+                            ) : (
+                              <img
+                                src={`https://image.tmdb.org/t/p/w500${recommendations.poster_path}`}
+                                alt={recommendations.name}
+                              />
+                            )}
+                          </NavLink>
+                        </div>
+
+                        <div className="profile-meta">
+                          <h3>{recommendations.original_title}</h3>
+                        </div>
+                      </div>
+                    </li>
+                  ))}
+                  <NavLink to={`/Cast/${id}`}>
+                    <p id="more">Afficher d'avantage </p>
+                  </NavLink>
+                </ul>
               </div>
             </section>
           </div>

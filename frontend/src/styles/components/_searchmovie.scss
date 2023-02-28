@@ -13,7 +13,12 @@
       margin: 0px 40px; 
 
       #rate {
-        width: 10px;
+        width: 90px;
+        display: flex;
+        align-items: center;
+      }
+
+      #trailer{
         display: flex;
         align-items: center;
       }
@@ -130,6 +135,7 @@
 
 .carousel-movie {
   overflow: hidden;
+  margin-top: 10px;
 
   .search-carousel-movie {
     display: flex;
@@ -139,9 +145,9 @@
     -webkit-overflow-scrolling: touch;
     overflow-x: scroll;
 
+  
     .card {
       margin: 10px;
-      height: 220px;
 
       .card-popular {
         color: white;
@@ -156,6 +162,8 @@
             border-radius: 10px;
           }
         }
+
+       
 
         .profile-meta {
           justify-content: center;
@@ -176,6 +184,36 @@
     scroll-snap-align: start;
   }
 }
+
+.card-recommendations{
+  margin: 0px 5px;
+  
+
+  .profile-popular-recommendations{
+    width: 240px;
+    height: 120px;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  }
+
+  .profile-meta {
+    justify-content: center;
+    font-size: 10px;
+    position: relative;
+    overflow: hidden;
+    height: 30px;
+
+    h3 {
+      font-size: 10px;
+    }
+  }
+}
+
 
 #more {
   color: white;
@@ -232,7 +270,6 @@
   padding-left: 30px;
 }
 .details-second {
-
   width: 100%;
 
   ul {
@@ -250,6 +287,7 @@
   }
 }
 .review-part {
+  width: 900px;
   padding: 20px 0px 0px 0px;
 
   .review-container {
@@ -264,27 +302,16 @@
   }
   .personal-info {
     display: flex;
+    padding-left: 20px;
   }
-  .profile {
-    width: 80px;
-    position: relative;
-    span {
-      position: absolute;
-      width: 70px;
-      margin: 10px 10px 10px 10px;
-      height: 70px;
-      background-color: rgb(212, 212, 212);
-      padding: 20px;
-      border-radius: 60px;
-    }
-  }
+  
 
   .info {
     padding: 20px 0px;
   }
 
   .text-info {
-    padding-left: 84px;
+    padding-left: 20px;
     padding-bottom: 20px;
     padding-right: 40px;
   }
@@ -297,8 +324,7 @@
 }
 
 #no-comment {
-  margin-top: 10%;
-  padding: 10px 0px;
+  padding: 50px 0px;
 }
 
 #reviewIcon{
@@ -342,7 +368,7 @@
 
 
 .media-movie {
-  margin-top: 120px;
+  margin-top: 20px;
   .menu {
     display: flex;
     ul {

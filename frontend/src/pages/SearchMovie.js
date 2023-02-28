@@ -40,7 +40,7 @@ const SearchMovie = () => {
       .get(
         `https://api.themoviedb.org/3/movie/${idMovie}/recommendations?api_key=dc4fa11dbb0888468121f0e93ac98077&language=fr-FR&query=`
       )
-      .then((res) => setRecommendations(res.data));
+      .then((res) => setRecommendations(res.data.results));
   }, [idMovie]);
 
   useEffect(() => {
