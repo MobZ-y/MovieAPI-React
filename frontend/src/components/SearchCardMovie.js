@@ -11,6 +11,7 @@ const SearchCardMovie = ({
   Review,
   Keywords,
   recommendations,
+  video,
 }) => {
   const runtimeInMinutes = SearchMovie.runtime;
   const hours = Math.floor(runtimeInMinutes / 60);
@@ -124,7 +125,31 @@ const SearchCardMovie = ({
                         : Math.floor(SearchMovie.vote_average * 10).toFixed(0)}
                     </div>
                     <p id="rate">Notes des utilisateurs</p>
-                    <p id="trailer">Bande d'annonce</p>
+
+                    <p id="trailer">
+                      {" "}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        height="24"
+                      >
+                        <path fill="none" d="M0 0h24v24H0z" />
+                        <path
+                          d="M19.376 12.416L8.777 19.482A.5.5 0 0 1 8 19.066V4.934a.5.5 0 0 1 .777-.416l10.599 7.066a.5.5 0 0 1 0 .832z"
+                          fill="rgba(255,255,255,1)"
+                        />
+                      </svg>
+                      <NavLink
+                        to={
+                          video[0] && video[0].key
+                            ? `https://www.youtube.com/watch?v=${video[0].key}`
+                            : "-"
+                        }
+                      >
+                        Bande d'annonce
+                      </NavLink>
+                    </p>
                   </div>
                   <i>{SearchMovie.tagline}</i>
                   <h4 id="Synopsis">Synopsis</h4>
