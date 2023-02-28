@@ -133,6 +133,8 @@
 
   .search-carousel-movie {
     display: flex;
+    width: 900px;
+    
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     overflow-x: scroll;
@@ -188,8 +190,7 @@
 }
 
 .details {
-  width: 100%;
-  padding-right: 40px;
+  padding-right: 30px;
 }
 
 .background-effet {
@@ -226,14 +227,13 @@
   color: rgb(241, 241, 241);
   margin-top: 20px;
   width: 100%;
-  padding-left: 200px;
-  padding-right: 440px;
   padding-top: 30px;
   padding-bottom: 30px;
+  padding-left: 30px;
 }
 .details-second {
-  min-width: 300px;
-  width: 300px;
+
+  width: 100%;
 
   ul {
     width: 100%;
