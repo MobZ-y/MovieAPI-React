@@ -1,7 +1,7 @@
 import React from "react";
 import MoviesAndTV from "../components/MoviesAndTV";
 import Navigation from "../components/Navigation";
-import Actors from "../components/Actors";
+import HomeActors from "../components/HomeActors";
 import Search from "../components/Search";
 
 const Home = () => {
@@ -10,7 +10,7 @@ const Home = () => {
       <Navigation />
       <Search />
       <MoviesAndTV />
-      <Actors />
+      <HomeActors />
     </div>
   );
 };

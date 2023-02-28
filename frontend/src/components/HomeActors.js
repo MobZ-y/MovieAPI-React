@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
-import CardPerson from "./CardPerson";
 
-const Actors = () => {
+const HomeActors = () => {
   const [data, setData] = useState([]);
+  const [id, setId] = useState("");
   const [url, setUrl] = useState(
     "https://api.themoviedb.org/3/trending/person/week?api_key=dc4fa11dbb0888468121f0e93ac98077"
   );
@@ -23,9 +23,15 @@ const Actors = () => {
     axios.get(url).then((res) => setData(res.data.results));
   }, [url]);
 
+  useEffect(() => {
+    setId(data.id);
+  }, [data.id]);
+
   const handleNavLinkClick = (contentType) => {
     setUrl(contentTypes.find((type) => type.name === contentType).url);
   };
+
+  console.log(data);
 
   return (
     <div>
@@ -43,8 +49,22 @@ const Actors = () => {
         </div>
         <div className="carouselPerson">
           <div className="trendingPerson">
-            {data.map((Person, index) => (
-              <CardPerson key={index} Person={Person} />
+            {data.map((person) => (
+              <div className="card">
+                <div className="card-popular">
+                  <div className="profile-popular">
+                    <NavLink to={`/ProfileCard/${id}`}>
+                      <img
+                        src={`https://image.tmdb.org/t/p/w500${person.profile_path}`}
+                        alt={person.name}
+                      />
+                    </NavLink>
+                  </div>
+                </div>
+                <div className="profile-meta">
+                  <p>{person.name}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -53,4 +73,4 @@ const Actors = () => {
   );
 };
 
-export default Actors;
+export default HomeActors;

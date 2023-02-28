@@ -28,7 +28,7 @@ const Navigation = () => {
     navigate(`/search/${People}`);
   };
   const navBackgroundColor =
-    scrollPosition > 100 ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0.3)";
+    scrollPosition > 10 ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0.3)";
 
   function handleIconClick() {
     setInputWidth(inputWidth === "0px" ? "200px" : "0px");
