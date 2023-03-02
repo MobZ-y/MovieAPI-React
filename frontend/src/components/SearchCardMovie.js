@@ -146,6 +146,7 @@ const SearchCardMovie = ({
                             ? `https://www.youtube.com/watch?v=${video[0].key}`
                             : "-"
                         }
+                        target="_blank"
                       >
                         Bande d'annonce
                       </NavLink>
@@ -226,8 +227,9 @@ const SearchCardMovie = ({
                 ))
               )}
             </div>
-            <section className="media-movie">
-              <div className="menu">
+
+            <section className="recommandation-movie">
+              <div className="recommandations">
                 <h3>Recommandations</h3>
               </div>
               <div className="carousel-movie">
@@ -257,9 +259,6 @@ const SearchCardMovie = ({
                       </div>
                     </li>
                   ))}
-                  <NavLink to={`/Cast/${id}`}>
-                    <p id="more">Afficher d'avantage </p>
-                  </NavLink>
                 </ul>
               </div>
             </section>

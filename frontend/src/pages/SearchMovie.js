@@ -60,6 +60,8 @@ const SearchMovie = () => {
       .then((res) => setVideo(res.data.results));
   }, [idMovie]);
 
+  console.log(video);
+
   return (
     <div>
       <Navigation />

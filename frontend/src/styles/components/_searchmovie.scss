@@ -24,9 +24,14 @@
 
         a{
           color: white;
+
+          &:hover{
+            color: rgb(172, 172, 172);
+          }
         }
 
       
+        
       }
     
 
@@ -396,3 +401,15 @@
   justify-content: center;
   align-items: center;
 }
+
+.media-movie{
+
+  .Menu{
+    display: flex;
+  
+          h4{
+            padding-left: 40px;
+          }
+  }
+}
+
