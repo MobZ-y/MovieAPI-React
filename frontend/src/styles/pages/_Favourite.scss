@@ -1,13 +1,15 @@
-.result {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+.user-list-page {
+  .result {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-h3 {
-  margin-top: 90px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
+  h3 {
+    margin-top: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
 }
