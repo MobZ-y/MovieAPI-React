@@ -70,9 +70,17 @@
       margin: 15px;
       overflow: hidden;
 
-      h3 {
-        margin-bottom: 50px;
-        font-size: 30px;
+      .title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+
+        h3 {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 30px;
+        }
       }
     }
 
@@ -185,4 +193,29 @@
   padding-right: 5px;
   color: black;
   font-weight: bold;
+}
+
+.btn-add-moviered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  padding: 0px 10px;
+  cursor: pointer;
+  transition: 0.2s;
+  color: red;
+}
+
+.btn-add-movie {
+  font-size: 30px;
+  cursor: pointer;
+  transition: 0.2s;
+  padding: 0px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 }

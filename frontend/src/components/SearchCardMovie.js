@@ -20,6 +20,7 @@ const SearchCardMovie = ({
   const formattedRuntime = `${hours}h ${minutes}min`;
   const [isAdded, setIsAdded] = useState(false);
   const [id, setId] = useState("");
+  const maDate = new Date(Review.created_at);
 
   useEffect(() => {
     setId(Credits.id);
@@ -222,7 +223,8 @@ const SearchCardMovie = ({
                           <div className="info">
                             <h3>Critique de {review.author}</h3>
                             <p>
-                              Rédigé par {review.author} le {review.created_at}
+                              Rédigé par {review.author} le{" "}
+                              {maDate.toLocaleDateString("fr")}
                             </p>
                           </div>
                         </div>

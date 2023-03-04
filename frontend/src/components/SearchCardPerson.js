@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart as faRegularHeart } from "@fortawesome/free-regular-svg-icons";
+import { faHeart as faSolidHeart } from "@fortawesome/free-solid-svg-icons";
 
 const SearchCard = ({ Search, Credits, CreditsCombined }) => {
   const [sortedArray, setSortedArray] = useState([]);
   const [id, setId] = useState("");
+  const [isAdded, setIsAdded] = useState(false);
 
   useEffect(() => {
     setId(Search.id);
@@ -28,6 +32,33 @@ const SearchCard = ({ Search, Credits, CreditsCombined }) => {
       return new Date(bDate) - new Date(aDate); // Tri en fonction de la date de sortie
     }
   });
+
+  useEffect(() => {
+    if (Search?.id) {
+      let storedData = window.localStorage.person
+        ? window.localStorage.person.split(",")
+        : [];
+      setIsAdded(storedData.includes(Search.id.toString()));
+    }
+  }, [Search]);
+
+  const addStorage = () => {
+    let storedData = window.localStorage.person
+      ? window.localStorage.person.split(",")
+      : [];
+    if (!storedData.includes(Search.id.toString())) {
+      storedData.push(Search.id);
+      window.localStorage.person = storedData;
+      setIsAdded(true);
+    }
+  };
+
+  const deleteStorage = () => {
+    let storedData = window.localStorage.person.split(",");
+    let newData = storedData.filter((id) => id != Search.id);
+    window.localStorage.person = newData;
+    setIsAdded(false);
+  };
   return (
     <div>
       <div className="search-wrap">
@@ -60,7 +91,18 @@ const SearchCard = ({ Search, Credits, CreditsCombined }) => {
             </ul>
           </div>
           <div className="Details">
-            <h3>{Search.name}</h3>
+            <div className="title">
+              <h3>{Search.name}</h3>
+              <div
+                className={"btn-add-movie" + (isAdded ? "red" : "")}
+                onClick={isAdded ? deleteStorage : addStorage}
+              >
+                <FontAwesomeIcon
+                  icon={isAdded ? faSolidHeart : faRegularHeart}
+                />
+              </div>
+            </div>
+
             <p>Biographie :</p>
             <br />
             <p>

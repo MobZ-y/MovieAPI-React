@@ -6,10 +6,13 @@ import axios from "axios";
 import CardMovie from "../components/CardMovie";
 
 import CardTV from "../components/CardTV";
+import HomeActors from "../components/HomeActors";
+import CardPerson from "../components/CardPerson";
 
 const Favorite = () => {
   const [listData, setListData] = useState([]);
   const [listDataTv, setListDataTv] = useState([]);
+  const [listDataPerson, setListDataPerson] = useState([]);
 
   useEffect(() => {
     const fetchMovieData = async () => {
@@ -52,12 +55,32 @@ const Favorite = () => {
 
     fetchMovieDatatv();
   }, []);
-  console.log(listData);
+
+  useEffect(() => {
+    const fetchMovieDataPerson = async () => {
+      let personId = window.localStorage.person
+        ? window.localStorage.person.split(",")
+        : [];
+
+      const promises = personId.map((id) =>
+        axios.get(
+          `https://api.themoviedb.org/3/person/${id}?api_key=ed82f4c18f2964e75117c2dc65e2161d&language=fr-FR`
+        )
+      );
+
+      const results = await Promise.all(promises);
+      const data = results.map((result) => result.data);
+
+      setListDataPerson(data);
+    };
+
+    fetchMovieDataPerson();
+  }, []);
 
   return (
     <div className="user-list-page">
       <Navigation />
-      <h3>Vos Films</h3>
+      <h3 id="movie">Vos Films préféré</h3>
       <div className="result">
         {listData.length > 0 ? (
           listData.map((movie) => <CardMovie Movies={movie} key={movie.id} />)
@@ -65,10 +88,20 @@ const Favorite = () => {
           <h2>Aucun coup de coeur pour le moment</h2>
         )}
       </div>
-      <h3>Vos émissions Tv</h3>
+      <h3>Vos émissions Tv préféré</h3>
       <div className="result">
         {listDataTv.length > 0 ? (
           listDataTv.map((Tv) => <CardTV Tv={Tv} key={Tv.id} />)
+        ) : (
+          <h2>Aucun coup de coeur pour le moment</h2>
+        )}
+      </div>
+      <h3>Vos Artistes préféré</h3>
+      <div className="result">
+        {listDataTv.length > 0 ? (
+          listDataPerson.map((person) => (
+            <CardPerson person={person} key={person.id} />
+          ))
         ) : (
           <h2>Aucun coup de coeur pour le moment</h2>
         )}
