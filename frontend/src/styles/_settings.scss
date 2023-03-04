@@ -24,6 +24,7 @@ $white: rgb(243, 243, 243);
 body {
   background: rgb(42, 42, 51);
   font-family: $font-1;
+  box-sizing: border-box;
   // @include verticalCenter;
 }
 li {

@@ -11,6 +11,7 @@ import SearchPersonPhoto from "./pages/SearchPersonPhoto";
 import SearchMovie from "./pages/SearchMovie";
 import SearchTV from "./pages/SearchTV";
 import Cast from "./pages/Cast";
+import CastTV from "./pages/CastTV";
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
           <Route path="/Movie/:idMovie" element={<SearchMovie />}></Route>
           <Route path="/Tv/:idTv" element={<SearchTV />}></Route>
           <Route path="/cast/:id" element={<Cast />}></Route>
+          <Route path="/castTv/:id" element={<CastTV />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

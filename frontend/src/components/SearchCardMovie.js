@@ -73,15 +73,17 @@ const SearchCardMovie = ({
             <div className="search-movie">
               <div className="search-movie-container">
                 <div className="Profile-movie">
-                  <img
-                    src={
-                      SearchMovie.poster_path
-                        ? "https://image.tmdb.org/t/p/w500" +
-                          SearchMovie.poster_path
-                        : "/src/assets/img/babylon.jpg"
-                    }
-                    alt=""
-                  />
+                  <div className="poster">
+                    <img
+                      src={
+                        SearchMovie.poster_path
+                          ? "https://image.tmdb.org/t/p/w500" +
+                            SearchMovie.poster_path
+                          : "/src/assets/img/babylon.jpg"
+                      }
+                      alt=""
+                    />
+                  </div>
                 </div>
                 <div className="details-movie">
                   <div className="title">
@@ -100,11 +102,13 @@ const SearchCardMovie = ({
                       />
                     </div>
                   </div>
-                  <ul>
-                    {SearchMovie.genres &&
-                      SearchMovie.genres.map((info) => <li>{info.name}</li>)}
-                    <p>{formattedRuntime}</p>
-                  </ul>
+                  <div className="info">
+                    <ul>
+                      {SearchMovie.genres &&
+                        SearchMovie.genres.map((info) => <li>{info.name}</li>)}
+                      <p>{formattedRuntime}</p>
+                    </ul>
+                  </div>
 
                   <div className="second-container">
                     <div
@@ -165,131 +169,135 @@ const SearchCardMovie = ({
             </div>
           </div>
         </div>
-        <div className="flex-details">
-          <div className="details">
-            <div className="carousel-movie">
-              <p>Têtes d'affiches</p>
-              <ul className="search-carousel-movie">
-                {sortedArray.map((item) => (
-                  <li className="card">
-                    <div className="card-popular">
-                      <div className="profile-popular">
-                        <NavLink to={`/ProfileCard/${item.id}`}>
-                          {item.profile_path ? (
-                            <img
-                              src={`https://image.tmdb.org/t/p/w500${item.profile_path}`}
-                              alt={item.name}
-                            />
-                          ) : (
-                            <img src="/nopict.png" alt={item.name} />
-                          )}
-                        </NavLink>
-                      </div>
+        <div className="mainflex">
+          <div className="preflex">
+            <div className="flex-details">
+              <div className="details">
+                <div className="carousel-movie">
+                  <p>Têtes d'affiches</p>
+                  <ul className="search-carousel-movie">
+                    {sortedArray.map((item) => (
+                      <li className="card">
+                        <div className="card-popular">
+                          <div className="profile-popular">
+                            <NavLink to={`/ProfileCard/${item.id}`}>
+                              {item.profile_path ? (
+                                <img
+                                  src={`https://image.tmdb.org/t/p/w500${item.profile_path}`}
+                                  alt={item.name}
+                                />
+                              ) : (
+                                <img src="/nopict.png" alt={item.name} />
+                              )}
+                            </NavLink>
+                          </div>
 
-                      <div className="profile-meta">
-                        <h3>{item.name}</h3>
-                        <h3>{item.character}</h3>
-                      </div>
-                    </div>
-                  </li>
-                ))}
-                <NavLink to={`/Cast/${id}`}>
-                  <p id="more">Afficher d'avantage </p>
-                </NavLink>
-              </ul>
-            </div>
-            <div className="review-part">
-              <div className="header-rewiew">
-                <ul>
-                  <li id="header">Review</li>
-                </ul>
-              </div>
-              {Review.length === 0 ? (
-                <h3 id="no-comment">
-                  Aucun avis pour le moment
-                  <FontAwesomeIcon icon={faCircleInfo} id="reviewIcon" />
-                </h3>
-              ) : (
-                Review.map((review) => (
-                  <div className="review-container">
-                    <div className="personal-info">
-                      <div className="info">
-                        <h3>Critique de {review.author}</h3>
-                        <p>
-                          Rédigé par {review.author} le {review.created_at}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="text-info">
-                      <p>{review.content}</p>
-                    </div>
+                          <div className="profile-meta">
+                            <h3>{item.name}</h3>
+                            <h3>{item.character}</h3>
+                          </div>
+                        </div>
+                      </li>
+                    ))}
+                    <NavLink to={`/Cast/${id}`}>
+                      <p id="more">Afficher d'avantage </p>
+                    </NavLink>
+                  </ul>
+                </div>
+                <div className="review-part">
+                  <div className="header-rewiew">
+                    <ul>
+                      <li id="header">Review</li>
+                    </ul>
                   </div>
-                ))
-              )}
-            </div>
-
-            <section className="recommandation-movie">
-              <div className="recommandations">
-                <h3>Recommandations</h3>
-              </div>
-              <div className="carousel-movie">
-                <ul className="search-carousel-movie">
-                  {recommendations.map((recommendations) => (
-                    <li className="card-recommendations">
-                      <div className="card-popular">
-                        <div className="profile-popular-recommendations">
-                          <NavLink to={`/Movie/${recommendations.id}`}>
-                            {recommendations.backdrop_path ? (
-                              <img
-                                src={`https://image.tmdb.org/t/p/w500${recommendations.backdrop_path}`}
-                                alt={recommendations.name}
-                              />
-                            ) : (
-                              <img
-                                src={`https://image.tmdb.org/t/p/w500${recommendations.poster_path}`}
-                                alt={recommendations.name}
-                              />
-                            )}
-                          </NavLink>
+                  {Review.length === 0 ? (
+                    <h3 id="no-comment">
+                      Aucun avis pour le moment
+                      <FontAwesomeIcon icon={faCircleInfo} id="reviewIcon" />
+                    </h3>
+                  ) : (
+                    Review.map((review) => (
+                      <div className="review-container">
+                        <div className="personal-info">
+                          <div className="info">
+                            <h3>Critique de {review.author}</h3>
+                            <p>
+                              Rédigé par {review.author} le {review.created_at}
+                            </p>
+                          </div>
                         </div>
-
-                        <div className="profile-meta">
-                          <h3>{recommendations.original_title}</h3>
+                        <div className="text-info">
+                          <p>{review.content}</p>
                         </div>
                       </div>
-                    </li>
+                    ))
+                  )}
+                </div>
+
+                <section className="recommandation-movie">
+                  <div className="recommandations">
+                    <h3>Recommandations</h3>
+                  </div>
+                  <div className="carousel-movie">
+                    <ul className="search-carousel-movie">
+                      {recommendations.map((recommendations) => (
+                        <li className="card-recommendations">
+                          <div className="card-popular">
+                            <div className="profile-popular-recommendations">
+                              <NavLink to={`/Movie/${recommendations.id}`}>
+                                {recommendations.backdrop_path ? (
+                                  <img
+                                    src={`https://image.tmdb.org/t/p/w500${recommendations.backdrop_path}`}
+                                    alt={recommendations.name}
+                                  />
+                                ) : (
+                                  <img
+                                    src={`https://image.tmdb.org/t/p/w500${recommendations.poster_path}`}
+                                    alt={recommendations.name}
+                                  />
+                                )}
+                              </NavLink>
+                            </div>
+
+                            <div className="profile-meta">
+                              <h3>{recommendations.original_title}</h3>
+                            </div>
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </section>
+              </div>
+              <div className="details-second">
+                <h4>Status du film</h4>
+                <p>{SearchMovie.status}</p>
+                <br />
+                <h4>Budget</h4>
+                <p>
+                  {SearchMovie.budget !== undefined
+                    ? `$${SearchMovie.budget.toLocaleString()}`
+                    : "-"}
+                </p>
+                <br />
+                <h4>Revenu</h4>
+                <p>
+                  {SearchMovie.revenue !== undefined
+                    ? `$${SearchMovie.revenue.toLocaleString()}`
+                    : "-"}
+                </p>
+                <br />
+                <h4>Langue d'origine</h4>
+                <p>{SearchMovie.original_language}</p>
+                <br />
+                <h4>Mots clés</h4>
+                <ul>
+                  {Keywords.map((keywords) => (
+                    <li>{keywords.name}</li>
                   ))}
                 </ul>
               </div>
-            </section>
-          </div>
-          <div className="details-second">
-            <h4>Status du film</h4>
-            <p>{SearchMovie.status}</p>
-            <br />
-            <h4>Budget</h4>
-            <p>
-              {SearchMovie.budget !== undefined
-                ? `$${SearchMovie.budget.toLocaleString()}`
-                : "-"}
-            </p>
-            <br />
-            <h4>Revenu</h4>
-            <p>
-              {SearchMovie.revenue !== undefined
-                ? `$${SearchMovie.revenue.toLocaleString()}`
-                : "-"}
-            </p>
-            <br />
-            <h4>Langue d'origine</h4>
-            <p>{SearchMovie.original_language}</p>
-            <br />
-            <h4>Mots clés</h4>
-            <ul>
-              {Keywords.map((keywords) => (
-                <li>{keywords.name}</li>
-              ))}
-            </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -298,3 +306,19 @@ const SearchCardMovie = ({
 };
 
 export default SearchCardMovie;
+
+{
+  /* <div>
+      <div className="card-movie">
+        <div className="header-movie" style={divStyle}>
+          <div className="background-effet">
+            <div className="search-movie">
+              
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div> */
+}

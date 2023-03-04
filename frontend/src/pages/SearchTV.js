@@ -26,7 +26,7 @@ const SearchTV = () => {
       .then((res) => setCredits(res.data));
   }, [idTv]);
 
-  console.log(Details);
+  console.log(Credits);
   return (
     <div>
       <Navigation />
