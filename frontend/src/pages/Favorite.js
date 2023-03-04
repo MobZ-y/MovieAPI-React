@@ -57,33 +57,21 @@ const Favorite = () => {
   return (
     <div className="user-list-page">
       <Navigation />
+      <h3>Vos Films</h3>
       <div className="result">
-        <div className="movie">
-          <div className="movie-info">
-            <h3>Vos Films</h3>
-          </div>
-          <div className="movie-fav">
-            {listData.length > 0 ? (
-              listData.map((movie) => (
-                <CardMovie Movies={movie} key={movie.id} />
-              ))
-            ) : (
-              <h2>Aucun coup de coeur pour le moment</h2>
-            )}
-          </div>
-        </div>
-        <div className="tv">
-          <div className="tv-info">
-            <h3>Vos émissions Tv</h3>
-          </div>
-          <div className="tv-fav">
-            {listDataTv.length > 0 ? (
-              listDataTv.map((Tv) => <CardTV Tv={Tv} key={Tv.id} />)
-            ) : (
-              <h2>Aucun coup de coeur pour le moment</h2>
-            )}
-          </div>
-        </div>
+        {listData.length > 0 ? (
+          listData.map((movie) => <CardMovie Movies={movie} key={movie.id} />)
+        ) : (
+          <h2>Aucun coup de coeur pour le moment</h2>
+        )}
+      </div>
+      <h3>Vos émissions Tv</h3>
+      <div className="result">
+        {listDataTv.length > 0 ? (
+          listDataTv.map((Tv) => <CardTV Tv={Tv} key={Tv.id} />)
+        ) : (
+          <h2>Aucun coup de coeur pour le moment</h2>
+        )}
       </div>
     </div>
   );

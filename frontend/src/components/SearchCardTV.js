@@ -25,9 +25,11 @@ const SearchCardTV = ({ Details, Credits }) => {
 
   React.useEffect(() => {
     const castArray = Array.isArray(Credits.cast) ? Credits.cast : [];
-
-    const sorted = castArray.sort((a, b) => a.order - b.order);
-    setSortedArray(sorted.slice(0, 8));
+    const crewArray = Array.isArray(Credits.crew) ? Credits.crew : [];
+    const mergedArray = [...castArray, ...crewArray];
+    const sorted = mergedArray.sort((a, b) => b.popularity - a.popularity);
+    const sliced = sorted.slice(0, 8);
+    setSortedArray(sliced);
   }, [Credits]);
 
   useEffect(() => {
@@ -91,11 +93,13 @@ const SearchCardTV = ({ Details, Credits }) => {
                       />
                     </div>
                   </div>
-                  <ul>
-                    {Details.genres &&
-                      Details.genres.map((info) => <li>{info.name}</li>)}
-                    <p>{formattedRuntime}</p>
-                  </ul>
+                  <div className="info">
+                    <ul>
+                      {Details.genres &&
+                        Details.genres.map((info) => <li>{info.name}</li>)}
+                      <p>{formattedRuntime}</p>
+                    </ul>
+                  </div>
 
                   <div className="second-container">
                     <div

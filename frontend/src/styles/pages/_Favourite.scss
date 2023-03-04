@@ -1,26 +1,13 @@
 .result {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+h3 {
+  margin-top: 90px;
+  display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 90px;
-
-  .movie-fav {
-    display: flex;
-  }
-  .movie-info {
-    color: white;
-  }
-
-  .tv {
-    margin-top: 20px;
-
-    h3 {
-      color: white;
-    }
-  }
-
-  .tv-fav {
-    display: flex;
-  }
+  color: white;
 }

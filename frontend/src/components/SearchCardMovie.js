@@ -270,27 +270,27 @@ const SearchCardMovie = ({
                 </section>
               </div>
               <div className="details-second">
-                <h4>Status du film</h4>
-                <p>{SearchMovie.status}</p>
+                <strong>Status du film</strong>
+                <p>{SearchMovie.status === "Released" ? "Sortie" : ""}</p>
                 <br />
-                <h4>Budget</h4>
+                <strong>Budget</strong>
                 <p>
                   {SearchMovie.budget !== undefined
                     ? `$${SearchMovie.budget.toLocaleString()}`
                     : "-"}
                 </p>
                 <br />
-                <h4>Revenu</h4>
+                <strong>Revenu</strong>
                 <p>
                   {SearchMovie.revenue !== undefined
                     ? `$${SearchMovie.revenue.toLocaleString()}`
                     : "-"}
                 </p>
                 <br />
-                <h4>Langue d'origine</h4>
-                <p>{SearchMovie.original_language}</p>
+                <strong>Langue d'origine</strong>
+                <p>{SearchMovie.original_language === "en" ? "Anglais" : ""}</p>
                 <br />
-                <h4>Mots clés</h4>
+                <strong>Mots clés</strong>
                 <ul>
                   {Keywords.map((keywords) => (
                     <li>{keywords.name}</li>
