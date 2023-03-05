@@ -165,13 +165,6 @@
 
 //////*****************************************************************************************
 
-.profile-meta {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .media-tv {
   .Menu {
     display: flex;
@@ -212,6 +205,11 @@
 
 //
 
+.profile-meta {
+  justify-content: center;
+  font-size: 10px;
+  position: relative;
+}
 .mainflex {
   width: 100%;
 
