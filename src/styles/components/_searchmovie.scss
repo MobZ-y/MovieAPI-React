@@ -276,6 +276,17 @@
           -webkit-overflow-scrolling: touch;
           overflow-x: scroll;
 
+          #no-comment {
+            padding: 50px 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          #reviewIcon {
+            padding-left: 10px;
+          }
+
           .card {
             margin: 10px;
 

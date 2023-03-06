@@ -134,8 +134,8 @@ const SearchCard = ({ Search, Credits, CreditsCombined }) => {
                 </div>
               </div>
             </div>
+            <h2 id="Interprétation">Interprétation</h2>
             <div className="table">
-              <h2>Interprétation</h2>
               {CreditsCombined.map((info) => (
                 <table className="fristLine">
                   <tbody>
@@ -151,11 +151,13 @@ const SearchCard = ({ Search, Credits, CreditsCombined }) => {
                         <span></span>
                       </td>
                       <td className="original-title">
-                        <p id="original-title-tile">
-                          {info.original_title
-                            ? info.original_title
-                            : info.original_name}
-                        </p>
+                        <NavLink to={`/Movie/${info.id}`}>
+                          <p id="original-title-tile">
+                            {info.original_title
+                              ? info.original_title
+                              : info.original_name}
+                          </p>
+                        </NavLink>
                         incarnant <p id="incarne-name">{info.character}</p>
                       </td>
                     </tr>

@@ -60,7 +60,7 @@
 
   .search {
     display: flex;
-    width: 63%;
+    width: 73%;
     position: absolute;
     left: 50%;
     margin-top: 20px;
@@ -98,6 +98,7 @@
 }
 
 .lower-content-Carousel {
+  padding-top: 30px;
   .carousel {
     overflow: hidden;
     margin: 0px;
@@ -148,13 +149,12 @@
     }
   }
 }
-.Cards {
-  margin-top: 70px;
+#Interprétation {
+  padding: 10px;
 }
-
 .table {
   background: rgb(112, 112, 112);
-  margin-top: 20px;
+  margin-top: 10px;
   border-radius: 10px;
   font-size: 18px;
 
@@ -164,7 +164,7 @@
 
   .separator {
     span {
-      border: 2px solid black;
+      border: 2px solid rgb(255, 255, 255);
       display: flex;
 
       width: 10px;
@@ -181,18 +181,18 @@
     padding: 0px 20px;
     display: flex;
   }
-}
 
-#incarne-name {
-  display: flex;
-  padding-left: 5px;
-  color: rgb(187, 187, 187);
-}
+  #incarne-name {
+    display: flex;
+    padding-left: 5px;
+    color: rgb(187, 187, 187);
+  }
 
-#original-title-tile {
-  padding-right: 5px;
-  color: black;
-  font-weight: bold;
+  #original-title-tile {
+    padding-right: 5px;
+    color: black;
+    font-weight: bold;
+  }
 }
 
 .btn-add-moviered {
@@ -219,4 +219,8 @@
   &:hover {
     transform: scale(1.2);
   }
+}
+
+.Cards {
+  margin-top: 70px;
 }

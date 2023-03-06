@@ -80,7 +80,7 @@ const SearchCardMovie = ({
                         SearchMovie.poster_path
                           ? "https://image.tmdb.org/t/p/w500" +
                             SearchMovie.poster_path
-                          : "/src/assets/img/babylon.jpg"
+                          : "/frontend/public/nopict.png"
                       }
                       alt=""
                     />
@@ -242,31 +242,41 @@ const SearchCardMovie = ({
                   </div>
                   <div className="carousel-movie">
                     <ul className="search-carousel-movie">
-                      {recommendations.map((recommendations) => (
-                        <li className="card-recommendations">
-                          <div className="card-popular">
-                            <div className="profile-popular-recommendations">
-                              <NavLink to={`/Movie/${recommendations.id}`}>
-                                {recommendations.backdrop_path ? (
-                                  <img
-                                    src={`https://image.tmdb.org/t/p/w500${recommendations.backdrop_path}`}
-                                    alt={recommendations.name}
-                                  />
-                                ) : (
-                                  <img
-                                    src={`https://image.tmdb.org/t/p/w500${recommendations.poster_path}`}
-                                    alt={recommendations.name}
-                                  />
-                                )}
-                              </NavLink>
-                            </div>
+                      {recommendations.length === 0 ? (
+                        <h3 id="no-comment">
+                          Aucune recommandation pour le moment
+                          <FontAwesomeIcon
+                            icon={faCircleInfo}
+                            id="reviewIcon"
+                          />
+                        </h3>
+                      ) : (
+                        recommendations.map((recommendations) => (
+                          <li className="card-recommendations">
+                            <div className="card-popular">
+                              <div className="profile-popular-recommendations">
+                                <NavLink to={`/Movie/${recommendations.id}`}>
+                                  {recommendations.backdrop_path ? (
+                                    <img
+                                      src={`https://image.tmdb.org/t/p/w500${recommendations.backdrop_path}`}
+                                      alt={recommendations.name}
+                                    />
+                                  ) : (
+                                    <img
+                                      src={`https://image.tmdb.org/t/p/w500${recommendations.poster_path}`}
+                                      alt={recommendations.name}
+                                    />
+                                  )}
+                                </NavLink>
+                              </div>
 
-                            <div className="profile-meta">
-                              <h3>{recommendations.original_title}</h3>
+                              <div className="profile-meta">
+                                <h3>{recommendations.original_title}</h3>
+                              </div>
                             </div>
-                          </div>
-                        </li>
-                      ))}
+                          </li>
+                        ))
+                      )}
                     </ul>
                   </div>
                 </section>
