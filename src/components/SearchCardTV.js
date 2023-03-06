@@ -3,8 +3,15 @@ import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as faRegularHeart } from "@fortawesome/free-regular-svg-icons";
 import { faHeart as faSolidHeart } from "@fortawesome/free-solid-svg-icons";
+import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 
-const SearchCardTV = ({ Details, Credits }) => {
+const SearchCardTV = ({
+  Details,
+  Credits,
+  Review,
+  Recommendations,
+  Keywords,
+}) => {
   const runtimeInMinutes = Details.episode_run_time;
   const hours = Math.floor(runtimeInMinutes / 60);
   const minutes = runtimeInMinutes % 60;
@@ -199,7 +206,7 @@ const SearchCardTV = ({ Details, Credits }) => {
                       <li id="header">Review</li>
                     </ul>
                   </div>
-                  {/* {Review.length === 0 ? (
+                  {Review.length === 0 ? (
                     <h3 id="no-comment">
                       Aucun avis pour le moment
                       <FontAwesomeIcon icon={faCircleInfo} id="reviewIcon" />
@@ -220,7 +227,7 @@ const SearchCardTV = ({ Details, Credits }) => {
                         </div>
                       </div>
                     ))
-                  )} */}
+                  )}
                 </div>
 
                 <section className="recommandation-tv">
@@ -229,7 +236,7 @@ const SearchCardTV = ({ Details, Credits }) => {
                   </div>
                   <div className="carousel-tv">
                     <ul className="search-carousel-tv">
-                      {/* {recommendations.map((recommendations) => (
+                      {Recommendations.map((recommendations) => (
                         <li className="card-recommendations">
                           <div className="card-popular">
                             <div className="profile-popular-recommendations">
@@ -249,17 +256,17 @@ const SearchCardTV = ({ Details, Credits }) => {
                             </div>
 
                             <div className="profile-meta">
-                              <h3>{recommendations.original_title}</h3>
+                              <h3>{recommendations.original_name}</h3>
                             </div>
                           </div>
                         </li>
-                      ))} */}
+                      ))}
                     </ul>
                   </div>
                 </section>
               </div>
               <div className="details-second">
-                <h4>Status du film</h4>
+                <h4>Status</h4>
                 <p>{Details.status}</p>
                 <br />
                 <h4>Langue d'origine</h4>
@@ -267,9 +274,9 @@ const SearchCardTV = ({ Details, Credits }) => {
                 <br />
                 <h4>Mots clés</h4>
                 <ul>
-                  {/* {Keywords.map((keywords) => (
+                  {Keywords.map((keywords) => (
                     <li>{keywords.name}</li>
-                  ))} */}
+                  ))}
                 </ul>
               </div>
             </div>
