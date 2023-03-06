@@ -236,38 +236,48 @@
         overflow: hidden;
         margin-top: 10px;
 
+        #role {
+          padding: 10px 0px;
+          letter-spacing: 1px;
+        }
+
         .search-carousel-tv {
           display: flex;
           scroll-snap-type: x mandatory;
           -webkit-overflow-scrolling: touch;
           overflow-x: scroll;
 
-          .card {
+          .card-tv {
             margin: 10px;
 
-            .card-popular {
+            .card-popular-tv {
               color: white;
+              background-color: rgb(37, 37, 37);
 
-              .profile-popular {
+              .profile-popular-tv {
                 width: calc(90px * 1.5);
                 height: calc(130px * 1.5);
 
                 img {
                   height: 100%;
                   width: 100%;
-                  border-radius: 10px;
                 }
               }
 
-              .profile-meta {
-                justify-content: center;
+              .profile-meta-tv {
                 font-size: 10px;
                 position: relative;
                 overflow: hidden;
                 height: 30px;
 
                 h3 {
-                  font-size: 10px;
+                  display: flex;
+                  justify-content: center;
+                  font-size: 12px;
+                }
+                p {
+                  display: flex;
+                  justify-content: center;
                 }
               }
             }

@@ -39,12 +39,21 @@ const CardMovie = ({ Movies }) => {
       <div className="card">
         <div className="card-popular">
           <div className="profile-popular">
-            <NavLink to={`/Movie/${idMovie}`}>
-              <img
-                src={`https://image.tmdb.org/t/p/w500${Movies.poster_path}`}
-                alt={Movies.name}
-              />
-            </NavLink>
+            {Movies.media_type === "tv" ? (
+              <NavLink to={`/tv/${Movies.id}`}>
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${Movies.poster_path}`}
+                  alt={Movies.name}
+                />
+              </NavLink>
+            ) : (
+              <NavLink to={`/movie/${Movies.id}`}>
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${Movies.poster_path}`}
+                  alt={Movies.title}
+                />
+              </NavLink>
+            )}
           </div>
           <div className="profile-meta">
             <p className="name">

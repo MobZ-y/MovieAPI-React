@@ -60,7 +60,7 @@ const SearchMovie = () => {
       .then((res) => setVideo(res.data.results));
   }, [idMovie]);
 
-  console.log(data);
+  console.log(credits);
 
   return (
     <div>

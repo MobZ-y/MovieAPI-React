@@ -175,7 +175,7 @@ const SearchCardMovie = ({
             <div className="flex-details">
               <div className="details">
                 <div className="carousel-movie">
-                  <p>Têtes d'affiches</p>
+                  <h3 id="role">Distribution des rôles</h3>
                   <ul className="search-carousel-movie">
                     {sortedArray.map((item) => (
                       <li className="card-movie">

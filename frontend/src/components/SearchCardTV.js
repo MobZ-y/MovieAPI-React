@@ -170,12 +170,12 @@ const SearchCardTV = ({
             <div className="flex-details">
               <div className="details">
                 <div className="carousel-tv">
-                  <p>Têtes d'affiches</p>
+                  <h3 id="role">Distribution des rôles</h3>
                   <ul className="search-carousel-tv">
                     {sortedArray.map((item) => (
-                      <li className="card">
-                        <div className="card-popular">
-                          <div className="profile-popular">
+                      <li className="card-tv">
+                        <div className="card-popular-tv">
+                          <div className="profile-popular-tv">
                             <NavLink to={`/ProfileCard/${item.id}`}>
                               {item.profile_path ? (
                                 <img
@@ -188,9 +188,9 @@ const SearchCardTV = ({
                             </NavLink>
                           </div>
 
-                          <div className="profile-meta">
+                          <div className="profile-meta-tv">
                             <h3>{item.name}</h3>
-                            <h3>{item.character}</h3>
+                            <p>{item.character}</p>
                           </div>
                         </div>
                       </li>

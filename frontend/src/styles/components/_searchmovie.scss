@@ -263,12 +263,19 @@
     color: rgb(241, 241, 241);
 
     .details {
-      margin-right: 30px;
+      width: 1000px;
       max-width: 1000px;
+
+      padding-right: 30px;
 
       .carousel-movie {
         overflow: hidden;
         margin-top: 10px;
+
+        #role {
+          padding: 10px 0px;
+          letter-spacing: 1px;
+        }
 
         .search-carousel-movie {
           display: flex;

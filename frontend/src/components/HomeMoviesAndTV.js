@@ -33,6 +33,7 @@ const HomeMoviesAndTV = () => {
       .then((res) => setMovie(res.data.results));
   }, []);
 
+  console.log(data);
   return (
     <div>
       <div className="movies-trending">
