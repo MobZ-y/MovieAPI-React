@@ -178,9 +178,9 @@ const SearchCardMovie = ({
                   <p>Têtes d'affiches</p>
                   <ul className="search-carousel-movie">
                     {sortedArray.map((item) => (
-                      <li className="card">
-                        <div className="card-popular">
-                          <div className="profile-popular">
+                      <li className="card-movie">
+                        <div className="card-popular-movie">
+                          <div className="profile-popular-movie">
                             <NavLink to={`/ProfileCard/${item.id}`}>
                               {item.profile_path ? (
                                 <img
@@ -193,9 +193,9 @@ const SearchCardMovie = ({
                             </NavLink>
                           </div>
 
-                          <div className="profile-meta">
+                          <div className="profile-meta-movie">
                             <h3>{item.name}</h3>
-                            <h3>{item.character}</h3>
+                            <p>{item.character}</p>
                           </div>
                         </div>
                       </li>
@@ -282,7 +282,7 @@ const SearchCardMovie = ({
                 </section>
               </div>
               <div className="details-second">
-                <strong>Status du film</strong>
+                <strong>Statut</strong>
                 <p>{SearchMovie.status === "Released" ? "Sortie" : ""}</p>
                 <br />
                 <strong>Budget</strong>
