@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as faRegularHeart } from "@fortawesome/free-regular-svg-icons";
 import { faHeart as faSolidHeart } from "@fortawesome/free-solid-svg-icons";
+import { faCamera } from "@fortawesome/free-solid-svg-icons";
 
 const SearchCard = ({ Search, Credits, CreditsCombined }) => {
   const [sortedArray, setSortedArray] = useState([]);
@@ -62,11 +63,6 @@ const SearchCard = ({ Search, Credits, CreditsCombined }) => {
   return (
     <div>
       <div className="search-wrap">
-        <div className="nav-profile">
-          <NavLink to={`/PhotoPerson/${id}`}>
-            <p>Médias</p>
-          </NavLink>
-        </div>
         <div className="search">
           <div className="Profile">
             <img
@@ -89,6 +85,12 @@ const SearchCard = ({ Search, Credits, CreditsCombined }) => {
               {Search.also_known_as &&
                 Search.also_known_as.map((Alias) => <li>{Alias}</li>)}
             </ul>
+            <div className="media">
+              <NavLink to={`/PhotoPerson/${id}`}>
+                <p>Photo de profile</p>
+              </NavLink>
+              <FontAwesomeIcon icon={faCamera} id="camera" />
+            </div>
           </div>
           <div className="Details">
             <div className="title">
@@ -102,7 +104,6 @@ const SearchCard = ({ Search, Credits, CreditsCombined }) => {
                 />
               </div>
             </div>
-
             <p>Biographie :</p>
             <br />
             <p>
@@ -157,8 +158,9 @@ const SearchCard = ({ Search, Credits, CreditsCombined }) => {
                               ? info.original_title
                               : info.original_name}
                           </p>
-                        </NavLink>
-                        incarnant <p id="incarne-name">{info.character}</p>
+                        </NavLink>{" "}
+                        <p id="in">incarnant </p>
+                        <p id="incarne-name">{info.character}</p>
                       </td>
                     </tr>
                   </tbody>
