@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { faMoon } from "@fortawesome/free-regular-svg-icons";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
 const Navigation = () => {
@@ -28,7 +26,7 @@ const Navigation = () => {
     navigate(`/search/${People}`);
   };
   const navBackgroundColor =
-    scrollPosition > 10 ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0.3)";
+    scrollPosition > 10 ? "rgba(0, 0, 0, 1)" : "background: #546fe4;";
 
   function handleIconClick() {
     setInputWidth(inputWidth === "0px" ? "200px" : "0px");

@@ -27,6 +27,21 @@
       position: relative;
     }
   }
+
+  #canvas {
+    border: 2px solid black;
+    color: azure;
+    border-radius: 150px;
+    position: absolute;
+    top: -29px;
+    left: -1px;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 //******Carrousel tendances*******//
@@ -127,20 +142,6 @@
 
 .orange {
   background-color: rgb(250, 204, 0);
-}
-#canvas {
-  border: 2px solid black;
-  color: azure;
-  border-radius: 150px;
-  position: absolute;
-  top: -29px;
-  left: -1px;
-  z-index: 1;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .btn-add {
