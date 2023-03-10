@@ -4,41 +4,33 @@ import Navigation from "../components/Navigation";
 import { NavLink } from "react-router-dom";
 
 const Films = () => {
-  const [popular, setPopular] = useState([]);
+  const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
 
-  const handlePopularClick = () => {
-    axios
-      .get(
-        `https://api.themoviedb.org/3/movie/popular?api_key=dc4fa11dbb0888468121f0e93ac98077&language=en-US&page=${page}`
-      )
-      .then((res) => setPopular(res.data.results));
-    setPage(1);
-  };
+  const [url, setUrl] = useState(
+    "https://api.themoviedb.org/3/movie/popular?api_key=dc4fa11dbb0888468121f0e93ac98077&language=en-US&page="
+  );
+  const contentTypes = [
+    {
+      name: "Popular Movies",
+      url: "https://api.themoviedb.org/3/movie/popular?api_key=dc4fa11dbb0888468121f0e93ac98077&language=en-US&page=",
+    },
+    {
+      name: "Top Rated Movies",
+      url: "https://api.themoviedb.org/3/movie/top_rated?api_key=dc4fa11dbb0888468121f0e93ac98077&language=en-US&page=",
+    },
+    {
+      name: "Upcoming Movies",
+      url: "https://api.themoviedb.org/3/movie/upcoming?api_key=dc4fa11dbb0888468121f0e93ac98077&language=en-US&page=",
+    },
+  ];
+
   useEffect(() => {
-    axios
-      .get(
-        `https://api.themoviedb.org/3/movie/popular?api_key=dc4fa11dbb0888468121f0e93ac98077&language=en-US&page=${page}`
-      )
-      .then((res) => setPopular(res.data.results));
-  }, [page]);
+    axios.get(url).then((res) => setData(res.data.results));
+  }, [url]);
 
-  const handleTopRatedClick = () => {
-    axios
-      .get(
-        `https://api.themoviedb.org/3/movie/top_rated?api_key=dc4fa11dbb0888468121f0e93ac98077&language=en-US&page=${page}`
-      )
-      .then((res) => setPopular(res.data.results));
-    setPage(1);
-  };
-
-  const handleSoonclick = () => {
-    axios
-      .get(
-        `https://api.themoviedb.org/3/movie/upcoming?api_key=dc4fa11dbb0888468121f0e93ac98077&language=en-US&page=${page}`
-      )
-      .then((res) => setPopular(res.data.results));
-    setPage(1);
+  const handleNavLinkClick = (contentType) => {
+    setUrl(contentTypes.find((type) => type.name === contentType).url);
   };
 
   const setPageUpdateAdd = () => {
@@ -52,10 +44,7 @@ const Films = () => {
     }
   };
 
-  const reset = () => {
-    page = 1;
-  };
-  console.log(popular);
+  console.log(data);
   return (
     <div>
       <Navigation />
@@ -64,14 +53,15 @@ const Films = () => {
         <div className="content-popular">
           <div className="form">
             <div className="form-button">
-              <p
-                onClick={handlePopularClick}
-                className={(p) => (p.isActive ? "p-active" : "")}
-              >
-                Populaires
-              </p>
-              <p onClick={handleTopRatedClick}>Mieux notés</p>
-              <p onClick={handleSoonclick}>Prochainement</p>
+              {contentTypes.map((contentType) => (
+                <NavLink
+                  key={contentType.name}
+                  id={contentType.name}
+                  onClick={() => handleNavLinkClick(contentType.name)}
+                >
+                  <p>{contentType.name}</p>
+                </NavLink>
+              ))}
             </div>
             <div className="switch">
               <p id="previous" onClick={setPageUpdateMinus}>
@@ -82,7 +72,7 @@ const Films = () => {
             </div>
           </div>
           <div className="famous-films">
-            {popular.map((popular) => (
+            {data.map((popular) => (
               <div className="card-pre">
                 <div className="card-films">
                   <div className="profile-films">
