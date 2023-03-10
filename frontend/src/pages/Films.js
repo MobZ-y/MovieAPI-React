@@ -12,27 +12,27 @@ const Films = () => {
   );
   const contentTypes = [
     {
-      name: "Popular Movies",
+      name: "Populaires",
       url: "https://api.themoviedb.org/3/movie/popular?api_key=dc4fa11dbb0888468121f0e93ac98077&language=en-US&page=",
     },
     {
-      name: "Top Rated Movies",
+      name: "Les mieux notés",
       url: "https://api.themoviedb.org/3/movie/top_rated?api_key=dc4fa11dbb0888468121f0e93ac98077&language=en-US&page=",
     },
     {
-      name: "Upcoming Movies",
+      name: "Prochainement",
       url: "https://api.themoviedb.org/3/movie/upcoming?api_key=dc4fa11dbb0888468121f0e93ac98077&language=en-US&page=",
     },
   ];
 
   useEffect(() => {
-    axios.get(url).then((res) => setData(res.data.results));
-  }, [url]);
+    axios.get(`${url}${page}`).then((res) => setData(res.data.results));
+  }, [url, page]);
 
   const handleNavLinkClick = (contentType) => {
     setUrl(contentTypes.find((type) => type.name === contentType).url);
+    setPage(1);
   };
-
   const setPageUpdateAdd = () => {
     setPage((prevPage) => prevPage + 1);
   };
