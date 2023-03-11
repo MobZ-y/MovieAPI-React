@@ -12,14 +12,14 @@ const CardArtist = ({ Artist }) => {
       <div className="card-famous">
         <div className="profile-famous">
           <NavLink to={`/ProfileCard/${id}`}>
-            <img
-              src={
-                Artist.profile_path
-                  ? "https://image.tmdb.org/t/p/w500" + Artist.profile_path
-                  : "/public/A+.png"
-              }
-              alt={Artist.name}
-            />
+            {Artist.profile_path ? (
+              <img
+                src={`https://image.tmdb.org/t/p/w500${Artist.profile_path}`}
+                alt={Artist.name}
+              />
+            ) : (
+              <img src="/nopict.png" alt={Artist.name} />
+            )}
           </NavLink>
         </div>
         <div className="profile-meta">

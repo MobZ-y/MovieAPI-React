@@ -121,7 +121,7 @@ const SearchCard = ({ Search, Credits, CreditsCombined }) => {
                           <div className="profile-popular">
                             <img
                               src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
-                              alt="drapeau"
+                              alt={item.title}
                               id="pp"
                             />
                           </div>
@@ -160,7 +160,9 @@ const SearchCard = ({ Search, Credits, CreditsCombined }) => {
                           </p>
                         </NavLink>{" "}
                         <p id="in">incarnant </p>
-                        <p id="incarne-name">{info.character}</p>
+                        <p id="incarne-name">
+                          {info.character ? info.character : "Inconnue"}
+                        </p>
                       </td>
                     </tr>
                   </tbody>

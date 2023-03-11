@@ -43,15 +43,9 @@ const Artist = () => {
           ))}
         </div>
         <div className="pages">
-          <NavLink>
-            <button className="previous" onClick={setPageUpdateMinus}>
-              Précedent
-            </button>
-          </NavLink>
-          <h2 className="count"></h2>
-          <button className="next" onClick={setPageUpdateAdd}>
-            <p>Suivant</p>
-          </button>
+          <p onClick={setPageUpdateMinus}>Précedent</p>
+          <h2 className="count">{page}</h2>
+          <p onClick={setPageUpdateAdd}>Suivant</p>
         </div>
       </div>
     </div>
