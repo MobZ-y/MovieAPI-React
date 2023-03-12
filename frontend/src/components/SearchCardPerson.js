@@ -9,6 +9,7 @@ const SearchCard = ({ Search, Credits, CreditsCombined }) => {
   const [sortedArray, setSortedArray] = useState([]);
   const [id, setId] = useState("");
   const [isAdded, setIsAdded] = useState(false);
+  const genderStr = Search.gender === 1 ? "Femme" : "Homme";
 
   useEffect(() => {
     setId(Search.id);
@@ -71,14 +72,15 @@ const SearchCard = ({ Search, Credits, CreditsCombined }) => {
               id="pp"
             />
             <h4>Date de Naissance : </h4>
-            <br />
             <p>
               {Search.birthday} ({age}ans)
             </p>
             <br />
             <h4>Lieu de Naissance :</h4>
-            <br />
             <p>{Search.place_of_birth}</p>
+            <br />
+            <h4>Genre:</h4>
+            <p>{genderStr}</p>
             <br />
             <h4>Alias</h4>
             <ul>
