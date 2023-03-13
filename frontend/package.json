@@ -1,6 +1,8 @@
 {
-  "name": "movieapireact",
-  "version": "0.1.0",
+  "name": "hostinger-react",
+  "homepage": "romainnourry.fr",
+  "version": "1.0.0",
+  "description": "my react application",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
